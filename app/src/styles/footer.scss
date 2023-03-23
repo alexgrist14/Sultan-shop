@@ -1,0 +1,197 @@
+@import "variables";
+
+.footer{
+  display: flex;
+  gap: 50px;
+  color: #FFFFFF;
+  min-height: 500px;
+  background: #3F4E65;
+  justify-content: center;
+  align-items: center;
+  &-content__company-description{
+    margin-left: -35px;
+    margin-right: 10px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 320px;
+    p{
+      margin-top: 10px;
+      margin-bottom: 30px;
+      width: 100%;
+      text-align: left;
+      font-size: 16px;
+      line-height: 24px;
+    }
+    .sales-subscribe{
+      &__title{
+        text-align: left;
+        font-weight: unset;
+        font-size: 12px;
+      }
+      .mail{
+        &-input{
+          display: flex;
+          justify-content: space-between;
+          padding-left: 20px;
+          padding-right: 10px;
+          align-items: center;
+          width: 252px;
+          height: 59px;
+          background: #FFFFFF;
+          border-radius: 36px;
+        }
+        &-placeholder{
+          font-size: 12px;
+          color: #5C6370;
+        }
+        &-submit{
+          width: 39px;
+          height: 39px;
+          background: #FFC85E;
+          border-radius: 1000px;
+          img{
+            position: relative;
+            top: 25%
+          }
+        }
+      }
+    }
+  }
+  &-links{
+    &__container{
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 95px;
+      margin-bottom: 100px;
+
+    }
+    &__menu{
+      display: flex;
+      flex-direction: column;
+
+      &-title{
+        text-align: left;
+        font-weight: 600;
+        font-size: 20px;
+        margin: 0 0 30px;
+      }
+      &-list{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        text-align: left;
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+        &__item{
+        }
+      }
+    }
+    &__categories{
+      text-align: left;
+      &-title{
+        font-weight: 600;
+        font-size: 20px;
+        margin: 0 0 28px;
+        letter-spacing: 0.2px;
+      }
+      &-list{
+        display: flex;
+        flex-direction: column;
+        gap:24px;
+        padding: 0;
+        font-size: 14px;
+
+      }
+    }
+    &__downloads{
+      text-align: left;
+      &-title{
+        letter-spacing: 0.3px;
+        font-weight: 600;
+        font-size: 20px;
+        margin: 0 0 30px;
+      }
+      &-btn{
+        display: flex;
+        width: 214px;
+        height: 59px;
+        gap: 12px;
+        align-items: center;
+        justify-content: center;
+        background: #FFC85E;
+        border-radius: 79px;
+        .btn-text{
+          font-weight: 700;
+          font-size: 14px;
+        }
+      }
+      &-socials{
+        .socials-title{
+          margin-left: 8px;
+          font-weight: normal;
+          font-size: 14px;
+
+        }
+        .socials-links{
+          display: flex;
+          margin-left: 5px;
+          gap:10px;
+        }
+      }
+    }
+    &__contacts{
+      text-align: left;
+      &-title{
+        letter-spacing: 0.6px;
+        font-weight: 600;
+        font-size: 20px;
+        margin: 0 0 30px;
+      }
+      &-number{
+        font-size: 14px;
+        letter-spacing: 0.2px;
+        margin-left: 2px;
+        display: flex;
+        flex-direction: column;
+        .number{
+          margin-bottom: 3px;
+        }
+        .schedule{
+          letter-spacing: 0.01px;
+          margin: 7px 0;
+          font-weight: 300;
+          font-size: 12px;
+        }
+        .order-callback{
+          font-weight: 400;
+          font-size: 10px;
+          text-decoration-line: underline;
+          margin-bottom: 25px;
+        }
+      }
+      &-mail{
+        display: flex;
+        flex-direction: column;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 0.4px;
+        margin-bottom: 25px;
+        span{
+          font-weight: 300;
+          font-size: 12px;
+          letter-spacing: 0.1px;
+        }
+      }
+      &-payments{
+        margin-left: 1px;
+        display: flex;
+        gap:5px;
+      }
+    }
+  }
+}

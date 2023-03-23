@@ -1,0 +1,15 @@
+@import "./styles/header";
+@import "./styles/footer";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  font-style: normal;
+}
+ul{
+  list-style: none;
+}
