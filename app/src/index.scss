@@ -1,4 +1,6 @@
 @import "./styles/header";
+@import "./styles/catalog";
+@import "./styles/product";
 @import "./styles/footer";
 
 body {
@@ -9,6 +11,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   font-style: normal;
+  font-weight: 400;
 }
 ul{
   list-style: none;

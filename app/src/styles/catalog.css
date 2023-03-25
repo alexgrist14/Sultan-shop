@@ -1,0 +1,10 @@
+.catalog .breadcrumbs {
+  font-weight: 300;
+  font-size: 14px;
+  color: #3F4E65;
+}
+.catalog .breadcrumbs li a {
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=catalog.css.map */
