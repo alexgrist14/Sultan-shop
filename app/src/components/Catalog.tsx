@@ -1,10 +1,28 @@
-import {ReactElement} from "react";
+import {ChangeEvent, ReactElement, useState} from "react";
 import polygonIcon from '../assets/images/polygon.svg';
 import searchIcon from '../assets/images/search_icon.svg';
 import ProductsList from "./ProductsList";
 import CatalogTypes from "./CatalogTypes";
 
 const Catalog = ():ReactElement=>{
+    const [minPrice,setMinPrice] = useState('0');
+    const [maxPrice,setMaxPrice] = useState('10000');
+    const handleInputMinChange = (event:ChangeEvent<HTMLInputElement>)=>{
+        setMinPrice(parser(event.target.value));
+    }
+    const handleInputMaxChange = (event:ChangeEvent<HTMLInputElement>)=>{
+        setMaxPrice(parser(event.target.value));
+    }
+    const parser =(inputValue:string):string =>{
+        const outputString:string = inputValue.replace(/\D/g, '');
+        if(outputString ===''){
+            return '0';
+        }
+        else if(outputString === '' || (outputString.charAt(0) !== '0' && parseInt(outputString) > 0)){
+            return outputString;
+        }
+        return '';
+    }
     const filterTypes = [
         'Уход за телом',
         'Уход за руками',
@@ -43,7 +61,7 @@ const Catalog = ():ReactElement=>{
                             <div className='catalog-filter__price'>
                                 <h4>Цена<span>₸</span></h4>
                                 <div className='catalog-filter__price-range'>
-                                    <div className='min'>0</div>-<div className='max'>10 000</div>
+                                    <input className='min' value={minPrice} onChange={handleInputMinChange} />-<input className='max' value={maxPrice} onChange={handleInputMaxChange}/>
                                 </div>
                             </div>
                             <div className='catalog-filter__producer'>
@@ -71,31 +89,8 @@ const Catalog = ():ReactElement=>{
                                             <div className='catalog-filter_types'><h2 className= 'catalog-filter__types-title'>{item}</h2></div>
                                             <div className='dashed-border'></div>
                                         </>
-
                                     )
                                 })}
-                                {/*<div className='catalog-filter_types'><h2 className= 'catalog-filter__types-title'>Уход за телом</h2></div>*/}
-                                {/*<div className='dashed-border'></div>*/}
-                                {/*<div className='catalog-filter_types'><h2 className= 'catalog-filter__types-title'>Уход за руками</h2></div>*/}
-                                {/*<div className='dashed-border'></div>*/}
-                                {/*<div className='catalog-filter_types'><h2 className= 'catalog-filter__types-title'>Уход за за ногами</h2></div>*/}
-                                {/*<div className='dashed-border'></div>*/}
-                                {/*<div className='catalog-filter_types'><h2 className= 'catalog-filter__types-title'>Уход за лицом</h2></div>*/}
-                                {/*<div className='dashed-border'></div>*/}
-                                {/*<div className='catalog-filter_types'><h2 className= 'catalog-filter__types-title'>Уход за волосами</h2></div>*/}
-                                {/*<div className='dashed-border'></div>*/}
-                                {/*<div className='catalog-filter_types'><h2 className= 'catalog-filter__types-title'>Средства для загара</h2></div>*/}
-                                {/*<div className='dashed-border'></div>*/}
-                                {/*<div className='catalog-filter_types'><h2 className= 'catalog-filter__types-title'>Средства для бритья</h2></div>*/}
-                                {/*<div className='dashed-border'></div>*/}
-                                {/*<div className='catalog-filter_types'><h2 className= 'catalog-filter__types-title'>Подарочные наборы</h2></div>*/}
-                                {/*<div className='dashed-border'></div>*/}
-                                {/*<div className='catalog-filter_types'><h2 className= 'catalog-filter__types-title'>Гигиеническая продукция</h2></div>*/}
-                                {/*<div className='dashed-border'></div>*/}
-                                {/*<div className='catalog-filter_types'><h2 className= 'catalog-filter__types-title'>Гигиена полости рта</h2></div>*/}
-                                {/*<div className='dashed-border'></div>*/}
-                                {/*<div className='catalog-filter_types'><h2 className= 'catalog-filter__types-title'>Бумажная продукция</h2></div>*/}
-
                             </div>
                         </div>
                         <ProductsList productsPerPage={15}/>

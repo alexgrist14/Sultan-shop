@@ -204,8 +204,10 @@
           margin-left: 10px;
         }
 
-        div {
+        input {
           width: 100px;
+          outline: none;
+          border: none;
           height: 23px;
           text-align: center;
           line-height: 23px;

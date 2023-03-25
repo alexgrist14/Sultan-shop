@@ -409,8 +409,10 @@
   width: 105px;
   margin-left: 10px;
 }
-.catalog-filter__price-range div {
+.catalog-filter__price-range input {
   width: 100px;
+  outline: none;
+  border: none;
   height: 23px;
   text-align: center;
   line-height: 23px;
