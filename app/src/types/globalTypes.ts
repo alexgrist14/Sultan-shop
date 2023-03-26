@@ -1,0 +1,1 @@
+export type SortBy = 'name-asc' | 'name-desc' | 'price-asc' | 'price-desc'

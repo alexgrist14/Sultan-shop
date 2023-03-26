@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7cc70d7-d9d8-4dd6-ae2e-fc9cfd6e389a" name="Changes" comment="feat: add catalog and pages">
+    <list default="true" id="b7cc70d7-d9d8-4dd6-ae2e-fc9cfd6e389a" name="Changes" comment="feat: add filter by price">
+      <change afterPath="$PROJECT_DIR$/app/src/components/ProducersFilter.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/types/globalTypes.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/components/Catalog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/ProductsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/ProductsList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/data/products.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/data/products.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/index.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/styles/catalog.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles/catalog.scss" afterDir="false" />
@@ -18,8 +22,8 @@
       <list>
         <option value="Sass File" />
         <option value="SCSS File" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -74,7 +78,8 @@
       <workItem from="1679657391759" duration="7240000" />
       <workItem from="1679669885591" duration="1316000" />
       <workItem from="1679729290079" duration="9721000" />
-      <workItem from="1679741806229" duration="5458000" />
+      <workItem from="1679741806229" duration="5767000" />
+      <workItem from="1679811078875" duration="16718000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add header and footer">
       <created>1679578692524</created>
@@ -90,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679745380915</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: add filter by price">
+      <created>1679747643160</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1679747643160</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,6 +123,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="feat: add header and footer" />
     <MESSAGE value="feat: add catalog and pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add catalog and pages" />
+    <MESSAGE value="feat: add filter by price" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add filter by price" />
   </component>
 </project>
