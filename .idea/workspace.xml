@@ -1,25 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7cc70d7-d9d8-4dd6-ae2e-fc9cfd6e389a" name="Changes" comment="feat: add filter producer, add selection by category">
-      <change afterPath="$PROJECT_DIR$/app/src/assets/images/black_download.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/images/share_icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/components/CardProductPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/styles/productCard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/styles/productCard.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/styles/productCard.scss" afterDir="false" />
+    <list default="true" id="b7cc70d7-d9d8-4dd6-ae2e-fc9cfd6e389a" name="Changes" comment="feat: add product card">
+      <change afterPath="$PROJECT_DIR$/app/src/assets/images/delete_icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/ShoppingCart.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/context/ShoppingCartContext.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/styles/shoppingCart.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/styles/shoppingCart.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/styles/shoppingCart.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/CardProductPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/CardProductPage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/components/Catalog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/CatalogTypes.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Product.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/ProductsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/ProductsList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/index.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/styles/product.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles/product.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/styles/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles/header.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/types/IProduct.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/types/IProduct.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -91,7 +88,7 @@
       <workItem from="1679741806229" duration="5767000" />
       <workItem from="1679811078875" duration="16885000" />
       <workItem from="1679840351107" duration="2393000" />
-      <workItem from="1679899886419" duration="9243000" />
+      <workItem from="1679899886419" duration="20572000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add header and footer">
       <created>1679578692524</created>
@@ -121,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679832202091</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: add product card">
+      <created>1679912098259</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1679912098259</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +148,7 @@
     <MESSAGE value="feat: add catalog and pages" />
     <MESSAGE value="feat: add filter by price" />
     <MESSAGE value="feat: add filter producer, add selection by category" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add filter producer, add selection by category" />
+    <MESSAGE value="feat: add product card" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add product card" />
   </component>
 </project>

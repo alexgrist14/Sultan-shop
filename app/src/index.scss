@@ -1,4 +1,5 @@
 @import "./styles/header";
+@import "./styles/shoppingCart";
 @import "./styles/catalog";
 @import "./styles/product";
 @import "./styles/productCard";
@@ -20,4 +21,7 @@ button{
 }
 ul{
   list-style: none;
+}
+a{
+  text-decoration: none;
 }

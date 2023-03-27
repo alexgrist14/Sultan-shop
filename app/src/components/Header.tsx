@@ -1,4 +1,4 @@
-import {ReactElement} from "react";
+import {ReactElement, useContext} from "react";
 import locationIcon from '../assets/images/location_icon.svg';
 import mailIcon from '../assets/images/mail_icon.svg';
 import sultanLogo from '../assets/images/sultan_logo.png';
@@ -7,8 +7,17 @@ import searchIcon from '../assets/images/search_icon.svg';
 import consultant from '../assets/images/Consultant_picture.png';
 import priceIcon from '../assets/images/download_icon.svg';
 import cartIcon from '../assets/images/cart_icon.svg';
+import {ShoppingCartContext} from "../context/ShoppingCartContext";
+import {useNavigate} from "react-router-dom";
 
 const Header = (): ReactElement => {
+    const {productsInCart, setProductsInCart} = useContext(ShoppingCartContext);
+    const navigate = useNavigate();
+
+    const handleClick = ():void =>{
+        navigate('/shopping-cart');
+    }
+
     return (
         <header className='header'>
             <div className='header-menu'>
@@ -73,9 +82,17 @@ const Header = (): ReactElement => {
                         </div>
                         <div className='dashed-border'></div>
                         <div className='header-actions__cart'>
-                            <div className='cart-icon'><img src={cartIcon} alt="cart-icon"/></div>
-                            <div className='total-cost'>
-                                <h4>Корзина</h4>
+                            <div className='cart-icon'>
+                                <img src={cartIcon} alt="cart-icon"/>
+                                {
+                                    productsInCart > 0 ?
+                                        <div className='count-products'>
+                                            {productsInCart}
+                                        </div> : ''
+                                }
+                            </div>
+                            <div className='total-cost' onClick={handleClick}>
+                                <h4>Корзина </h4>
                                 <span className='cost'>12 478 ₸</span>
                             </div>
                         </div>

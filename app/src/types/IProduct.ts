@@ -8,5 +8,4 @@ export  default interface IProduct{
     description:string,
     producer:string,
     price:string,
-    category:string[]
 }

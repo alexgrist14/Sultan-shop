@@ -1,9 +1,10 @@
-import {ChangeEvent, ReactElement, useState} from "react";
+import {ChangeEvent, MouseEventHandler, ReactElement, useState} from "react";
 import polygonIcon from '../assets/images/polygon.svg';
 import searchIcon from '../assets/images/search_icon.svg';
 import ProductsList from "./ProductsList";
 import ProducersFilter from "./ProducersFilter";
 import {SortBy} from "../types/globalTypes";
+import {useNavigate} from "react-router-dom";
 
 const Catalog = (): ReactElement => {
     const [minPrice, setMinPrice] = useState('0');
@@ -12,6 +13,7 @@ const Catalog = (): ReactElement => {
     const [producersFilterList, setProducersFilterList] = useState<string[]>([]);
     const [sortBy, setSortBy] = useState<SortBy>('name-asc');
     const [selectedCategory,setSelectedCategory] =useState('');
+    const navigate = useNavigate();
 
     const updateProducersFilterList = (producers: string[]):void => {
         setProducersFilterList(producers);
@@ -25,7 +27,7 @@ const Catalog = (): ReactElement => {
     }
     const handleRedirect = (event:any):void =>{
         event.preventDefault();
-        window.location.href = '/';
+        navigate('/');
     }
     const parser = (inputValue: string): string => {
         const outputString: string = inputValue.replace(/\D/g, '');
@@ -54,7 +56,7 @@ const Catalog = (): ReactElement => {
         <section className='catalog'>
             <div className='catalog-container'>
                 <ul className='breadcrumbs'>
-                    <li><a href="/">Главная</a></li>
+                    <li><a href="/" onClick={handleRedirect}>Главная</a></li>
                     <div className='dashed-border'></div>
                     <li><a href="/" onClick={handleRedirect}>Каталог</a></li>
                 </ul>
