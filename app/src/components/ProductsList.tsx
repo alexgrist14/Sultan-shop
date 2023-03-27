@@ -1,4 +1,4 @@
-import {ReactElement, useEffect, useState} from "react";
+import React, {ReactElement, useEffect, useState} from "react";
 import productsData from "../data/products.json";
 import arrowIcon from '../assets/images/arrow_orange.svg';
 import Product from "./Product";
@@ -58,6 +58,7 @@ const ProductsList = ({productsPerPage,maxPrice,minPrice,producers,selectedCateg
         setItemOffset(newOffset);
     };
     return (
+
             <div className='catalog-products__container'>
                 <div className='catalog-products__list'>
                     {currentItems.length > 0 ?(currentItems.map(prod=>{

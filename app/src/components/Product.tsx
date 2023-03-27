@@ -3,22 +3,25 @@ import weightIcon from '../assets/images/weight_icon.svg';
 import volumeIcon from '../assets/images/volume_icon.svg';
 import cartIcon from '../assets/images/cart_white_icon.svg';
 import IProduct from "../types/IProduct";
-
+import {useNavigate} from 'react-router-dom'
 interface IProducts{
     product:IProduct
 }
 
 const Product = ({product}:IProducts):ReactElement =>{
-
+    const navigate = useNavigate();
+    const handleClick =()=>{
+        navigate(`/product-card/${product.barcode}`)
+    }
     return (
         <div className='product'>
-            <div className='product-image'><img src={process.env.PUBLIC_URL+product.url} alt=""/></div>
+            <div className='product-image'><img src={product.url} alt="product_image"/></div>
             <div className='product-weight'>
-                <div className='type-img'><img src={product.weightType === 'г' ? weightIcon : volumeIcon} alt=""/></div>
+                <div className='type-img'><img src={product.weightType === 'г' ? weightIcon : volumeIcon} alt="volume_icon"/></div>
                 <span className='weight'>{product.size}</span>
                 <span className='type'> {product.weightType}</span>
             </div>
-            <div className='product-name'>
+            <div className='product-name' onClick={handleClick}>
                 <p><span className='name'>{product.name} </span>{product.description}</p>
             </div>
             <div className='product-details'>

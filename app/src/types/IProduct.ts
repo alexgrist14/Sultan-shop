@@ -7,5 +7,6 @@ export  default interface IProduct{
     brand:string,
     description:string,
     producer:string,
-    price:string
+    price:string,
+    category:string[]
 }

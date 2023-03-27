@@ -2,7 +2,6 @@ import {ChangeEvent, ReactElement, useState} from "react";
 import polygonIcon from '../assets/images/polygon.svg';
 import searchIcon from '../assets/images/search_icon.svg';
 import ProductsList from "./ProductsList";
-import CatalogTypes from "./CatalogTypes";
 import ProducersFilter from "./ProducersFilter";
 import {SortBy} from "../types/globalTypes";
 
@@ -23,6 +22,10 @@ const Catalog = (): ReactElement => {
     }
     const handleInputMaxChange = (event: ChangeEvent<HTMLInputElement>):void => {
         setMaxPrice(parser(event.target.value));
+    }
+    const handleRedirect = (event:any):void =>{
+        event.preventDefault();
+        window.location.href = '/';
     }
     const parser = (inputValue: string): string => {
         const outputString: string = inputValue.replace(/\D/g, '');
@@ -51,9 +54,9 @@ const Catalog = (): ReactElement => {
         <section className='catalog'>
             <div className='catalog-container'>
                 <ul className='breadcrumbs'>
-                    <li><a href="./">Главная</a></li>
+                    <li><a href="/">Главная</a></li>
                     <div className='dashed-border'></div>
-                    <li><a href="./">Каталог</a></li>
+                    <li><a href="/" onClick={handleRedirect}>Каталог</a></li>
                 </ul>
                 <div className='catalog-header'>
                     <h2>Каталог</h2>
@@ -83,7 +86,6 @@ const Catalog = (): ReactElement => {
                         })
                     }
                 </div>
-                {/*<CatalogTypes/>*/}
                 <div className='catalog-content__container'>
                     <div className='catalog-filter'>
                         <div className='catalog-filter__parameters'>
@@ -112,7 +114,7 @@ const Catalog = (): ReactElement => {
                                                      updateProducersFilterList={updateProducersFilterList}/>
                                 </div>
                                 <div className='dashed-border'></div>
-                                {filterTypes.map((item,i) => {
+                                {filterTypes.map((item) => {
                                     return (
                                         <>
                                             <div key={item} className={`catalog-filter_types ${selectedCategory === item ? 'selected-category' : ''}`} onClick={()=>setSelectedCategory(item)}>

@@ -1,6 +1,7 @@
 @import "./styles/header";
 @import "./styles/catalog";
 @import "./styles/product";
+@import "./styles/productCard";
 @import "./styles/footer";
 
 body {
@@ -12,6 +13,10 @@ body {
   overflow-x: hidden;
   font-style: normal;
   font-weight: 400;
+}
+button{
+  border: none;
+  outline: none;
 }
 ul{
   list-style: none;
