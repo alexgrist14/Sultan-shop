@@ -1,5 +1,6 @@
 @import "./styles/header";
 @import "./styles/shoppingCart";
+@import "./styles/orderMessage";
 @import "./styles/catalog";
 @import "./styles/product";
 @import "./styles/productCard";
@@ -8,6 +9,7 @@
 body {
   margin: 0;
   padding: 0;
+  min-height: 100vh;
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

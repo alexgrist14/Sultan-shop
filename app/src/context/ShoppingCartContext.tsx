@@ -1,28 +1,44 @@
-import {Dispatch, ReactElement, SetStateAction, useState,createContext} from "react";
+import {Dispatch, SetStateAction, useState, createContext, FC, ReactNode} from "react";
 import IProduct from "../types/IProduct";
 
 type ShoppingCartContextContextType = {
     productsInCart: number;
     setProductsInCart: Dispatch<SetStateAction<number>>;
-    productsToBuy: IProduct[];
-    setProductsToBuy: Dispatch<SetStateAction<IProduct[]>>;
+    productsToBuy: CheckoutProduct[];
+    setProductsToBuy: Dispatch<SetStateAction<CheckoutProduct[]>>;
+    totalCost: number;
+    setTotalCost: Dispatch<SetStateAction<number>>;
 };
 
+type ShoppingCartProviderProps = {
+    children: ReactNode
+}
+
+export interface CheckoutProduct extends IProduct{
+    amount: number
+}
+
+export const getProductByBarCode = (data:IProduct[], barcode: string | undefined): IProduct | undefined => {
+    return data.find((product: IProduct) => product.barcode === barcode);
+}
 
 export const ShoppingCartContext = createContext<ShoppingCartContextContextType>({
     productsInCart: 0,
     setProductsInCart: ()=>{},
     productsToBuy: [],
     setProductsToBuy: ()=>{},
+    totalCost: 0,
+    setTotalCost: ()=>{},
 });
 
 
-export const ShoppingCartProvider = ({children} :any) :ReactElement =>{
+export const ShoppingCartProvider:FC<ShoppingCartProviderProps> = ({children}) =>{
     const [productsInCart, setProductsInCart] = useState(0);
-    const [productsToBuy, setProductsToBuy] = useState<IProduct[]>([]);
+    const [totalCost, setTotalCost] = useState(0);
+    const [productsToBuy, setProductsToBuy] = useState<CheckoutProduct[]>([]);
 
     return(
-        <ShoppingCartContext.Provider value ={{productsInCart,setProductsInCart,productsToBuy,setProductsToBuy}}>
+        <ShoppingCartContext.Provider value ={{productsInCart,setProductsInCart,productsToBuy,setProductsToBuy,totalCost,setTotalCost}}>
             {children}
         </ShoppingCartContext.Provider>
     )

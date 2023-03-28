@@ -1,4 +1,4 @@
-import {ReactElement, useContext} from "react";
+import {ReactElement, useContext, useEffect, useState} from "react";
 import locationIcon from '../assets/images/location_icon.svg';
 import mailIcon from '../assets/images/mail_icon.svg';
 import sultanLogo from '../assets/images/sultan_logo.png';
@@ -11,10 +11,48 @@ import {ShoppingCartContext} from "../context/ShoppingCartContext";
 import {useNavigate} from "react-router-dom";
 
 const Header = (): ReactElement => {
-    const {productsInCart, setProductsInCart} = useContext(ShoppingCartContext);
+    const {
+        productsInCart,
+        setProductsInCart,
+        productsToBuy,
+        totalCost,
+        setTotalCost,
+        setProductsToBuy
+    } = useContext(ShoppingCartContext);
+    useEffect(() => {
+        if (!localStorage.getItem('cartCount')) {
+            setProductsInCart(0);
+        } else {
+            const count = localStorage.getItem('cartCount');
+            if (count) {
+                const storedData = localStorage.getItem('productsToBuy')
+                if (storedData) {
+                    setProductsToBuy(JSON.parse(storedData))
+                }
+                setTotalCost(productsToBuy.reduce((total, product) => {
+                    const price = parseFloat(product.price);
+                    const amount = product.amount;
+                    return +(total + (price * amount)).toFixed(2);
+                }, 0))
+                setProductsInCart(JSON.parse(count));
+            }
+        }
+    }, [])
+
+    useEffect(() => {
+        if (productsToBuy.length > 0) {
+            setTotalCost(productsToBuy.reduce((total, product) => {
+                const price = parseFloat(product.price);
+                const amount = product.amount;
+                return +(total + (price * amount)).toFixed(2);
+            }, 0))
+        } else setTotalCost(0)
+
+    }, [productsInCart, productsToBuy])
+
     const navigate = useNavigate();
 
-    const handleClick = ():void =>{
+    const handleClick = (): void => {
         navigate('/shopping-cart');
     }
 
@@ -81,7 +119,7 @@ const Header = (): ReactElement => {
                             <div className='price-btn'><img src={priceIcon} alt="price_icon"/></div>
                         </div>
                         <div className='dashed-border'></div>
-                        <div className='header-actions__cart'>
+                        <div className='header-actions__cart' onClick={handleClick}>
                             <div className='cart-icon'>
                                 <img src={cartIcon} alt="cart-icon"/>
                                 {
@@ -91,9 +129,9 @@ const Header = (): ReactElement => {
                                         </div> : ''
                                 }
                             </div>
-                            <div className='total-cost' onClick={handleClick}>
+                            <div className='total-cost'>
                                 <h4>Корзина </h4>
-                                <span className='cost'>12 478 ₸</span>
+                                <span className='cost'>{totalCost} ₸</span>
                             </div>
                         </div>
                     </div>

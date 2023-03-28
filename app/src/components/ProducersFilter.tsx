@@ -1,6 +1,7 @@
 import {ChangeEvent, ReactElement, useEffect, useState} from "react";
 import productsData from "../data/products.json";
 import polygonIcon from "../assets/images/polygon.svg";
+import IProduct from "../types/IProduct";
 
 type GroupedProduct = {
     producer: string;
@@ -15,11 +16,22 @@ type ProducerFilterProps = {
 const ProducersFilter = ({searchValue, updateProducersFilterList}: ProducerFilterProps): ReactElement => {
     const [showAll, setShowAll] = useState(false);
     const [selectedProducers, setSelectedProducers] = useState<string[]>([]);
-    const [groupedData, setGroupedData] = useState<GroupedProduct[]>([])
-    const products = productsData.products;
+    const [groupedData, setGroupedData] = useState<GroupedProduct[]>([]);
+    //const products = productsData.products;
+
+    let products: any;
+    if (!localStorage.getItem('products')) {
+        products = productsData.products;
+    } else {
+        const storedProducts = localStorage.getItem('products');
+        if (storedProducts) {
+            products = JSON.parse(storedProducts);
+        }
+    }
+
     const groupByProducer = (): GroupedProduct[] => {
         const groupedData: { [key: string]: number } = {};
-        products.forEach((p) => {
+        products.forEach((p:any) => {
             const producer = p.producer;
             if (producer in groupedData) {
                 groupedData[producer]++;
@@ -38,7 +50,7 @@ const ProducersFilter = ({searchValue, updateProducersFilterList}: ProducerFilte
     useEffect(() => {
         const groupData = groupByProducer();
         if (searchValue !== '') {
-            setGroupedData(groupData.filter((data) => data.producer.includes(searchValue)))
+            setGroupedData(groupData.filter((data) => data.producer.toLowerCase().includes(searchValue.toLowerCase())))
         } else {
             setGroupedData(groupData);
         }
@@ -72,7 +84,7 @@ const ProducersFilter = ({searchValue, updateProducersFilterList}: ProducerFilte
             {
                 producersToShow.map((producer: GroupedProduct, i: number) => (
                     <div key={i}>
-                        <input type="checkbox" onChange={(e) => addSelectedProducer(e, producer.producer)}/>
+                        <input type="checkbox" checked={selectedProducers.includes(producer.producer)} onChange={(e) => addSelectedProducer(e, producer.producer)}/>
                         <span className='producer'>{producer.producer}</span> <span
                         className='count'>({producer.count})</span>
                     </div>

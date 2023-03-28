@@ -1,6 +1,5 @@
-import {ReactElement, useContext, useState} from "react";
-import {useParams} from "react-router-dom";
-import IProduct from "../types/IProduct";
+import {ReactElement, useContext, useEffect, useState} from "react";
+import {Link, useParams} from "react-router-dom";
 import productsData from "../data/products.json";
 import weightIcon from "../assets/images/weight_icon.svg";
 import volumeIcon from "../assets/images/volume_icon.svg";
@@ -8,39 +7,64 @@ import cartIcon from "../assets/images/cart_white_icon.svg";
 import shareIcon from "../assets/images/share_icon.svg";
 import downloadIcon from "../assets/images/black_download.svg";
 import polygonIcon from "../assets/images/polygon.svg";
-import {ShoppingCartContext} from "../context/ShoppingCartContext";
+import {getProductByBarCode, ShoppingCartContext} from "../context/ShoppingCartContext";
 
 const CardProductPage = (): ReactElement => {
     const [countProducts, setCountProducts] = useState(1);
-    const {productsInCart, setProductsInCart,productsToBuy,setProductsToBuy} = useContext(ShoppingCartContext);
+    const {productsInCart, setProductsInCart, productsToBuy, setProductsToBuy} = useContext(ShoppingCartContext);
     const {barcode} = useParams();
-
-    const getProductByBarCode = (barcode: string | undefined): IProduct | undefined => {
-        return productsData.products.find((product: IProduct) => product.barcode === barcode);
+    let product: any = [];
+    if (!localStorage.getItem('products')) {
+        product = getProductByBarCode(productsData.products, barcode);
+    } else {
+        const storedProducts = localStorage.getItem('products');
+        if (storedProducts) {
+            product = getProductByBarCode(JSON.parse(storedProducts), barcode);
+        }
     }
-    const product: any  = getProductByBarCode(barcode);
+
+    useEffect(()=>{
+        const storedData = localStorage.getItem('productsToBuy')
+        if(storedData){
+            setProductsToBuy(JSON.parse(storedData))
+        }
+    },[]);
+    useEffect(()=>{
+        if(productsToBuy.length !== 0){
+            localStorage.setItem('productsToBuy',JSON.stringify(productsToBuy));
+            localStorage.setItem('cartCount',(productsInCart).toString());
+        }
+    },[productsToBuy,productsInCart]);
 
     const handleDecrement = (): void => {
         if (countProducts > 1)
             setCountProducts(countProducts - 1);
     }
 
-    const handleCart = ():void =>{
+    const handleCart = (): void => {
+        if (!product) {
+            return;
+        }
         setProductsInCart(productsInCart + countProducts);
 
-        setProductsToBuy( prevState => [...prevState,product]);
+        if (getProductByBarCode(productsToBuy, barcode)) {
+            setProductsToBuy(productsToBuy.map((item) => {
+                if (item.barcode === barcode) {
+                    return {...item, amount: item.amount + countProducts}
+                } else return item;
+            }));
+        } else {
+            setProductsToBuy(prevState => [...prevState, {...product, amount: countProducts}]);
+        }
     }
 
     return (
         <div className='product-card__container'>
             <div className='product-card__wrapper'>
                 <ul className='breadcrumbs'>
-                    <li><a href="/">Главная</a></li>
+                    <li><Link to="/">Главная</Link></li>
                     <div className='dashed-border'></div>
-                    <li><a href="/" onClick={(e) => {
-                        e.preventDefault();
-                        window.location.href = '/'
-                    }}>Каталог</a></li>
+                    <li><Link to="/">Каталог</Link></li>
                     <div className='dashed-border'></div>
                     <li className='product-name__link'>
                         <div>{product?.name} {product?.description}</div>

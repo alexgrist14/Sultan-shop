@@ -70,7 +70,7 @@ const Catalog = (): ReactElement => {
                             <option value="name-desc"><p>Название <br/> (по убыванию)</p></option>
                             <option value="price-asc">Цена</option>
                             <option value="price-desc">Цена(по убыванию)</option>
-                            <div><img src={polygonIcon} alt="polygon"/></div>
+                            <img src={polygonIcon} alt="polygon"/>
                         </select>
                     </div>
                 </div>

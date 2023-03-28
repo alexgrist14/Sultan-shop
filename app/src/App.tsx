@@ -13,23 +13,10 @@ function App() {
         <div className="App">
             <ShoppingCartProvider>
                 <Router>
+                    <Header/>
                     <Routes>
-                        <Route path='/' element={<Header/>}/>
-                    </Routes>
-                    <Routes>
-                        <Route path='/product-card/:barcode' element={
-                            <>
-                                <Header/>
-                                <CardProductPage/>
-                            </>
-                        }/>
-                        <Route path='/shopping-cart' element={
-                            <>
-                                <Header/>
-                                <ShoppingCart/>
-                            </>
-                        }
-                        />
+                        <Route path='/product-card/:barcode' element={<CardProductPage/>}/>
+                        <Route path='/shopping-cart' element={<ShoppingCart/>}/>
                         <Route path='/' element={<Catalog/>}/>
                     </Routes>
                 </Router>
