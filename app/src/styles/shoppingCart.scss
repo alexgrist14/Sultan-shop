@@ -19,7 +19,11 @@
       margin-top: 45px;
       margin-left: -30px;
       font-size: 14px;
-
+      .link{
+        &:visited{
+          color: #3F4E65;
+        }
+      }
       .dashed-border {
         height: 16px;
         opacity: 0.3;
@@ -74,8 +78,12 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          width: 281px;
-          height: 191px;
+          min-width: 281px;
+          min-height: 191px;
+          img{
+            max-width: 281px;
+            max-height: 191px;
+          }
         }
         &-description{
             max-width: 563px;
@@ -160,7 +168,10 @@
 }
 .ordering{
   display: flex;
+  padding: 50px 0;
   justify-content: space-between;
+  border-top: 1px dashed rgba(63, 78, 101, 0.3);
+
   align-items: center;
   &-btn{
     display: flex;

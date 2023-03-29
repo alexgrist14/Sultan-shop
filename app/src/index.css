@@ -280,6 +280,9 @@
   margin-left: -30px;
   font-size: 14px;
 }
+.shopping-cart__content .breadcrumbs .link:visited {
+  color: #3F4E65;
+}
 .shopping-cart__content .breadcrumbs .dashed-border {
   height: 16px;
   opacity: 0.3;
@@ -330,8 +333,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 281px;
-  height: 191px;
+  min-width: 281px;
+  min-height: 191px;
+}
+.shopping-cart__products-item .product-img img {
+  max-width: 281px;
+  max-height: 191px;
 }
 .shopping-cart__products-item .product-description {
   max-width: 563px;
@@ -413,7 +420,9 @@
 
 .ordering {
   display: flex;
+  padding: 50px 0;
   justify-content: space-between;
+  border-top: 1px dashed rgba(63, 78, 101, 0.3);
   align-items: center;
 }
 .ordering-btn {
@@ -785,6 +794,17 @@
   text-align: left;
   line-height: 50px;
 }
+.catalog .admin-panel {
+  position: absolute;
+  width: 200px;
+  height: 20px;
+}
+.catalog .admin-link {
+  color: #111111;
+}
+.catalog .admin-link:visited {
+  color: #111111;
+}
 
 .selected-category {
   border-radius: 15px;
@@ -806,6 +826,7 @@
 .product-image img {
   max-width: 80%;
   max-height: 80%;
+  margin-bottom: 20px;
 }
 .product-weight {
   margin-top: -14px;
@@ -1308,6 +1329,140 @@
   margin-left: 1px;
   display: flex;
   gap: 5px;
+}
+
+.admin-panel__container {
+  display: flex;
+  min-height: 50vh;
+  text-align: left;
+  flex-direction: column;
+  align-items: center;
+}
+.admin-panel__container .admin-panel__table {
+  border-spacing: 20px 10px;
+}
+.admin-panel__container .admin-panel__table .product-edit_card {
+  border-spacing: 20px;
+}
+.admin-panel__container .admin-panel__table .product-edit_card td input {
+  height: 30px;
+}
+.admin-panel__container .admin-panel__table .product-edit_card .name input {
+  width: 80px;
+}
+.admin-panel__container .admin-panel__table .product-edit_card .weight input {
+  width: 30px;
+}
+.admin-panel__container .admin-panel__table .product-edit_card .size input {
+  width: 50px;
+}
+.admin-panel__container .admin-panel__table .product-edit_card .barcode input {
+  width: 80px;
+}
+.admin-panel__container .admin-panel__table .product-edit_card .producer input {
+  width: 60px;
+}
+.admin-panel__container .admin-panel__table .product-edit_card .description input {
+  width: 240px;
+}
+.admin-panel__container .admin-panel__table .product-edit_card .price input {
+  width: 50px;
+}
+.admin-panel__container .admin-panel__table .product-edit_card .category input {
+  width: 400px;
+}
+.admin-panel__container .admin-panel__table .product-edit_card .delete-btn {
+  border-radius: 5px;
+  background-color: #ff4d4d;
+  cursor: pointer;
+}
+.admin-panel__container .breadcrumbs-admin {
+  display: flex;
+  gap: 10px;
+  align-self: flex-start;
+  margin-top: 45px;
+  margin-left: 230px;
+  font-size: 14px;
+}
+.admin-panel__container .breadcrumbs-admin .link:visited {
+  color: #3F4E65;
+}
+.admin-panel__container .breadcrumbs-admin .dashed-border {
+  height: 16px;
+  opacity: 0.3;
+  border: 1px dashed #3F4E65;
+}
+.admin-panel__container .breadcrumbs-admin .cart-crumb {
+  font-size: 14px;
+  opacity: 0.5;
+  font-weight: 300;
+  user-select: none;
+}
+
+.add-item__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 50vh;
+}
+.add-item__container .admin-panel__table .product-edit_card .category {
+  display: flex;
+}
+.add-item__container .admin-panel__table .product-edit_card .category select {
+  width: 200px;
+}
+.add-item__container select {
+  width: 100px;
+  height: 50px;
+}
+.add-item__container .add-form {
+  margin: 0 auto;
+}
+.add-item__container .breadcrumbs-admin {
+  display: flex;
+  gap: 10px;
+  align-self: flex-start;
+  margin-bottom: 250px;
+  margin-left: 230px;
+  font-size: 14px;
+}
+.add-item__container .breadcrumbs-admin .link:visited {
+  color: #3F4E65;
+}
+.add-item__container .breadcrumbs-admin .dashed-border {
+  height: 16px;
+  opacity: 0.3;
+  border: 1px dashed #3F4E65;
+}
+.add-item__container .breadcrumbs-admin .cart-crumb {
+  font-size: 14px;
+  opacity: 0.5;
+  font-weight: 300;
+  user-select: none;
+}
+.add-item__container .add-btn {
+  width: 200px;
+  height: 30px;
+  background-color: #84d55a;
+  border-radius: 10px;
+  color: #EDEDED;
+  cursor: pointer;
+  transition: 0.5s ALL;
+}
+.add-item__container .add-btn:active {
+  background-color: #649d43;
+}
+.add-item__container input {
+  width: 100px;
+  overflow-wrap: break-word;
+  height: 50px;
+}
+.add-item__container textarea {
+  width: 400px;
+  height: 50px;
+}
+.add-item__container .admin-panel__table {
+  flex-direction: column;
 }
 
 body {

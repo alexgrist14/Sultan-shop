@@ -31,7 +31,7 @@ const ProductsList = ({
     const [pageCount, setPageCount] = useState(0);
 
     useEffect(() => {
-        if (!localStorage.getItem('products')) {
+        if (!localStorage.getItem('products') || JSON.parse(localStorage.getItem('products') || '[]').length === 0) {
             setLocalStorageProducts(productsData.products);
             localStorage.setItem('products', JSON.stringify(productsData.products));
         } else {

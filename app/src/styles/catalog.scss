@@ -335,6 +335,19 @@
       }
     }
   }
+  .admin-panel{
+    position: absolute;
+
+    width: 200px;
+    height: 20px;
+
+  }
+  .admin-link{
+    color: $primary-text-color;
+    &:visited{
+      color: $primary-text-color;
+    }
+  }
 }
 
 .selected-category{

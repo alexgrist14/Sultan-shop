@@ -1,10 +1,10 @@
-import {ChangeEvent, MouseEventHandler, ReactElement, useState} from "react";
+import {ChangeEvent,ReactElement, useState} from "react";
 import polygonIcon from '../assets/images/polygon.svg';
 import searchIcon from '../assets/images/search_icon.svg';
 import ProductsList from "./ProductsList";
 import ProducersFilter from "./ProducersFilter";
-import {SortBy} from "../types/globalTypes";
-import {useNavigate} from "react-router-dom";
+import {filterTypes, SortBy} from "../types/globalTypes";
+import {Link, useNavigate} from "react-router-dom";
 
 const Catalog = (): ReactElement => {
     const [minPrice, setMinPrice] = useState('0');
@@ -38,19 +38,7 @@ const Catalog = (): ReactElement => {
         }
         return '';
     }
-    const filterTypes = [
-        'Уход за телом',
-        'Уход за руками',
-        'Уход за за ногами',
-        'Уход за лицом',
-        'Уход за волосами',
-        'Средства для загара',
-        'Средства для бритья',
-        'Подарочные наборы',
-        'Гигиеническая продукция',
-        'Гигиена полости рта',
-        'Бумажная продукция'
-    ];
+
 
     return (
         <section className='catalog'>
@@ -132,7 +120,9 @@ const Catalog = (): ReactElement => {
                     </div>
                 </div>
             </div>
-
+            <div className='admin-panel'>
+                <Link className='admin-link' to='/admin-panel'>Админ панель</Link>
+            </div>
         </section>
     );
 }
