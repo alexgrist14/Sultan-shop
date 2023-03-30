@@ -195,3 +195,102 @@
     }
   }
 }
+
+@media only screen and (max-width: 1300px) {
+  .footer{
+    flex-wrap: wrap;
+    .footer-links__container{
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .footer-content__company-description{
+      justify-content: center;
+      align-items: center;
+      margin-left: 0;
+    }
+  }
+}
+@media only screen and (max-width: 320px) {
+  .footer{
+    flex-wrap: wrap;
+    gap: 0;
+    .footer-links__container{
+      margin-top: -10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      row-gap: 15px;
+    }
+    .footer-content__company-description{
+      justify-content: center;
+      align-items: center;
+      margin-left: 0;
+      .company-logo{
+
+        img{
+          width: 97px !important;
+          height: 41px !important;
+        }
+      }
+      .footer-header{
+        display: flex;
+        margin-top: 17px;
+        width: 93.5%;
+        justify-content: space-between;
+        .footer-links__downloads-btn{
+          width: 149px;
+          height: 40px;
+
+          .btn-text{
+            font-weight: 700;
+            font-size: 12px;
+          }
+        }
+      }
+      p{
+        width: 85%;
+        margin-left: -22px;
+        margin-bottom: 0;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+      }
+    }
+  }
+  .footer-links__container{
+    .footer-links__menu{
+      order: 1;
+      &-title{
+        font-weight: 600;
+        font-size: 20px;
+      }
+      &-list{
+        font-weight: 400;
+        font-size: 12px;
+      }
+    }
+    .footer-links__categories{
+      order: 2;
+      &-title{
+        font-weight: 600;
+        font-size: 20px;
+      }
+      &-list{
+        font-weight: 400;
+        font-size: 12px;
+      }
+    }
+    .footer-links__downloads{
+      width: 100px;
+      margin-top: 30px;
+      margin-right: 30px;
+      order: 4;
+    }
+    .footer-links__contacts{
+      order: 3;
+      .footer-links__contacts-mail{
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

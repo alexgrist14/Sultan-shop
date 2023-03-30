@@ -3,7 +3,7 @@ export type SortBy = 'name-asc' | 'name-desc' | 'price-asc' | 'price-desc';
 export const filterTypes = [
     'Уход за телом',
     'Уход за руками',
-    'Уход за за ногами',
+    'Уход за ногами',
     'Уход за лицом',
     'Уход за волосами',
     'Средства для загара',

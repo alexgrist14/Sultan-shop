@@ -3,10 +3,13 @@ import locationIcon from '../assets/images/location_icon.svg';
 import mailIcon from '../assets/images/mail_icon.svg';
 import sultanLogo from '../assets/images/sultan_logo.png';
 import catalogLogo from '../assets/images/canalog_logo.svg';
+import darkCatalogLogo from '../assets/images/dark_caralog_icon.svg';
 import searchIcon from '../assets/images/search_icon.svg';
+import darkSearchIcon from '../assets/images/dark_search_icon.svg';
 import consultant from '../assets/images/Consultant_picture.png';
 import priceIcon from '../assets/images/download_icon.svg';
 import cartIcon from '../assets/images/cart_icon.svg';
+import menuIcon from '../assets/images/menu_icon.svg';
 import {ShoppingCartContext} from "../context/ShoppingCartContext";
 import {useNavigate} from "react-router-dom";
 
@@ -17,8 +20,20 @@ const Header = (): ReactElement => {
         productsToBuy,
         totalCost,
         setTotalCost,
-        setProductsToBuy
+        setProductsToBuy,
+        isSmallScreen,
+        setIsSmallScreen
     } = useContext(ShoppingCartContext);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsSmallScreen(window.innerWidth <= 600);
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     useEffect(() => {
         if (!localStorage.getItem('cartCount')) {
             setProductsInCart(0);
@@ -91,15 +106,37 @@ const Header = (): ReactElement => {
             <div className='header-actions'>
                 <div className='header-actions__container'>
                     <div className='header-actions__logo'>
-                        <img src={sultanLogo} alt="sultan_logo"/>
+                        {
+                            isSmallScreen &&
+                            <div className='menu-btn'>
+                                <img src={menuIcon} alt="menu_icon"/>
+                            </div>
+                        }
+                        <img className='sultan-logo' src={sultanLogo} alt="sultan_logo"/>
+                        {
+                            isSmallScreen &&
+                            <div className='header-actions__cart' onClick={handleClick}>
+                                <div className='cart-icon'>
+                                    <img src={cartIcon} alt="cart-icon"/>
+                                    {
+                                        productsInCart > 0 ?
+                                            <div className='count-products'>
+                                                {productsInCart}
+                                            </div> : ''
+                                    }
+                                </div>
+                            </div>
+                        }
                     </div>
                     <div className='first-actions__container'>
                         <div className='header-actions__catalog-btn'>
-                            <button>Каталог <img src={catalogLogo} alt="catalog_logo"/></button>
+                            <button><span>Каталог</span> <img src={isSmallScreen ? darkCatalogLogo : catalogLogo}
+                                                 alt="catalog_logo"/></button>
                         </div>
                         <div className='header-actions__search-field'>
                             <div className='search-placeholder'>Поиск...</div>
-                            <div className='search-btn'><img src={searchIcon} alt="search_icon"/></div>
+                            <div className='search-btn'><img src={isSmallScreen ? darkSearchIcon : searchIcon}
+                                                             alt="search_icon"/></div>
                         </div>
                     </div>
                     <div className='second-actions__container'>
@@ -119,21 +156,24 @@ const Header = (): ReactElement => {
                             <div className='price-btn'><img src={priceIcon} alt="price_icon"/></div>
                         </div>
                         <div className='dashed-border'></div>
-                        <div className='header-actions__cart' onClick={handleClick}>
-                            <div className='cart-icon'>
-                                <img src={cartIcon} alt="cart-icon"/>
-                                {
-                                    productsInCart > 0 ?
-                                        <div className='count-products'>
-                                            {productsInCart}
-                                        </div> : ''
-                                }
+                        {
+                            !isSmallScreen &&
+                            <div className='header-actions__cart' onClick={handleClick}>
+                                <div className='cart-icon'>
+                                    <img src={cartIcon} alt="cart-icon"/>
+                                    {
+                                        productsInCart > 0 ?
+                                            <div className='count-products'>
+                                                {productsInCart}
+                                            </div> : ''
+                                    }
+                                </div>
+                                <div className='total-cost'>
+                                    <h4>Корзина </h4>
+                                    <span className='cost'>{totalCost} ₸</span>
+                                </div>
                             </div>
-                            <div className='total-cost'>
-                                <h4>Корзина </h4>
-                                <span className='cost'>{totalCost} ₸</span>
-                            </div>
-                        </div>
+                        }
                     </div>
                 </div>
             </div>

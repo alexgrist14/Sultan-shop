@@ -1,24 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7cc70d7-d9d8-4dd6-ae2e-fc9cfd6e389a" name="Changes" comment="feat: local storage management">
-      <change afterPath="$PROJECT_DIR$/app/src/components/AddItemForm.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/components/AdminPanel.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/styles/adminPanel.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/styles/adminPanel.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/styles/adminPanel.scss" afterDir="false" />
+    <list default="true" id="b7cc70d7-d9d8-4dd6-ae2e-fc9cfd6e389a" name="Changes" comment="feat: add admin panel">
+      <change afterPath="$PROJECT_DIR$/app/src/assets/images/arrow_mobile.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/assets/images/dark_caralog_icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/assets/images/dark_search_icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/assets/images/menu_icon.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/images/ariel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/images/bimax.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/images/biomio.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/images/dishwash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/images/sorti.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/AdminPanel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/AdminPanel.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/components/Catalog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/ProductsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/ProductsList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/context/ShoppingCartContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/context/ShoppingCartContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/data/products.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/data/products.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/index.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/styles/adminPanel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles/adminPanel.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/styles/catalog.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles/catalog.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/styles/product.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles/product.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/styles/shoppingCart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles/shoppingCart.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/styles/footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles/footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/styles/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles/header.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/types/globalTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/types/globalTypes.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +101,8 @@
       <workItem from="1679986378082" duration="25463000" />
       <workItem from="1680077329519" duration="326000" />
       <workItem from="1680077986356" duration="13393000" />
-      <workItem from="1680097086464" duration="6474000" />
+      <workItem from="1680097086464" duration="6591000" />
+      <workItem from="1680161164685" duration="17423000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add header and footer">
       <created>1679578692524</created>
@@ -146,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680016650020</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="feat: add admin panel">
+      <created>1680103730688</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1680103730688</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,6 +186,7 @@
     <MESSAGE value="feat: add product card" />
     <MESSAGE value="feat: add shopping cart" />
     <MESSAGE value="feat: local storage management" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: local storage management" />
+    <MESSAGE value="feat: add admin panel" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add admin panel" />
   </component>
 </project>

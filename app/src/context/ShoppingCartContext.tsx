@@ -8,6 +8,8 @@ type ShoppingCartContextContextType = {
     setProductsToBuy: Dispatch<SetStateAction<CheckoutProduct[]>>;
     totalCost: number;
     setTotalCost: Dispatch<SetStateAction<number>>;
+    isSmallScreen: boolean;
+    setIsSmallScreen: Dispatch<SetStateAction<boolean>>;
 };
 
 type ShoppingCartProviderProps = {
@@ -29,6 +31,8 @@ export const ShoppingCartContext = createContext<ShoppingCartContextContextType>
     setProductsToBuy: ()=>{},
     totalCost: 0,
     setTotalCost: ()=>{},
+    isSmallScreen: false,
+    setIsSmallScreen: ()=>{},
 });
 
 
@@ -36,9 +40,10 @@ export const ShoppingCartProvider:FC<ShoppingCartProviderProps> = ({children}) =
     const [productsInCart, setProductsInCart] = useState(0);
     const [totalCost, setTotalCost] = useState(0);
     const [productsToBuy, setProductsToBuy] = useState<CheckoutProduct[]>([]);
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
 
     return(
-        <ShoppingCartContext.Provider value ={{productsInCart,setProductsInCart,productsToBuy,setProductsToBuy,totalCost,setTotalCost}}>
+        <ShoppingCartContext.Provider value ={{productsInCart,setProductsInCart,productsToBuy,setProductsToBuy,totalCost,setTotalCost,isSmallScreen,setIsSmallScreen}}>
             {children}
         </ShoppingCartContext.Provider>
     )

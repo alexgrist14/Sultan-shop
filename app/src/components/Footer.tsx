@@ -1,4 +1,4 @@
-import {ReactElement} from "react";
+import {ReactElement, useContext} from "react";
 import companyLogo from '../assets/images/sultan-logo_white.png';
 import arrowBtn from '../assets/images/arrow-right.svg';
 import visaLogo from '../assets/images/Visa.png';
@@ -6,13 +6,25 @@ import masterCardLogo from '../assets/images/mastercard.png';
 import downloadIcon from '../assets/images/download_icon.svg';
 import telegramIcon from '../assets/images/logos_telegram.png';
 import whatsAppIcon from '../assets/images/whatsapp.png';
+import {ShoppingCartContext} from "../context/ShoppingCartContext";
 
 const Footer = (): ReactElement => {
+    const {isSmallScreen} = useContext(ShoppingCartContext);
     return (
         <footer className='footer'>
             <div className='footer-content__company-description'>
-                <div className='company-logo'><img src={companyLogo} alt="company_logo"/></div>
-                <p>Компания «Султан» — снабжаем розничные магазины товарами <br/>
+                <div className='footer-header'>
+                    <div className='company-logo'><img src={companyLogo} alt="company_logo"/></div>
+                    {
+                        isSmallScreen &&
+                        <div className='footer-links__downloads-btn'>
+                            <div className='btn-text'>Прайс-лист</div>
+                            <div className='btn-img'><img src={downloadIcon} alt="download_icon"/></div>
+                        </div>
+                    }
+                </div>
+
+                <p>Компания «Султан» — снабжаем розничные магазины товарами{!isSmallScreen &&<br/>}
                     "под ключ" в Кокчетаве и Акмолинской области
                 </p>
                 <div className='sales-subscribe'>
@@ -44,11 +56,16 @@ const Footer = (): ReactElement => {
                     </ul>
                 </div>
                 <div className='footer-links__downloads'>
-                    <h3 className='footer-links__downloads-title'>Скачать прайс-лист:</h3>
-                    <div className='footer-links__downloads-btn'>
-                        <div className='btn-text'>Прайс-лист</div>
-                        <div className='btn-img'><img src={downloadIcon} alt="download_icon"/></div>
-                    </div>
+                    {
+                        !isSmallScreen &&
+                        <>
+                            <h3 className='footer-links__downloads-title'>Скачать прайс-лист:</h3>
+                            <div className='footer-links__downloads-btn'>
+                                <div className='btn-text'>Прайс-лист</div>
+                                <div className='btn-img'><img src={downloadIcon} alt="download_icon"/></div>
+                            </div>
+                        </>
+                    }
                     <div className='footer-links__downloads-socials'>
                         <h4 className='socials-title'>Связь в мессенджерах:</h4>
                         <div className='socials-links'>

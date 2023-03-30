@@ -24,8 +24,8 @@ function App() {
                         <Route path='/' element={<Catalog/>}/>
                     </Routes>
                 </Router>
+                <Footer/>
             </ShoppingCartProvider>
-            <Footer/>
         </div>
     );
 }
