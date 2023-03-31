@@ -183,6 +183,13 @@
           background: #FFC85E;
           border-radius: 79px;
           cursor: pointer;
+          transition: 0.2s ALL;
+          &:hover{
+            background: #efb02c;
+          }
+          &:active{
+            background: #b0790d;
+          }
         }
       }
     }
@@ -209,6 +216,13 @@
     font-weight: 700;
     font-size: 14px;
     cursor: pointer;
+    transition: 0.2s ALL;
+    &:hover{
+      background: #efb02c;
+    }
+    &:active{
+      background: #b0790d;
+    }
   }
 
   &-total-cost {

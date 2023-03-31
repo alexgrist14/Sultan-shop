@@ -127,6 +127,13 @@
       align-items: center;
       gap: 5px;
       cursor: pointer;
+      transition: 0.2s ALL;
+      &:hover{
+        background: #efb02c;
+      }
+      &:active{
+        background: #b0790d;
+      }
     }
   }
 }

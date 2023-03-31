@@ -141,6 +141,13 @@
         font-size: 14px;
         color: #FFFFFF;
         cursor: pointer;
+        transition: 0.2s ALL;
+        &:hover{
+          background: #efb02c;
+        }
+        &:active{
+          background: #b0790d;
+        }
       }
 
       .links {
