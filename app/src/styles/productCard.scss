@@ -411,6 +411,14 @@
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .product-card__info-purchase{
+    justify-content: center;
+    width: 100%;
+
+  }
+}
+
 @media only screen and (max-width: 320px) {
   .product-card__info-stock {
     margin-top: 0;
@@ -420,7 +428,7 @@
     margin-left: 16px;
   }
   .product-card__info-purchase {
-    width: 100%;
+    justify-content: unset;
     gap: 20px;
     row-gap: 10px;
     flex-wrap: wrap;

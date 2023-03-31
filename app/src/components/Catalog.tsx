@@ -109,7 +109,7 @@ const Catalog = (): ReactElement => {
                         <div className='catalog-filter__parameters'>
                             <div className='catalog-header'>
                                 <h3 className='catalog-filter__parameters-title'>Подбор по параметрам</h3>
-                                {isSmallScreen && <div className={`show-filters-btn ${showFilters ? 'rotate' : ''}`}
+                                {isSmallScreen &&  <div className={`show-filters-btn ${showFilters ? 'rotate' : ''}`}
                                                        onClick={() => setShowFilters(!showFilters)}><img src={arrowIcon}
                                                                                                          alt=""/></div>}
                             </div>

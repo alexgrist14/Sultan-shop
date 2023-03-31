@@ -1119,6 +1119,50 @@
   .catalog-header {
     flex-wrap: wrap;
   }
+  .catalog-sort {
+    display: flex;
+    gap: 5px;
+    padding-top: 18px;
+    margin-right: -5px;
+  }
+  .catalog-sort div {
+    color: #111111;
+    font-weight: 800;
+    font-size: 16px;
+  }
+  .catalog-sort .sort-type {
+    cursor: pointer;
+    color: #3F4E65;
+    font-size: 16px;
+    outline: none;
+    border: none;
+  }
+  .catalog-header {
+    display: flex;
+    width: 92.5%;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+  }
+  .catalog-header .show-filters-btn {
+    cursor: pointer;
+  }
+  .catalog-header .show-filters-btn img {
+    transform: rotate(270deg);
+  }
+  .show {
+    height: auto;
+  }
+  .rotate {
+    transform: rotate(180deg);
+  }
+  .catalog-filter__parameters-container {
+    height: 0;
+    overflow: hidden;
+  }
+  .catalog-filter__parameters-container.show {
+    height: auto;
+  }
 }
 @media only screen and (max-width: 320px) {
   .catalog-sort .sort-type {
@@ -1166,34 +1210,6 @@
   }
   .rotate {
     transform: rotate(180deg);
-  }
-  .catalog-sort {
-    display: flex;
-    gap: 5px;
-    padding-top: 18px;
-    margin-right: -5px;
-  }
-  .catalog-sort div {
-    color: #111111;
-    font-weight: 800;
-    font-size: 16px;
-  }
-  .catalog-sort .sort-type {
-    cursor: pointer;
-    color: #3F4E65;
-    font-size: 16px;
-    outline: none;
-    border: none;
-  }
-  .catalog-products__container {
-    margin-top: 37px;
-  }
-  .pages {
-    left: 10% !important;
-  }
-  .catalog-products__text {
-    max-width: 280px;
-    line-height: 21px;
   }
 }
 .product {
@@ -1658,6 +1674,12 @@
     text-align: left;
   }
 }
+@media only screen and (max-width: 600px) {
+  .product-card__info-purchase {
+    justify-content: center;
+    width: 100%;
+  }
+}
 @media only screen and (max-width: 320px) {
   .product-card__info-stock {
     margin-top: 0;
@@ -1667,7 +1689,7 @@
     margin-left: 16px;
   }
   .product-card__info-purchase {
-    width: 100%;
+    justify-content: unset;
     gap: 20px;
     row-gap: 10px;
     flex-wrap: wrap;
