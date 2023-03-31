@@ -1,6 +1,6 @@
 @import "variables";
 
-.footer{
+.footer {
   display: flex;
   gap: 50px;
   color: #FFFFFF;
@@ -8,7 +8,8 @@
   background: #3F4E65;
   justify-content: center;
   align-items: center;
-  &-content__company-description{
+
+  &-content__company-description {
     margin-left: -35px;
     margin-right: 10px;
     margin-bottom: 40px;
@@ -16,7 +17,8 @@
     flex-direction: column;
     align-items: flex-start;
     width: 320px;
-    p{
+
+    p {
       margin-top: 10px;
       margin-bottom: 30px;
       width: 100%;
@@ -24,14 +26,16 @@
       font-size: 16px;
       line-height: 24px;
     }
-    .sales-subscribe{
-      &__title{
+
+    .sales-subscribe {
+      &__title {
         text-align: left;
         font-weight: unset;
         font-size: 12px;
       }
-      .mail{
-        &-input{
+
+      .mail {
+        &-input {
           display: flex;
           justify-content: space-between;
           padding-left: 20px;
@@ -42,16 +46,19 @@
           background: #FFFFFF;
           border-radius: 36px;
         }
-        &-placeholder{
+
+        &-placeholder {
           font-size: 12px;
           color: #5C6370;
         }
-        &-submit{
+
+        &-submit {
           width: 39px;
           height: 39px;
           background: #FFC85E;
           border-radius: 1000px;
-          img{
+
+          img {
             position: relative;
             top: 25%
           }
@@ -59,8 +66,9 @@
       }
     }
   }
-  &-links{
-    &__container{
+
+  &-links {
+    &__container {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
@@ -68,17 +76,19 @@
       margin-bottom: 100px;
 
     }
-    &__menu{
+
+    &__menu {
       display: flex;
       flex-direction: column;
 
-      &-title{
+      &-title {
         text-align: left;
         font-weight: 600;
         font-size: 20px;
         margin: 0 0 30px;
       }
-      &-list{
+
+      &-list {
         display: flex;
         flex-direction: column;
         gap: 24px;
@@ -86,36 +96,43 @@
         margin: 0;
         padding: 0;
         font-size: 14px;
-        &__item{
+
+        &__item {
         }
       }
     }
-    &__categories{
+
+    &__categories {
       text-align: left;
-      &-title{
+
+      &-title {
         font-weight: 600;
         font-size: 20px;
         margin: 0 0 28px;
         letter-spacing: 0.2px;
       }
-      &-list{
+
+      &-list {
         display: flex;
         flex-direction: column;
-        gap:24px;
+        gap: 24px;
         padding: 0;
         font-size: 14px;
 
       }
     }
-    &__downloads{
+
+    &__downloads {
       text-align: left;
-      &-title{
+
+      &-title {
         letter-spacing: 0.3px;
         font-weight: 600;
         font-size: 20px;
         margin: 0 0 30px;
       }
-      &-btn{
+
+      &-btn {
         display: flex;
         width: 214px;
         height: 59px;
@@ -124,56 +141,66 @@
         justify-content: center;
         background: #FFC85E;
         border-radius: 79px;
-        .btn-text{
+
+        .btn-text {
           font-weight: 700;
           font-size: 14px;
         }
       }
-      &-socials{
-        .socials-title{
+
+      &-socials {
+        .socials-title {
           margin-left: 8px;
           font-weight: normal;
           font-size: 14px;
 
         }
-        .socials-links{
+
+        .socials-links {
           display: flex;
           margin-left: 5px;
-          gap:10px;
+          gap: 10px;
         }
       }
     }
-    &__contacts{
+
+    &__contacts {
       text-align: left;
-      &-title{
+
+      &-title {
         letter-spacing: 0.6px;
         font-weight: 600;
         font-size: 20px;
         margin: 0 0 30px;
       }
-      &-number{
+
+      &-number {
         font-size: 14px;
         letter-spacing: 0.2px;
         margin-left: 2px;
         display: flex;
         flex-direction: column;
-        .number{
+
+        .number {
           margin-bottom: 3px;
         }
-        .schedule{
+
+        .schedule {
           letter-spacing: 0.01px;
           margin: 7px 0;
           font-weight: 300;
           font-size: 12px;
         }
-        .order-callback{
+
+        .order-callback {
           font-weight: 400;
           font-size: 10px;
           text-decoration-line: underline;
           margin-bottom: 25px;
         }
       }
-      &-mail{
+
+      &-mail {
         display: flex;
         flex-direction: column;
         font-weight: 600;
@@ -181,73 +208,84 @@
         line-height: 18px;
         letter-spacing: 0.4px;
         margin-bottom: 25px;
-        span{
+
+        span {
           font-weight: 300;
           font-size: 12px;
           letter-spacing: 0.1px;
         }
       }
-      &-payments{
+
+      &-payments {
         margin-left: 1px;
         display: flex;
-        gap:5px;
+        gap: 5px;
       }
     }
   }
 }
 
 @media only screen and (max-width: 1300px) {
-  .footer{
+  .footer {
     flex-wrap: wrap;
-    .footer-links__container{
+
+    .footer-links__container {
       justify-content: center;
       flex-wrap: wrap;
     }
-    .footer-content__company-description{
+
+    .footer-content__company-description {
       justify-content: center;
       align-items: center;
       margin-left: 0;
     }
   }
 }
+
 @media only screen and (max-width: 320px) {
-  .footer{
+  .footer {
     flex-wrap: wrap;
     gap: 0;
-    .footer-links__container{
+
+    .footer-links__container {
       margin-top: -10px;
       justify-content: center;
       flex-wrap: wrap;
       gap: 30px;
       row-gap: 15px;
     }
-    .footer-content__company-description{
+
+    .footer-content__company-description {
       justify-content: center;
       align-items: center;
       margin-left: 0;
-      .company-logo{
 
-        img{
+      .company-logo {
+
+        img {
           width: 97px !important;
           height: 41px !important;
         }
       }
-      .footer-header{
+
+      .footer-header {
         display: flex;
         margin-top: 17px;
         width: 93.5%;
         justify-content: space-between;
-        .footer-links__downloads-btn{
+
+        .footer-links__downloads-btn {
           width: 149px;
           height: 40px;
 
-          .btn-text{
+          .btn-text {
             font-weight: 700;
             font-size: 12px;
           }
         }
       }
-      p{
+
+      p {
         width: 85%;
         margin-left: -22px;
         margin-bottom: 0;
@@ -257,38 +295,46 @@
       }
     }
   }
-  .footer-links__container{
-    .footer-links__menu{
+  .footer-links__container {
+    .footer-links__menu {
       order: 1;
-      &-title{
+
+      &-title {
         font-weight: 600;
         font-size: 20px;
       }
-      &-list{
+
+      &-list {
         font-weight: 400;
         font-size: 12px;
       }
     }
-    .footer-links__categories{
+
+    .footer-links__categories {
       order: 2;
-      &-title{
+
+      &-title {
         font-weight: 600;
         font-size: 20px;
       }
-      &-list{
+
+      &-list {
         font-weight: 400;
         font-size: 12px;
       }
     }
-    .footer-links__downloads{
+
+    .footer-links__downloads {
       width: 100px;
       margin-top: 30px;
       margin-right: 30px;
       order: 4;
     }
-    .footer-links__contacts{
+
+    .footer-links__contacts {
       order: 3;
-      .footer-links__contacts-mail{
+
+      .footer-links__contacts-mail {
         margin-bottom: 10px;
       }
     }

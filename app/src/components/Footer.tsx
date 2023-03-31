@@ -23,8 +23,7 @@ const Footer = (): ReactElement => {
                         </div>
                     }
                 </div>
-
-                <p>Компания «Султан» — снабжаем розничные магазины товарами{!isSmallScreen &&<br/>}
+                <p>Компания «Султан» — снабжаем розничные магазины товарами{!isSmallScreen && <br/>}
                     "под ключ" в Кокчетаве и Акмолинской области
                 </p>
                 <div className='sales-subscribe'>

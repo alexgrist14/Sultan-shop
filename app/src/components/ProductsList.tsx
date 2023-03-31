@@ -5,7 +5,6 @@ import Product from "./Product";
 import ReactPaginate from "react-paginate";
 import IProduct from "../types/IProduct";
 import {SortBy} from "../types/globalTypes";
-import product from "./Product";
 
 interface FilteredProducts {
     maxPrice: string,
@@ -25,7 +24,7 @@ const ProductsList = ({
                           sortBy
                       }: FilteredProducts): ReactElement => {
     const [products, setProducts] = useState<IProduct[]>([]);
-    const [localStorageProducts,setLocalStorageProducts] = useState<IProduct[]>([]);
+    const [localStorageProducts, setLocalStorageProducts] = useState<IProduct[]>([]);
     const [currentItems, setCurrentItems] = useState<IProduct[]>([]);
     const [itemOffset, setItemOffset] = useState(0);
     const [pageCount, setPageCount] = useState(0);
@@ -46,7 +45,7 @@ const ProductsList = ({
         if (localStorageProducts.length > 0) {
             const filteredProducts = localStorageProducts.filter((item) => {
                 if (selectedCategory && !item.category.includes(selectedCategory)) {
-                    return false
+                    return false;
                 }
                 const isPriceInRange = +item.price >= +minPrice && +item.price <= +maxPrice;
                 const isProducerIncluded = producers.length === 0 || producers.includes(item.producer);

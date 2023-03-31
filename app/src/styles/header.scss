@@ -274,11 +274,13 @@
       }
 
       .total-cost {
+        width: 70px;
         margin-left: 25px;
         margin-right: -25px;
       }
 
       .cost {
+        width: 200px;
         color: $primary-text-color;
         font-weight: 600;
         font-size: 14px;

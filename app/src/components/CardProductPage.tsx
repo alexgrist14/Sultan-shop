@@ -8,10 +8,23 @@ import shareIcon from "../assets/images/share_icon.svg";
 import downloadIcon from "../assets/images/black_download.svg";
 import polygonIcon from "../assets/images/polygon.svg";
 import {getProductByBarCode, ShoppingCartContext} from "../context/ShoppingCartContext";
+import {toast, ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import arrowIcon from "../assets/images/arrow_mobile.svg";
 
 const CardProductPage = (): ReactElement => {
     const [countProducts, setCountProducts] = useState(1);
-    const {productsInCart, setProductsInCart, productsToBuy, setProductsToBuy} = useContext(ShoppingCartContext);
+    const {
+        productsInCart,
+        setProductsInCart,
+        productsToBuy,
+        setProductsToBuy,
+        isSmallScreen,
+        setIsSmallScreen
+    } = useContext(ShoppingCartContext);
+    const [isDescrOpen, setIsDescrOpen] = useState(true);
+    const [isCharacteristicsOpen, setIsCharacteristicsOpen] = useState(true);
+
     const {barcode} = useParams();
     let product: any = [];
     if (!localStorage.getItem('products')) {
@@ -23,18 +36,29 @@ const CardProductPage = (): ReactElement => {
         }
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         const storedData = localStorage.getItem('productsToBuy')
-        if(storedData){
+        if (storedData) {
             setProductsToBuy(JSON.parse(storedData))
         }
-    },[]);
-    useEffect(()=>{
-        if(productsToBuy.length !== 0){
-            localStorage.setItem('productsToBuy',JSON.stringify(productsToBuy));
-            localStorage.setItem('cartCount',(productsInCart).toString());
+    }, []);
+
+    useEffect(() => {
+        if (isSmallScreen) {
+            setIsDescrOpen(false);
+            setIsCharacteristicsOpen(false);
+        } else {
+            setIsDescrOpen(true);
+            setIsCharacteristicsOpen(true);
         }
-    },[productsToBuy,productsInCart]);
+    }, [isSmallScreen])
+
+    useEffect(() => {
+        if (productsToBuy.length !== 0) {
+            localStorage.setItem('productsToBuy', JSON.stringify(productsToBuy));
+            localStorage.setItem('cartCount', (productsInCart).toString());
+        }
+    }, [productsToBuy, productsInCart]);
 
     const handleDecrement = (): void => {
         if (countProducts > 1)
@@ -56,20 +80,30 @@ const CardProductPage = (): ReactElement => {
         } else {
             setProductsToBuy(prevState => [...prevState, {...product, amount: countProducts}]);
         }
+        toast('Товар добавлен в корзину.', {hideProgressBar: true});
     }
 
     return (
         <div className='product-card__container'>
             <div className='product-card__wrapper'>
-                <ul className='breadcrumbs'>
-                    <li><Link to="/">Главная</Link></li>
-                    <div className='dashed-border'></div>
-                    <li><Link to="/">Каталог</Link></li>
-                    <div className='dashed-border'></div>
-                    <li className='product-name__link'>
-                        <div>{product?.name} {product?.description}</div>
-                    </li>
-                </ul>
+                {
+                    isSmallScreen ?
+                        <Link to="/" className='back-content'>
+                            <div className='back-btn'>
+                                <img src={arrowIcon} alt="arrow_icon"/>
+                            </div>
+                            <span>Назад</span>
+                        </Link> :
+                        <ul className='breadcrumbs'>
+                            <li><Link to="/">Главная</Link></li>
+                            <div className='dashed-border'></div>
+                            <li><Link to="/">Каталог</Link></li>
+                            <div className='dashed-border'></div>
+                            <li className='product-name__link'>
+                                <div>{product?.name} {product?.description}</div>
+                            </li>
+                        </ul>
+                }
                 <div className='product-card__content'>
                     <div className='product-card__img'>
                         <img className='img' src={product?.url} alt="product_image"/>
@@ -77,13 +111,16 @@ const CardProductPage = (): ReactElement => {
                     <div className='product-card__info'>
                         <h4 className='product-card__info-stock'>В наличии</h4>
                         <h2 className='product-card__info-name'><span>{product?.name}</span> {product?.description}</h2>
-                        <div className='product-card__info-weight'>
-                            <div className='type-img'>
-                                <img src={product?.weightType === 'г' ? weightIcon : volumeIcon} alt="volume_icon"/>
+                        {
+                            !isSmallScreen &&
+                            <div className='product-card__info-weight'>
+                                <div className='type-img'>
+                                    <img src={product?.weightType === 'г' ? weightIcon : volumeIcon} alt="volume_icon"/>
+                                </div>
+                                <div className='weight'>{product?.size}</div>
+                                <div className='type'> {product?.weightType}</div>
                             </div>
-                            <div className='weight'>{product?.size}</div>
-                            <div className='type'> {product?.weightType}</div>
-                        </div>
+                        }
                         <div className='product-card__info-purchase'>
                             <div className='price'>{product?.price} ₸</div>
                             <div className='count-products'>
@@ -98,8 +135,6 @@ const CardProductPage = (): ReactElement => {
                                 <div>В корзину</div>
                                 <div><img src={cartIcon} alt=""/></div>
                             </button>
-                        </div>
-                        <div className='product-card__info-additional__btn'>
                             <div className='links'><img src={shareIcon} alt="share_icon"/></div>
                             <div className='ad'>
                                 <div>При покупке от <span>10 000 ₸</span> бесплатная <br/> доставка по Кокчетаву и
@@ -119,8 +154,11 @@ const CardProductPage = (): ReactElement => {
                                 <div className='producer'>Штрихкод: <span>{product?.barcode}</span></div>
                             </div>
                             <div className='description'>
-                                <h3 className='description-title'>Описание <img src={polygonIcon} alt=""/></h3>
-                                <p className='description-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                <h3 className={`description-title ${!isDescrOpen ? 'rotate-img' : ''}`}
+                                    onClick={() => setIsDescrOpen(prevState => !prevState)}>Описание <img
+                                    src={polygonIcon} alt=""/></h3>
+                                <p className={`description-text ${isDescrOpen ? 'open' : 'close'}`}>Lorem ipsum dolor
+                                    sit amet, consectetur adipiscing elit.
                                     Nullam interdum ut justo, vestibulum sagittis iaculis iaculis.
                                     Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet
                                     sed pellentesque consequat consectetur congue mauris venenatis.
@@ -129,9 +167,10 @@ const CardProductPage = (): ReactElement => {
                             </div>
                             <div className='dashed-border'></div>
                             <div className='characteristics'>
-                                <h3 className='characteristics-title'>Характеристики <img src={polygonIcon} alt=""/>
-                                </h3>
-                                <div className='characteristics-content'>
+                                <h3 className={`characteristics-title ${!isCharacteristicsOpen ? 'rotate-img' : ''}`}
+                                    onClick={() => setIsCharacteristicsOpen(prevState => !prevState)}>Характеристики <img
+                                    src={polygonIcon} alt=""/></h3>
+                                <div className={`characteristics-content ${isCharacteristicsOpen ? 'open' : 'close'}`}>
                                     <div>Назначение: <span>{product?.name}</span></div>
                                     <div>Тип: <span>{product?.name}</span></div>
                                     <div>Производитель: <span>{product?.producer}</span></div>
@@ -147,6 +186,7 @@ const CardProductPage = (): ReactElement => {
                     </div>
                 </div>
             </div>
+            <ToastContainer position="top-center" autoClose={1000}/>
         </div>
     )
 }

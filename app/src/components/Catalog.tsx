@@ -17,8 +17,8 @@ const Catalog = (): ReactElement => {
     const [selectedCategory, setSelectedCategory] = useState('');
     const [showFilters, setShowFilters] = useState(false);
     const {isSmallScreen} = useContext(ShoppingCartContext);
-    const navigate = useNavigate();
 
+    const navigate = useNavigate();
 
     const updateProducersFilterList = (producers: string[]): void => {
         setProducersFilterList(producers);
@@ -27,13 +27,23 @@ const Catalog = (): ReactElement => {
     const handleInputMinChange = (event: ChangeEvent<HTMLInputElement>): void => {
         setMinPrice(parser(event.target.value));
     }
+
     const handleInputMaxChange = (event: ChangeEvent<HTMLInputElement>): void => {
         setMaxPrice(parser(event.target.value));
     }
+
     const handleRedirect = (event: any): void => {
         event.preventDefault();
         navigate('/');
     }
+
+    const handleSelectCategory = (item: string): void => {
+        if (selectedCategory === item)
+            setSelectedCategory('');
+        else
+            setSelectedCategory(item);
+    }
+
     const parser = (inputValue: string): string => {
         const outputString: string = inputValue.replace(/\D/g, '');
         if (outputString === '') {
@@ -44,19 +54,17 @@ const Catalog = (): ReactElement => {
         return '';
     }
 
-
     return (
         <section className='catalog'>
             <div className='catalog-container'>
                 {
                     isSmallScreen ?
-                        <div className='back-content'>
+                        <Link to='/' className='back-content'>
                             <div className='back-btn'>
                                 <img src={arrowIcon} alt="arrow_icon"/>
                             </div>
                             <span>Назад</span>
-                        </div>
-
+                        </Link>
                         :
                         <ul className='breadcrumbs'>
                             <li><a href="/" onClick={handleRedirect}>Главная</a></li>
@@ -64,7 +72,6 @@ const Catalog = (): ReactElement => {
                             <li><a href="/" onClick={handleRedirect}>Каталог</a></li>
                         </ul>
                 }
-
                 <div className='catalog-header'>
                     <h2>Каталог</h2>
                     {
@@ -87,7 +94,7 @@ const Catalog = (): ReactElement => {
                             return (
                                 <div
                                     className={`catalog-goods__types-item ${selectedCategory === item ? 'selected-category' : ''}`}
-                                    onClick={() => setSelectedCategory(item)}>
+                                    onClick={() => handleSelectCategory(item)} key={item}>
                                     <div>
                                         {item}
                                     </div>
@@ -138,7 +145,7 @@ const Catalog = (): ReactElement => {
                                     <>
                                         <div key={item}
                                              className={`catalog-filter_types ${selectedCategory === item ? 'selected-category' : ''}`}
-                                             onClick={() => setSelectedCategory(item)}>
+                                             onClick={() => handleSelectCategory(item)}>
                                             <h2 className='catalog-filter__types-title'>{item}</h2></div>
                                         <div className='dashed-border'></div>
                                     </>

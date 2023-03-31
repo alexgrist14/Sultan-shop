@@ -1,6 +1,6 @@
 @import "variables";
 
-.product{
+.product {
   position: relative;
   width: 282px;
   height: 419px;
@@ -8,30 +8,36 @@
   box-shadow: 0 14px 39px -11px rgba(0, 0, 0, 0.06);
   border-radius: 10px;
   padding: 42px 21px 29px 23px;
-  &-image{
+
+  &-image {
     margin-top: -10px;
-    img{
+
+    img {
       max-width: 80%;
       max-height: 80%;
       margin-bottom: 20px;
     }
 
   }
-  &-weight{
+
+  &-weight {
     margin-top: -14px;
     margin-left: 2px;
     display: flex;
     font-size: 12px;
     color: $secondary-text-color;
-    .weight{
+
+    .weight {
       margin-left: 5px;
       color: $secondary-text-color;
     }
-    .type-img{
+
+    .type-img {
       opacity: 0.23;
     }
   }
-  &-name{
+
+  &-name {
     display: flex;
     cursor: pointer;
     text-align: left;
@@ -41,17 +47,20 @@
     line-height: 21px;
     padding-top: 9px;
     padding-left: 2px;
-    p{
+
+    p {
       margin: 0;
       letter-spacing: 0.1px;
     }
-    .name{
+
+    .name {
       font-weight: 700;
       line-height: 21px;
       letter-spacing: 0.5px;
     }
   }
-  &-details{
+
+  &-details {
     text-align: left;
     font-weight: 300;
     font-size: 14px;
@@ -59,40 +68,48 @@
     color: $secondary-text-color;
     margin-top: 25px;
     margin-left: 2px;
-    &__barcode{
+
+    &__barcode {
       margin-bottom: 5px;
-      .barcode{
+
+      .barcode {
         color: $primary-text-color;
         font-weight: 700;
       }
     }
-    &__producer{
+
+    &__producer {
       margin-bottom: 5px;
-      .producer{
+
+      .producer {
         color: $primary-text-color;
         font-weight: 700;
       }
     }
-    &__brand{
-      .brand{
+
+    &__brand {
+      .brand {
         color: $primary-text-color;
         font-weight: 700;
       }
     }
   }
-  &-acquire{
+
+  &-acquire {
     position: absolute;
     bottom: 15px;
     display: flex;
     align-items: center;
     margin-left: 3px;
     gap: 40px;
-    .product-price{
+
+    .product-price {
       font-weight: 800;
       font-size: 16px;
       color: $primary-text-color;
     }
-    .product-cart__btn{
+
+    .product-cart__btn {
       display: flex;
       width: 153px;
       height: 45px;

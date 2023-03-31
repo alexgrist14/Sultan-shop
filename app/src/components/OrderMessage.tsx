@@ -2,12 +2,12 @@ import {FC} from "react";
 import orderIcon from '../assets/images/order-icon.svg';
 import closeIcon from '../assets/images/close_icon.svg';
 
-interface OrderMessageProps{
-    onClose: ()=> void;
+interface OrderMessageProps {
+    onClose: () => void;
     showOrderMessage: boolean,
 }
 
-const OrderMessage: FC<OrderMessageProps> = ({onClose,showOrderMessage})=>{
+const OrderMessage: FC<OrderMessageProps> = ({onClose, showOrderMessage}) => {
     return (
         <div className={`order-overlay ${showOrderMessage && 'active'}`}>
             <div className='order-modal'>

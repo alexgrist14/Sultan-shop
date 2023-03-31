@@ -131,7 +131,7 @@ const Header = (): ReactElement => {
                     <div className='first-actions__container'>
                         <div className='header-actions__catalog-btn'>
                             <button><span>Каталог</span> <img src={isSmallScreen ? darkCatalogLogo : catalogLogo}
-                                                 alt="catalog_logo"/></button>
+                                                              alt="catalog_logo"/></button>
                         </div>
                         <div className='header-actions__search-field'>
                             <div className='search-placeholder'>Поиск...</div>

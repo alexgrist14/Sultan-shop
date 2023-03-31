@@ -7,15 +7,26 @@ import {filterTypes} from "../types/globalTypes";
 import {toast, ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const AdminPanel = (): ReactElement => {
+interface AdminPanelProps {
+    isOpen: boolean;
+    onToggle: () => void;
+}
+
+const AdminPanel = ({isOpen, onToggle}: AdminPanelProps): ReactElement => {
     const [products, setProducts] = useState<IProduct[]>(JSON.parse(localStorage.getItem('products') || '[]'));
     const notifyDelete = () => toast("Товар удалён.", {hideProgressBar: true});
+
+    useEffect(() => {
+        if (!isOpen)
+            onToggle();
+        return () => onToggle();
+    }, [isOpen])
 
     useEffect(() => {
         window.addEventListener('storage', (event) => {
             if (event.key === 'products') {
                 if (!event.newValue) {
-                    toast('Localstorage пуст. Данные загружены из JSON',{hideProgressBar:true})
+                    toast('Localstorage пуст. Данные загружены из JSON', {hideProgressBar: true})
                     setProducts(productsData.products);
                 }
             }
@@ -53,6 +64,7 @@ const AdminPanel = (): ReactElement => {
         } else {
             updatedProducts[index][field].push(value);
         }
+
         setProducts(updatedProducts);
         localStorage.setItem('products', JSON.stringify(updatedProducts));
         event.target.value = '';
@@ -78,7 +90,7 @@ const AdminPanel = (): ReactElement => {
                 <tr>
                     <th>Url</th>
                     <th>Name</th>
-                    <th>Weight Type</th>
+                    <th>Type</th>
                     <th>Size</th>
                     <th>Barcode</th>
                     <th>Producer</th>

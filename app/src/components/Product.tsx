@@ -5,6 +5,8 @@ import cartIcon from '../assets/images/cart_white_icon.svg';
 import IProduct from "../types/IProduct";
 import {useNavigate} from 'react-router-dom'
 import {getProductByBarCode, ShoppingCartContext} from "../context/ShoppingCartContext";
+import {toast, ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface IProducts {
     product: IProduct
@@ -14,12 +16,12 @@ const Product = ({product}: IProducts): ReactElement => {
     const {productsInCart, setProductsInCart, productsToBuy, setProductsToBuy} = useContext(ShoppingCartContext);
     const navigate = useNavigate();
 
-    useEffect(()=>{
-        if(productsToBuy.length !== 0){
-            localStorage.setItem('productsToBuy',JSON.stringify(productsToBuy));
-            localStorage.setItem('cartCount',(productsInCart).toString());
+    useEffect(() => {
+        if (productsToBuy.length !== 0) {
+            localStorage.setItem('productsToBuy', JSON.stringify(productsToBuy));
+            localStorage.setItem('cartCount', (productsInCart).toString());
         }
-    },[productsToBuy])
+    }, [productsToBuy])
 
     const handleToCart = (): void => {
         setProductsInCart(productsInCart + 1);
@@ -35,6 +37,7 @@ const Product = ({product}: IProducts): ReactElement => {
         } else {
             setProductsToBuy(prevState => [...prevState, {...product, amount: 1}]);
         }
+        toast('Товар добавлен в корзину.', {hideProgressBar: true});
     }
 
     const handleClick = () => {
@@ -66,6 +69,7 @@ const Product = ({product}: IProducts): ReactElement => {
                     <div className='btn-img'><img src={cartIcon} alt="cart_icon"/></div>
                 </button>
             </div>
+            <ToastContainer position="top-center" autoClose={1000}/>
         </div>
     );
 }

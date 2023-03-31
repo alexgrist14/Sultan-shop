@@ -5,6 +5,7 @@ import volumeIcon from "../assets/images/volume_icon.svg";
 import deleteIcon from "../assets/images/delete_icon.svg";
 import {Link} from "react-router-dom";
 import OrderMessage from "./OrderMessage";
+import arrowIcon from "../assets/images/arrow_mobile.svg";
 
 const ShoppingCart = (): ReactElement => {
     const {
@@ -12,7 +13,8 @@ const ShoppingCart = (): ReactElement => {
         setProductsInCart,
         productsToBuy,
         setProductsToBuy,
-        totalCost
+        totalCost,
+        isSmallScreen
     } = useContext(ShoppingCartContext);
 
     const [showOrderMessage, setShowOrderMessage] = useState(false);
@@ -80,13 +82,22 @@ const ShoppingCart = (): ReactElement => {
                 <OrderMessage showOrderMessage={showOrderMessage} onClose={handleCloseMessage}/>
 
                 <div className='shopping-cart__content'>
-                    <ul className='breadcrumbs'>
-                        <li><Link className='link' to="/">Главная</Link></li>
-                        <div className='dashed-border'></div>
-                        <li className='cart-crumb'>
-                            <div>Корзина</div>
-                        </li>
-                    </ul>
+                    {
+                        isSmallScreen ?
+                            <Link to="/" className='back-content'>
+                                <div className='back-btn'>
+                                    <img src={arrowIcon} alt="arrow_icon"/>
+                                </div>
+                                <span>Назад</span>
+                            </Link> :
+                            <ul className='breadcrumbs'>
+                                <li><Link className='link' to="/">Главная</Link></li>
+                                <div className='dashed-border'></div>
+                                <li className='cart-crumb'>
+                                    <div>Корзина</div>
+                                </li>
+                            </ul>
+                    }
                     <h2 className='shopping-cart__title'>Корзина</h2>
                     <div className='shopping-cart__products'>
                         {

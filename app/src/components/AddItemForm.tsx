@@ -1,8 +1,8 @@
-import {ChangeEvent, ReactElement, useEffect, useRef, useState} from "react";
+import {ChangeEvent, FormEvent, ReactElement, useEffect, useRef, useState} from "react";
 import IProduct from "../types/IProduct";
 import {filterTypes} from "../types/globalTypes";
 import {Link} from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
+import {toast, ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const AddItemForm = (): ReactElement => {
@@ -23,9 +23,9 @@ const AddItemForm = (): ReactElement => {
         category: selectedCategory,
     });
     const formRef = useRef<HTMLFormElement>(null);
-    const notifyDefault = () => toast("Товар успешно добавлен.",{hideProgressBar: true});
+    const notifyDefault = () => toast("Товар успешно добавлен.", {hideProgressBar: true});
     const parser = (event: ChangeEvent<HTMLInputElement>) => {
-        const { value } = event.target;
+        const {value} = event.target;
         const reg = /^-?\d*(\.\d*)?$/;
 
         if ((!isNaN(Number(value)) && reg.test(value)) || value === '' || value === '-') {
@@ -34,41 +34,39 @@ const AddItemForm = (): ReactElement => {
     };
 
     const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = event.target;
-        console.log(product);
+        const {name, value} = event.target;
         setProduct(prevState => ({
             ...prevState,
             [name]: value,
-            ['category']:selectedCategory,
+            ['category']: selectedCategory,
         }));
     };
 
-    const handleWeightTypeChange = (event: ChangeEvent<HTMLSelectElement>) =>{
+    const handleWeightTypeChange = (event: ChangeEvent<HTMLSelectElement>) => {
         const weightType = event.target.value;
         setSelectedWeight(weightType);
     }
 
     const handleCategoryChange = (event: ChangeEvent<HTMLSelectElement>) => {
         const category = event.target.value;
-        console.log('ev');
         setSelectedCategory(selectedCategory => {
-            if(!selectedCategory.includes(category))
+            if (!selectedCategory.includes(category))
                 return selectedCategory.concat(category)
-            return selectedCategory.filter(item => category !== item )
+            return selectedCategory.filter(item => category !== item)
         });
     };
 
     useEffect(() => {
         setProduct(prevState => ({
             ...prevState,
-            ['weightType']:selectedWeight,
-            ['category']:selectedCategory,
+            ['weightType']: selectedWeight,
+            ['category']: selectedCategory,
         }));
-    }, [selectedWeight,selectedCategory]);
+    }, [selectedWeight, selectedCategory]);
 
-    const handleFormSubmit = (e:any)=>{
+    const handleFormSubmit = (e: FormEvent) => {
         e.preventDefault();
-        localStorage.setItem('products', JSON.stringify([...products,product]));
+        localStorage.setItem('products', JSON.stringify([...products, product]));
         formRef.current?.reset();
         setPriceValue('');
         setSelectedCategory([]);
@@ -85,9 +83,12 @@ const AddItemForm = (): ReactElement => {
                     <div>Добавить товар</div>
                 </li>
             </ul>
-            <form className='add-form' ref={formRef} onSubmit={(e)=>{handleFormSubmit(e); notifyDefault();} }>
+            <form className='add-form' ref={formRef} onSubmit={(e) => {
+                handleFormSubmit(e);
+                notifyDefault();
+            }}>
                 <table className='admin-panel__table'>
-
+                    <thead>
                     <tr>
                         <th>Url</th>
                         <th>Name</th>
@@ -100,6 +101,8 @@ const AddItemForm = (): ReactElement => {
                         <th>Price</th>
                         <th>Category</th>
                     </tr>
+                    </thead>
+                    <tbody>
                     <tr className='product-edit_card'>
                         <td className='url'>
                             <input name='url' onChange={handleInputChange} type='text' required={true}/>
@@ -114,10 +117,12 @@ const AddItemForm = (): ReactElement => {
                             </select>
                         </td>
                         <td className='size'>
-                            <input name='size' onChange={handleInputChange} type='text' placeholder="Только цифры" pattern="[0-9]*" required={true}/>
+                            <input name='size' onChange={handleInputChange} type='text' placeholder="Только цифры"
+                                   pattern="[0-9]*" required={true}/>
                         </td>
                         <td className='barcode'>
-                            <input name='barcode' onChange={handleInputChange} type='text' placeholder="Только цифры" pattern="[0-9]*" required={true}/>
+                            <input name='barcode' onChange={handleInputChange} type='text' placeholder="Только цифры"
+                                   pattern="[0-9]*" required={true}/>
                         </td>
                         <td className='producer'>
                             <input name='producer' onChange={handleInputChange} type='text' required={true}/>
@@ -129,20 +134,26 @@ const AddItemForm = (): ReactElement => {
                             <input name='description' onChange={handleInputChange} type='text' required={true}/>
                         </td>
                         <td className='price'>
-                            <input name='price' placeholder='Только цифры' value={priceValue} onChange={(e)=>{handleInputChange(e);parser(e)} } type='text' required={true}/>
+                            <input name='price' placeholder='Только цифры' value={priceValue} onChange={(e) => {
+                                handleInputChange(e);
+                                parser(e)
+                            }} type='text' required={true}/>
                         </td>
                         <td className='category'>
-                            <textarea value={selectedCategory} placeholder='Выберите из списка категорию чтобы её добавить, выберите её ещё раз чтобы убрать (поле не может быть пустым)' required={true}/>
+                            <textarea readOnly={true} value={selectedCategory}
+                                      placeholder='Выберите из списка категорию чтобы её добавить, выберите её ещё раз чтобы убрать (поле не может быть пустым)'
+                                      required={true}/>
                             <select value={selectedCategory} name='category' onChange={handleCategoryChange}>
                                 <option value="">Выберите тип ухода</option>
-                                {filterTypes.map(filterType =>(
-                                    <option key = {filterType} value={filterType}>
+                                {filterTypes.map(filterType => (
+                                    <option key={filterType} value={filterType}>
                                         {filterType}
                                     </option>
                                 ))}
-                                </select>
+                            </select>
                         </td>
                     </tr>
+                    </tbody>
                 </table>
                 <button type='submit' className='add-btn button is-primary'>Добавить товар</button>
             </form>
