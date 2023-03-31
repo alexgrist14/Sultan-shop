@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Sultan-shop/static/css/main.82f90d81.css",
+    "main.css": "/Sultan-shop/static/css/main.39a091e1.css",
     "main.js": "/Sultan-shop/static/js/main.8ec42944.js",
     "static/media/cart_white_icon.svg": "/Sultan-shop/static/media/cart_white_icon.a01cc6d208c6df982a93cbd6d28e73e7.svg",
     "static/media/cart_icon.svg": "/Sultan-shop/static/media/cart_icon.7e3f10a67cbf7efab90673a8b0ccf897.svg",
@@ -24,11 +24,11 @@
     "static/media/arrow-right.svg": "/Sultan-shop/static/media/arrow-right.35ab94e2f8817f324bd31c2293385fa8.svg",
     "static/media/polygon.svg": "/Sultan-shop/static/media/polygon.260e242d67fc23d29ab014c3406116d8.svg",
     "static/media/arrow_mobile.svg": "/Sultan-shop/static/media/arrow_mobile.5a3ebbf524233ddda3e33d65833a2922.svg",
-    "main.82f90d81.css.map": "/Sultan-shop/static/css/main.82f90d81.css.map",
+    "main.39a091e1.css.map": "/Sultan-shop/static/css/main.39a091e1.css.map",
     "main.8ec42944.js.map": "/Sultan-shop/static/js/main.8ec42944.js.map"
   },
   "entrypoints": [
-    "static/css/main.82f90d81.css",
+    "static/css/main.39a091e1.css",
     "static/js/main.8ec42944.js"
   ]
 }
