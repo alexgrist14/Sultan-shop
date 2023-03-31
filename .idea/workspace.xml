@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7cc70d7-d9d8-4dd6-ae2e-fc9cfd6e389a" name="Changes" comment="fix: try to fix route problem" />
+    <list default="true" id="b7cc70d7-d9d8-4dd6-ae2e-fc9cfd6e389a" name="Changes" comment="feat: add 404 redirect page">
+      <change beforePath="$PROJECT_DIR$/404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/public/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/index.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/styles/catalog.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles/catalog.scss" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,6 +56,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Work\Sultan-shop" />
+      <recent name="D:\Work\Sultan-shop\app" />
+      <recent name="D:\Work\Sultan-shop\app\public" />
       <recent name="D:\Work\Sultan-shop\app\src\assets\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -81,7 +91,7 @@
       <workItem from="1680097086464" duration="6591000" />
       <workItem from="1680161164685" duration="17601000" />
       <workItem from="1680185839992" duration="2418000" />
-      <workItem from="1680247559449" duration="14493000" />
+      <workItem from="1680247559449" duration="14832000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add header and footer">
       <created>1679578692524</created>
@@ -174,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680261955678</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="feat: add 404 redirect page">
+      <created>1680262337453</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1680262337453</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,6 +223,7 @@
     <MESSAGE value="feat: add gh-pages deploy" />
     <MESSAGE value="fix: fix route problem" />
     <MESSAGE value="fix: try to fix route problem" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: try to fix route problem" />
+    <MESSAGE value="feat: add 404 redirect page" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add 404 redirect page" />
   </component>
 </project>
