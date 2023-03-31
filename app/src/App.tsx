@@ -27,7 +27,7 @@ function App() {
     return (
         <div className="App">
             <ShoppingCartProvider>
-                <BrowserRouter basename={'/'}>
+                <BrowserRouter basename={'/Sultan-shop'}>
                     <Header/>
                     <Routes>
                         <Route path='/product-card/:barcode' element={<CardProductPage/>}/>
