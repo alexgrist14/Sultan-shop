@@ -14,7 +14,7 @@ const Catalog = (): ReactElement => {
     const [producerSearchValue, setProducerSearchValue] = useState('');
     const [producersFilterList, setProducersFilterList] = useState<string[]>([]);
     const [sortBy, setSortBy] = useState<SortBy>('name-asc');
-    const [selectedCategory, setSelectedCategory] = useState('');
+    const [selectedCategory, setSelectedCategory] = useState<string[]>([]);
     const [showFilters, setShowFilters] = useState(false);
     const {isSmallScreen} = useContext(ShoppingCartContext);
 
@@ -38,10 +38,10 @@ const Catalog = (): ReactElement => {
     }
 
     const handleSelectCategory = (item: string): void => {
-        if (selectedCategory === item)
-            setSelectedCategory('');
+        if (selectedCategory.includes(item))
+            setSelectedCategory(prevState => prevState.filter(category=>category!==item));
         else
-            setSelectedCategory(item);
+            setSelectedCategory([...selectedCategory,item])
     }
 
     const parser = (inputValue: string): string => {
@@ -93,7 +93,7 @@ const Catalog = (): ReactElement => {
                         filterTypes.map((item) => {
                             return (
                                 <div
-                                    className={`catalog-goods__types-item ${selectedCategory === item ? 'selected-category' : ''}`}
+                                    className={`catalog-goods__types-item ${selectedCategory.includes(item) ? 'selected-category' : ''}`}
                                     onClick={() => handleSelectCategory(item)} key={item}>
                                     <div>
                                         {item}
@@ -144,7 +144,7 @@ const Catalog = (): ReactElement => {
                                 return (
                                     <>
                                         <div key={item}
-                                             className={`catalog-filter_types ${selectedCategory === item ? 'selected-category' : ''}`}
+                                             className={`catalog-filter_types ${selectedCategory.includes(item) ? 'selected-category' : ''}`}
                                              onClick={() => handleSelectCategory(item)}>
                                             <h2 className='catalog-filter__types-title'>{item}</h2></div>
                                         <div className='dashed-border'></div>

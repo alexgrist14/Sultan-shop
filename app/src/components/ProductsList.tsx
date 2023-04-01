@@ -11,7 +11,7 @@ interface FilteredProducts {
     minPrice: string,
     productsPerPage: number,
     producers: string[],
-    selectedCategory: string,
+    selectedCategory: string[],
     sortBy: SortBy
 }
 
@@ -44,7 +44,7 @@ const ProductsList = ({
     useEffect(() => {
         if (localStorageProducts.length > 0) {
             const filteredProducts = localStorageProducts.filter((item) => {
-                if (selectedCategory && !item.category.includes(selectedCategory)) {
+                if (selectedCategory.length && !item.category.some(val => selectedCategory.includes(val))) {
                     return false;
                 }
                 const isPriceInRange = +item.price >= +minPrice && +item.price <= +maxPrice;

@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7cc70d7-d9d8-4dd6-ae2e-fc9cfd6e389a" name="Changes" comment="style: add animation for buttons">
+    <list default="true" id="b7cc70d7-d9d8-4dd6-ae2e-fc9cfd6e389a" name="Changes" comment="style: fix adaptive problems">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/components/Catalog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/index.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/styles/catalog.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles/catalog.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/styles/productCard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles/productCard.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/ProductsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/ProductsList.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +89,8 @@
       <workItem from="1680161164685" duration="17601000" />
       <workItem from="1680185839992" duration="2418000" />
       <workItem from="1680247559449" duration="16324000" />
-      <workItem from="1680265846353" duration="636000" />
+      <workItem from="1680265846353" duration="1192000" />
+      <workItem from="1680345432061" duration="810000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add header and footer">
       <created>1679578692524</created>
@@ -206,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680263548889</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="style: fix adaptive problems">
+      <created>1680266644681</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1680266644681</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,6 +246,7 @@
     <MESSAGE value="feat: add 404 redirect page" />
     <MESSAGE value="fix: fix links styles" />
     <MESSAGE value="style: add animation for buttons" />
-    <option name="LAST_COMMIT_MESSAGE" value="style: add animation for buttons" />
+    <MESSAGE value="style: fix adaptive problems" />
+    <option name="LAST_COMMIT_MESSAGE" value="style: fix adaptive problems" />
   </component>
 </project>
