@@ -79,12 +79,22 @@
 }
 
 @media only screen and (max-width: 500px) {
+  html{
+    overflow-x: hidden;
+  }
   .order-overlay {
-    justify-content: unset;
-
+    justify-content: center;
+    width: 100vw;
   }
   .order-modal {
-    width: 290px;
-    height: 288px;
+    min-height: unset;
+    width: 270px;
+    height: 268px;
+    h2{
+      font-size: 20px;
+    }
+    p{
+      font-size: 13px;
+    }
   }
 }

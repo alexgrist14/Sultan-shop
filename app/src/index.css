@@ -727,12 +727,23 @@
 }
 
 @media only screen and (max-width: 500px) {
+  html {
+    overflow-x: hidden;
+  }
   .order-overlay {
-    justify-content: unset;
+    justify-content: center;
+    width: 100vw;
   }
   .order-modal {
-    width: 290px;
-    height: 288px;
+    min-height: unset;
+    width: 270px;
+    height: 268px;
+  }
+  .order-modal h2 {
+    font-size: 20px;
+  }
+  .order-modal p {
+    font-size: 13px;
   }
 }
 .catalog {
@@ -2082,6 +2093,9 @@ body.adminPanel-open {
   margin-top: 45px;
   margin-left: 230px;
   font-size: 14px;
+}
+.admin-panel__container .breadcrumbs-admin .link {
+  color: #3F4E65;
 }
 .admin-panel__container .breadcrumbs-admin .link:visited {
   color: #3F4E65;
