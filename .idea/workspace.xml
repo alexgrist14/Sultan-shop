@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7cc70d7-d9d8-4dd6-ae2e-fc9cfd6e389a" name="Changes" comment="feat: add possibility to select multiple categories">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/index.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/styles/orderMessage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles/orderMessage.scss" afterDir="false" />
-    </list>
+    <list default="true" id="b7cc70d7-d9d8-4dd6-ae2e-fc9cfd6e389a" name="Changes" comment="fix: fix style for mobile devices" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,7 +87,7 @@
       <workItem from="1680247559449" duration="16324000" />
       <workItem from="1680265846353" duration="1192000" />
       <workItem from="1680345432061" duration="1011000" />
-      <workItem from="1680452078354" duration="309000" />
+      <workItem from="1680452078354" duration="698000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add header and footer">
       <created>1679578692524</created>
@@ -220,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680346287601</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="fix: fix style for mobile devices">
+      <created>1680452617855</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1680452617855</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,6 +259,7 @@
     <MESSAGE value="style: add animation for buttons" />
     <MESSAGE value="style: fix adaptive problems" />
     <MESSAGE value="feat: add possibility to select multiple categories" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add possibility to select multiple categories" />
+    <MESSAGE value="fix: fix style for mobile devices" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: fix style for mobile devices" />
   </component>
 </project>
