@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7cc70d7-d9d8-4dd6-ae2e-fc9cfd6e389a" name="Changes" comment="fix: fix style for mobile devices" />
+    <list default="true" id="b7cc70d7-d9d8-4dd6-ae2e-fc9cfd6e389a" name="Changes" comment="refactor: remove unused file">
+      <change afterPath="$PROJECT_DIR$/app/src/components/CatalogHeader.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/CatalogLeftFilters.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/CatalogParameters.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/CatalogParametersProducer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/CatalogSortProducts.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/CatalogTopFilters.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Catalog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +24,8 @@
         <option value="Sass File" />
         <option value="TypeScript File" />
         <option value="SCSS File" />
-        <option value="TypeScript JSX File" />
         <option value="HTML File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -87,7 +98,12 @@
       <workItem from="1680247559449" duration="16324000" />
       <workItem from="1680265846353" duration="1192000" />
       <workItem from="1680345432061" duration="1011000" />
-      <workItem from="1680452078354" duration="698000" />
+      <workItem from="1680452078354" duration="1390000" />
+      <workItem from="1680507459013" duration="15000" />
+      <workItem from="1680511915833" duration="177000" />
+      <workItem from="1680522132488" duration="10000" />
+      <workItem from="1680534314985" duration="365000" />
+      <workItem from="1680620102509" duration="3517000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add header and footer">
       <created>1679578692524</created>
@@ -222,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680452617855</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="refactor: remove unused file">
+      <created>1680452879766</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1680452879766</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,6 +283,7 @@
     <MESSAGE value="style: fix adaptive problems" />
     <MESSAGE value="feat: add possibility to select multiple categories" />
     <MESSAGE value="fix: fix style for mobile devices" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: fix style for mobile devices" />
+    <MESSAGE value="refactor: remove unused file" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: remove unused file" />
   </component>
 </project>
