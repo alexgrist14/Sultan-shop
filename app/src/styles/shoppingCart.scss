@@ -13,35 +13,6 @@
     width: 100%;
     max-width: 1370px;
     text-align: left;
-
-    .breadcrumbs {
-      display: flex;
-      gap: 10px;
-      margin-top: 45px;
-      margin-left: -30px;
-      font-size: 14px;
-
-      .link {
-        color: #3F4E65;
-
-        &:visited {
-          color: #3F4E65;
-        }
-      }
-
-      .dashed-border {
-        height: 16px;
-        opacity: 0.3;
-        border: 1px dashed #3F4E65;
-      }
-
-      .cart-crumb {
-        font-size: 14px;
-        opacity: 0.5;
-        font-weight: 300;
-        user-select: none;
-      }
-    }
   }
 
   &__title {

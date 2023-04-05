@@ -5,7 +5,7 @@ import cartIcon from '../assets/images/cart_white_icon.svg';
 import IProduct from "../types/IProduct";
 import {useNavigate} from 'react-router-dom'
 import {getProductByBarCode, ShoppingCartContext} from "../context/ShoppingCartContext";
-import {toast, ToastContainer} from "react-toastify";
+import {toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 interface IProducts {
@@ -37,6 +37,7 @@ const Product = ({product}: IProducts): ReactElement => {
         } else {
             setProductsToBuy(prevState => [...prevState, {...product, amount: 1}]);
         }
+
         toast('Товар добавлен в корзину.', {hideProgressBar: true});
     }
 
@@ -44,13 +45,13 @@ const Product = ({product}: IProducts): ReactElement => {
         navigate(`/product-card/${product.barcode}`)
     }
     return (
-        <div className='product'>
+        <div data-testid="product" className='product'>
             <div className='product-image'><img src={product.url} alt="product_image"/></div>
             <div className='product-weight'>
                 <div className='type-img'><img src={product.weightType === 'г' ? weightIcon : volumeIcon}
                                                alt="volume_icon"/></div>
                 <span className='weight'>{product.size}</span>
-                <span className='type'> {product.weightType}</span>
+                <span className='type'>{` ${product.weightType}`}</span>
             </div>
             <div className='product-name' onClick={handleClick}>
                 <p><span className='name'>{product.name} </span>{product.description}</p>
@@ -69,7 +70,6 @@ const Product = ({product}: IProducts): ReactElement => {
                     <div className='btn-img'><img src={cartIcon} alt="cart_icon"/></div>
                 </button>
             </div>
-            <ToastContainer position="top-center" autoClose={1000}/>
         </div>
     );
 }

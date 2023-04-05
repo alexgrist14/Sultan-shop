@@ -9,35 +9,6 @@
     width: 100%;
     max-width: 1332px;
     margin: 0 auto;
-
-    .breadcrumbs {
-      display: flex;
-      gap: 10px;
-      margin-top: 43px;
-      margin-left: -49px;
-
-      .dashed-border {
-        height: 16px;
-        opacity: 0.3;
-        border: 1px dashed #3F4E65;
-      }
-
-      .product-name__link {
-        font-size: 14px;
-        opacity: 0.5;
-        font-weight: 300;
-        user-select: none;
-      }
-
-      li {
-        a {
-          font-size: 14px;
-          font-weight: 300;
-          color: $secondary-text-color;
-          text-decoration: none;
-        }
-      }
-    }
   }
 
   &__content {

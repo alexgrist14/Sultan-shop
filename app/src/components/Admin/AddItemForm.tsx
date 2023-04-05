@@ -1,9 +1,9 @@
 import {ChangeEvent, FormEvent, ReactElement, useEffect, useRef, useState} from "react";
-import IProduct from "../types/IProduct";
-import {filterTypes} from "../types/globalTypes";
-import {Link} from "react-router-dom";
+import IProduct from "../../types/IProduct";
+import {filterTypes} from "../../types/globalTypes";
 import {toast, ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Breadcrumbs from "../Breadcrumbs";
 
 const AddItemForm = (): ReactElement => {
     const [selectedCategory, setSelectedCategory] = useState<string[]>([]);
@@ -22,7 +22,7 @@ const AddItemForm = (): ReactElement => {
         price: '',
         category: selectedCategory,
     });
-    const formRef = useRef<HTMLFormElement>(null);
+    const formRef = useRef<HTMLFormElement | null>(null);
     const notifyDefault = () => toast("Товар успешно добавлен.", {hideProgressBar: true});
     const parser = (event: ChangeEvent<HTMLInputElement>) => {
         const {value} = event.target;
@@ -47,7 +47,7 @@ const AddItemForm = (): ReactElement => {
         setSelectedWeight(weightType);
     }
 
-    const handleCategoryChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    const handleCategoryChange = (event: ChangeEvent<HTMLInputElement>) => {
         const category = event.target.value;
         setSelectedCategory(selectedCategory => {
             if (!selectedCategory.includes(category))
@@ -74,87 +74,79 @@ const AddItemForm = (): ReactElement => {
 
     return (
         <div className='add-item__container'>
-            <ul className='breadcrumbs-admin'>
-                <li><Link className='link' to="/">Главная</Link></li>
-                <div className='dashed-border'></div>
-                <li><Link className='link' to="/admin-panel">Админ панель</Link></li>
-                <div className='dashed-border'></div>
-                <li className='cart-crumb'>
-                    <div>Добавить товар</div>
-                </li>
-            </ul>
+            <Breadcrumbs items={[{path: '/admin-panel', title: 'Админ панель'}, {path: '', title: "Добавить товар"}]}/>
             <form className='add-form' ref={formRef} onSubmit={(e) => {
                 handleFormSubmit(e);
                 notifyDefault();
             }}>
-                <table className='admin-panel__table'>
-                    <thead>
-                    <tr>
-                        <th>Url</th>
-                        <th>Name</th>
-                        <th>Weight Type</th>
-                        <th>Size</th>
-                        <th>Barcode</th>
-                        <th>Producer</th>
-                        <th>Brand</th>
-                        <th>Description</th>
-                        <th>Price</th>
-                        <th>Category</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr className='product-edit_card'>
-                        <td className='url'>
-                            <input name='url' onChange={handleInputChange} type='text' required={true}/>
-                        </td>
-                        <td className='name'>
-                            <input name='name' onChange={handleInputChange} type='text' required={true}/>
-                        </td>
-                        <td className='weight'>
+                <div className='admin-panel__item-fields'>
+                    <div className='admin-panel__item-fields__left'>
+                        <label>
+                            <h3>Url изображения:</h3>
+                            <input type='text' name='url' onChange={handleInputChange}></input>
+                        </label>
+                        <label>
+                            <h3>Название:</h3>
+                            <input type='text' name='name' onChange={handleInputChange}></input>
+                        </label>
+                        <label>
+                            <h3>Тип размера:</h3>
                             <select value={selectedWeight} onChange={handleWeightTypeChange} id="" required={true}>
                                 <option value="г">г</option>
                                 <option value="мл">мл</option>
                             </select>
-                        </td>
-                        <td className='size'>
+                        </label>
+                        <label>
+                            <h3>Размер:</h3>
                             <input name='size' onChange={handleInputChange} type='text' placeholder="Только цифры"
                                    pattern="[0-9]*" required={true}/>
-                        </td>
-                        <td className='barcode'>
+                        </label>
+                    </div>
+                    <div className='admin-panel__item-fields__right'>
+                        <label>
+                            <h3>Штрихкод:</h3>
                             <input name='barcode' onChange={handleInputChange} type='text' placeholder="Только цифры"
                                    pattern="[0-9]*" required={true}/>
-                        </td>
-                        <td className='producer'>
+                        </label>
+                        <label>
+                            <h3>Производитель:</h3>
                             <input name='producer' onChange={handleInputChange} type='text' required={true}/>
-                        </td>
-                        <td className='brand'>
+                        </label>
+                        <label>
+                            <h3>Бренд:</h3>
                             <input name='brand' onChange={handleInputChange} type='text' required={true}/>
-                        </td>
-                        <td className='description'>
+                        </label>
+                        <label>
+                            <h3>Описание:</h3>
                             <input name='description' onChange={handleInputChange} type='text' required={true}/>
-                        </td>
-                        <td className='price'>
+                        </label>
+                        <label>
+                            <h3>Цена:</h3>
                             <input name='price' placeholder='Только цифры' value={priceValue} onChange={(e) => {
                                 handleInputChange(e);
                                 parser(e)
                             }} type='text' required={true}/>
-                        </td>
-                        <td className='category'>
-                            <textarea readOnly={true} value={selectedCategory}
-                                      placeholder='Выберите из списка категорию чтобы её добавить, выберите её ещё раз чтобы убрать (поле не может быть пустым)'
-                                      required={true}/>
-                            <select value={selectedCategory} name='category' onChange={handleCategoryChange}>
-                                <option value="">Выберите тип ухода</option>
-                                {filterTypes.map(filterType => (
-                                    <option key={filterType} value={filterType}>
-                                        {filterType}
-                                    </option>
-                                ))}
-                            </select>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+                        </label>
+                    </div>
+                    <label>
+                        <h3>Категории: </h3>
+                        <textarea readOnly={true} value={selectedCategory}
+                                  placeholder='Выберите из списка категорию (поле не может быть пустым)'
+                                  required={true}/>
+                    </label>
+                    <div className='filter-types__container'>
+                        {
+                            filterTypes.map(filterType => (
+                                <div key={filterType} className='filter-types__item'>
+                                    <input className='filter-types__item-checkbox' type="checkbox" name={filterType}
+                                           value={filterType}
+                                           onChange={handleCategoryChange}/>
+                                    <span className='filter-types__item-name'>{filterType}</span>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
                 <button type='submit' className='add-btn button is-primary'>Добавить товар</button>
             </form>
             <ToastContainer position="top-center" autoClose={1000}/>

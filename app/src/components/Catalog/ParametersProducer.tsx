@@ -1,6 +1,6 @@
 import {Dispatch, ReactElement, SetStateAction, useState} from "react";
-import searchIcon from "../assets/images/search_icon.svg";
-import ProducersFilter from "./ProducersFilter";
+import searchIcon from "../../assets/images/search_icon.svg";
+import ProducersFilter from "../ProducersFilter";
 
 interface CatalogParametersProducerProps{
     setProducersFilterList: Dispatch<SetStateAction<string[]>>,

@@ -1,12 +1,12 @@
 import {ReactElement} from "react";
-import {filterTypes} from "../types/globalTypes";
+import {filterTypes} from "../../types/globalTypes";
 
-interface CatalogTopFiltersProps{
-    handleSelectCategory: (item:string)=>void,
+interface CatalogTopFiltersProps {
+    handleSelectCategory: (item: string) => void,
     selectedCategory: string[],
 }
 
-const CatalogTopFilters = ({handleSelectCategory,selectedCategory}:CatalogTopFiltersProps):ReactElement =>{
+const CatalogTopFilters = ({handleSelectCategory, selectedCategory}: CatalogTopFiltersProps): ReactElement => {
     return (
         <div className='catalog-goods__types'>
             {

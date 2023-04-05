@@ -1,10 +1,10 @@
 import {ChangeEvent, Dispatch, ReactElement, SetStateAction, useContext, useState} from "react";
-import arrowIcon from "../assets/images/arrow_mobile.svg";
-import CatalogLeftFilters from "./CatalogLeftFilters";
-import CatalogSortProducts from "./CatalogSortProducts";
-import {ShoppingCartContext} from "../context/ShoppingCartContext";
-import {SortBy} from "../types/globalTypes";
-import CatalogParametersProducer from "./CatalogParametersProducer";
+import arrowIcon from "../../assets/images/arrow_mobile.svg";
+import CatalogLeftFilters from "./LeftFilters";
+import CatalogSortProducts from "./SortProducts";
+import {ShoppingCartContext} from "../../context/ShoppingCartContext";
+import {SortBy} from "../../types/globalTypes";
+import CatalogParametersProducer from "./ParametersProducer";
 
 interface CatalogParametersProps {
     setProducersFilterList: Dispatch<SetStateAction<string[]>>,

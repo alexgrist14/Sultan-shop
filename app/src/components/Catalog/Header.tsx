@@ -1,6 +1,6 @@
 import {Dispatch, ReactElement, SetStateAction} from "react";
-import {SortBy} from "../types/globalTypes";
-import CatalogSortProducts from "./CatalogSortProducts";
+import {SortBy} from "../../types/globalTypes";
+import CatalogSortProducts from "./SortProducts";
 
 interface CatalogHeaderProps{
     isSmallScreen: boolean,

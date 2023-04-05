@@ -1,12 +1,13 @@
 import {ReactElement, useContext, useState} from "react";
-import arrowIcon from '../assets/images/arrow_mobile.svg';
-import ProductsList from "./ProductsList";
-import {SortBy} from "../types/globalTypes";
-import {Link, useNavigate} from "react-router-dom";
-import {ShoppingCartContext} from "../context/ShoppingCartContext";
-import CatalogTopFilters from "./CatalogTopFilters";
-import CatalogHeader from "./CatalogHeader";
-import CatalogParameters from "./CatalogParameters";
+import ProductsList from "../ProductsList";
+import {SortBy} from "../../types/globalTypes";
+import {Link} from "react-router-dom";
+import {ShoppingCartContext} from "../../context/ShoppingCartContext";
+import CatalogTopFilters from "./TopFilters";
+import CatalogHeader from "./Header";
+import CatalogParameters from "./Parameters";
+import Breadcrumbs from "../Breadcrumbs";
+import BreadCrumbMobile from "../BreadCrumbMobile";
 
 const Catalog = (): ReactElement => {
     const [minPrice, setMinPrice] = useState('0');
@@ -16,13 +17,6 @@ const Catalog = (): ReactElement => {
     const [selectedCategory, setSelectedCategory] = useState<string[]>([]);
     const {isSmallScreen} = useContext(ShoppingCartContext);
 
-    const navigate = useNavigate();
-
-    const handleRedirect = (event: any): void => {
-        event.preventDefault();
-        navigate('/');
-    }
-
     const handleSelectCategory = (item: string): void => {
         if (selectedCategory.includes(item))
             setSelectedCategory(prevState => prevState.filter(category => category !== item));
@@ -30,37 +24,34 @@ const Catalog = (): ReactElement => {
             setSelectedCategory([...selectedCategory, item])
     }
 
-
     return (
         <section className='catalog'>
             <div className='catalog-container'>
                 {
                     isSmallScreen ?
-                        <Link to='/' className='back-content'>
-                            <div className='back-btn'>
-                                <img src={arrowIcon} alt="arrow_icon"/>
-                            </div>
-                            <span>Назад</span>
-                        </Link>
+                        <BreadCrumbMobile/>
                         :
-                        <ul className='breadcrumbs'>
-                            <li><a href="/" onClick={handleRedirect}>Главная</a></li>
-                            <div className='dashed-border'></div>
-                            <li><a href="/" onClick={handleRedirect}>Каталог</a></li>
-                        </ul>
+                        <Breadcrumbs items={[{path:'/',title:"Каталог"}]}/>
                 }
                 <CatalogHeader isSmallScreen={isSmallScreen} sortBy={sortBy} setSortBy={setSortBy}/>
                 <CatalogTopFilters handleSelectCategory={handleSelectCategory} selectedCategory={selectedCategory}/>
                 <div className='catalog-content__container'>
                     <div className='catalog-filter'>
-                        <CatalogParameters setProducersFilterList={setProducersFilterList} sortBy={sortBy}
+                        <CatalogParameters setProducersFilterList={setProducersFilterList}
+                                           sortBy={sortBy}
                                            selectedCategory={selectedCategory}
-                                           handleSelectCategory={handleSelectCategory} minPrice={minPrice}
-                                           maxPrice={maxPrice} setMaxPrice={setMaxPrice} setMinPrice={setMinPrice}
+                                           handleSelectCategory={handleSelectCategory}
+                                           minPrice={minPrice}
+                                           maxPrice={maxPrice}
+                                           setMaxPrice={setMaxPrice}
+                                           setMinPrice={setMinPrice}
                                            setSortBy={setSortBy}/>
-                        <ProductsList sortBy={sortBy} selectedCategory={selectedCategory} maxPrice={maxPrice}
+                        <ProductsList sortBy={sortBy}
+                                      selectedCategory={selectedCategory}
+                                      maxPrice={maxPrice}
                                       minPrice={minPrice}
-                                      producers={producersFilterList} productsPerPage={15}/>
+                                      producers={producersFilterList}
+                                      productsPerPage={15}/>
                     </div>
                 </div>
             </div>

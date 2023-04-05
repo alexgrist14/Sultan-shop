@@ -1,6 +1,6 @@
 import {Dispatch, ReactElement, SetStateAction} from "react";
-import {SortBy} from "../types/globalTypes";
-import polygonIcon from "../assets/images/polygon.svg";
+import {SortBy} from "../../types/globalTypes";
+import polygonIcon from "../../assets/images/polygon.svg";
 
 interface CatalogSortProductsProps{
     sortBy: SortBy,

@@ -1,149 +1,146 @@
-body.adminPanel-open {
-  overflow-x: unset;
-}
+.admin-panel {
+  &__container {
+    display: flex;
+    min-height: 50vh;
+    text-align: left;
+    flex-direction: column;
+    align-items: center;
 
-.admin-panel__container {
-  display: flex;
-  min-height: 50vh;
-  text-align: left;
-  flex-direction: column;
-  align-items: center;
+    .add-item {
+      width: 150px;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      position: relative;
+      right: -40%;
+      background-color: #84d55a;
+      border-radius: 10px;
+      color: #EDEDED;
+      cursor: pointer;
+      transition: 0.5s ALL;
 
-  .add-item {
-    width: 150px;
-    height: 40px;
-    text-align: center;
-    line-height: 40px;
-    position: relative;
-    right: -40%;
-    background-color: #84d55a;
-    border-radius: 10px;
-    color: #EDEDED;
-    cursor: pointer;
-    transition: 0.5s ALL;
+      &:active {
+        background-color: #649d43;
+      }
+    }
 
-    &:active {
-      background-color: #649d43;
+    .breadcrumbs {
+      gap: 10px;
+      align-self: flex-start;
+      margin-top: 45px;
+      margin-left: 230px;
     }
   }
 
-  .admin-panel__table {
-    border-spacing: 20px 10px;
+  &__items-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 20px;
+  }
 
-    .product-edit_card {
-      border-spacing: 20px;
+  &__item {
+    width: 100%;
 
-      td {
-        input {
-          height: 30px;
-        }
+    &-preview {
+      display: flex;
+      font-size: 14px;
+      font-weight: 400;
+      align-items: center;
+
+    }
+
+    &-title {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      h2 {
+        cursor: pointer;
+        user-select: none;
+      }
+    }
+
+    .delete-btn {
+      height: 25px !important;
+      max-height: 25px;
+      border-radius: 5px;
+      background-color: #ff4d4d;
+      cursor: pointer;
+    }
+
+    &-img {
+      img {
+        width: 25px;
+        height: 25px;
       }
 
-      .url {
-        input {
-          width: 100px;
-          height: 50px;
+    }
+
+    &-fields {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      label {
+        width: 50%;
+
+        h3 {
+          margin: 0;
+          font-weight: normal;
+          font-size: 14px;
         }
-      }
-
-      .name {
-        input {
-          width: 50px;
-          height: 50px;
-
-        }
-      }
-
-      .weight {
-        input {
-          width: 30px;
-        }
-      }
-
-      .size {
-        input {
-          width: 30px;
-
-        }
-      }
-
-      .barcode {
-        input {
-          width: 60px;
-        }
-      }
-
-      .producer {
-        input {
-          width: 45px;
-        }
-      }
-
-      .brand {
-        input {
-          width: 50px;
-        }
-      }
-
-      .description {
-        input {
-          width: 240px;
-
-        }
-      }
-
-      .price {
-        input {
-          width: 50px;
-        }
-      }
-
-      .category {
-        display: flex;
 
         textarea {
-          width: 400px;
-          height: 50px;
+          width: 50%;
+          height: 100px;
+
         }
       }
 
-      .delete-btn {
-        height: 25px !important;
-        max-height: 25px;
-        border-radius: 5px;
-        background-color: #ff4d4d;
-        cursor: pointer;
+      &__right {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        flex-basis: 45%;
+
+        label {
+          width: 100%;
+
+          input {
+            width: 100%;
+          }
+
+          h3 {
+            margin: 0;
+            font-weight: normal;
+            font-size: 14px;
+          }
+        }
       }
-    }
-  }
 
-  .breadcrumbs-admin {
-    display: flex;
-    gap: 10px;
-    align-self: flex-start;
-    margin-top: 45px;
-    margin-left: 230px;
-    font-size: 14px;
+      &__left {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        flex-basis: 50%;
 
-    .link {
-      color: #3F4E65;
-      &:visited {
-        color: #3F4E65;
+        label {
+          width: 100%;
+
+          input {
+            width: 100%;
+          }
+
+          h3 {
+            margin: 0;
+            font-weight: normal;
+            font-size: 14px;
+          }
+        }
       }
-    }
-
-    .dashed-border {
-      height: 16px;
-      opacity: 0.3;
-      border: 1px dashed #3F4E65;
-    }
-
-    .cart-crumb {
-      font-size: 14px;
-      opacity: 0.5;
-      font-weight: 300;
-      user-select: none;
-
     }
   }
 }
@@ -154,33 +151,16 @@ body.adminPanel-open {
   justify-content: center;
   min-height: 50vh;
 
-  .admin-panel__table {
-    .product-edit_card {
-      .category {
-        display: flex;
-
-        select {
-          width: 200px;
-        }
-      }
-    }
-  }
-
-  select {
-    width: 100px;
-    height: 50px;
-  }
-
   .add-form {
     margin: 0 auto;
   }
 
-  .breadcrumbs-admin {
+  .breadcrumbs {
 
     display: flex;
     gap: 10px;
     align-self: flex-start;
-    margin-bottom: 250px;
+    margin-bottom: 10px;
     margin-left: 230px;
     font-size: 14px;
 
@@ -196,7 +176,7 @@ body.adminPanel-open {
       border: 1px dashed #3F4E65;
     }
 
-    .cart-crumb {
+    .last-link {
       font-size: 14px;
       opacity: 0.5;
       font-weight: 300;
@@ -208,6 +188,8 @@ body.adminPanel-open {
   .add-btn {
     width: 200px;
     height: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     background-color: #84d55a;
     border-radius: 10px;
     color: #EDEDED;
@@ -219,20 +201,9 @@ body.adminPanel-open {
     }
   }
 
-  input {
-    width: 100px;
-    overflow-wrap: break-word;
-    height: 50px;
-  }
-
-  textarea {
-    width: 400px;
-    height: 50px;
-  }
-
-  .admin-panel__table {
+  .filter-types__container {
+    display: flex;
+    text-align: left;
     flex-direction: column;
   }
 }
-
-

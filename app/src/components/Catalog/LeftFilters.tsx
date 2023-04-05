@@ -1,8 +1,8 @@
 import {ReactElement} from "react";
-import {filterTypes} from "../types/globalTypes";
+import {filterTypes} from "../../types/globalTypes";
 
 interface CatalogLeftFiltersProps{
-    handleSelectCategory: (item:string)=>void,
+    handleSelectCategory: (item: string) => void,
     selectedCategory: string[],
 }
 
