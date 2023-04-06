@@ -45,7 +45,7 @@ const ShoppingCart = (): ReactElement => {
 
     return (
         <>
-            <div className='shopping-cart__container'>
+            <div data-testid="cart-main" className='shopping-cart__container'>
                 <OrderMessage showOrderMessage={showOrderMessage} onClose={handleCloseMessage}/>
                 <div className='shopping-cart__content'>
                     {
@@ -57,8 +57,8 @@ const ShoppingCart = (): ReactElement => {
                     <h2 className='shopping-cart__title'>Корзина</h2>
                     <div className='shopping-cart__products'>
                         {
-                            productsToBuy.length > 0 ? productsToBuy.map((item) => {
-                                    return (<ShoppingCartItem item={item}/>)
+                            productsToBuy.length > 0 ? productsToBuy.map((item, index) => {
+                                    return (<ShoppingCartItem key={index} item={item}/>)
                                 }) : (
                                     <>
                                         Корзина пуста. Перейдите в каталог чтобы выбрать товары.

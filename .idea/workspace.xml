@@ -1,55 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7cc70d7-d9d8-4dd6-ae2e-fc9cfd6e389a" name="Changes" comment="refactor: split catalog component">
-      <change afterPath="$PROJECT_DIR$/app/src/components/Admin/Item.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/components/Admin/ItemLeftFields.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/components/Admin/ItemRightFields.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/components/BreadCrumbMobile.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/components/Breadcrumbs.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/components/CardProductPage/Characteristics.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/components/CardProductPage/Info.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/components/CardProductPage/InfoPurchase.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/components/CardProductPage/Weight.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/components/Footer/Contacts.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/components/Footer/Description.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/components/Footer/Downloads.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/components/Footer/Navigation.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/components/Header/Actions.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/components/Header/Callback.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/components/Header/Cart.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/components/Header/Logo.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/components/Header/Menu.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/components/Header/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/components/ShoppingCart/Item.tsx" afterDir="false" />
+    <list default="true" id="b7cc70d7-d9d8-4dd6-ae2e-fc9cfd6e389a" name="Changes" comment="refactor: split components into smaller components, change styles for admin panel and AddItemForm">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/404.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/App.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Admin/AddItemForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/AdminPanel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Admin/AdminPanel.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/CardProductPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/CardProductPage/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Catalog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/CatalogHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/CatalogLeftFilters.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog/LeftFilters.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/CatalogParameters.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog/Parameters.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/CatalogParametersProducer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog/ParametersProducer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/CatalogSortProducts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog/SortProducts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/CatalogTopFilters.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog/TopFilters.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Footer/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Header.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/ProducersFilter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/ProducersFilter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Breadcrumbs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Breadcrumbs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Catalog/LeftFilters.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog/LeftFilters.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Catalog/Parameters.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog/Parameters.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Catalog/ParametersProducer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog/ParametersProducer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Catalog/SortProducts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog/SortProducts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Header/Cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Header/Cart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/ProducersFilter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog/ProducersFilter.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/components/Product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Product.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/ProductsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/ProductsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/ShoppingCart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/ShoppingCart/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/ShoppingCart/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/ShoppingCart/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/index.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/styles/adminPanel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles/adminPanel.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/styles/productCard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles/productCard.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/styles/shoppingCart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles/shoppingCart.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,15 +78,28 @@
       <recent name="D:\Work\Sultan-shop\app\src\assets\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Work\Sultan-shop\app\src\components\Catalog" />
       <recent name="D:\Work\Sultan-shop\app\src\components\CardProductPage" />
       <recent name="D:\Work\Sultan-shop\app\src\components\ShoppingCart" />
       <recent name="D:\Work\Sultan-shop\app\src\components\Admin" />
       <recent name="D:\Work\Sultan-shop\app\src\components\Header" />
-      <recent name="D:\Work\Sultan-shop\app\src\components\Footer" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="renders learn react link" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Jest.Test app.should link to shopping cart after click on cart button">
+    <configuration name="Test app" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/app/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$/app" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/app/src/App.test.tsx" />
+      <test-names>
+        <test-name value="Test app" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Test app.should be only one product in cart after click button &quot;В корзину&quot;" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/app/node_modules/react-scripts" />
@@ -129,13 +108,60 @@
       <scope-kind value="TEST" />
       <test-file value="$PROJECT_DIR$/app/src/App.test.tsx" />
       <test-names>
-        <test-name value="renders learn react link" />
+        <test-name value="Test app" />
+        <test-name value="should be only one product in cart after click button &quot;В корзину&quot;" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Test app.should delete all non number symbols from input value" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/app/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$/app" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/app/src/App.test.tsx" />
+      <test-names>
+        <test-name value="Test app" />
+        <test-name value="should delete all non number symbols from input value" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Test app.should delete all zeros from input value" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/app/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$/app" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/app/src/App.test.tsx" />
+      <test-names>
+        <test-name value="Test app" />
+        <test-name value="should delete all zeros from input value" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Test app.should link to shopping cart after click on cart button" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/app/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$/app" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/app/src/App.test.tsx" />
+      <test-names>
+        <test-name value="Test app" />
+        <test-name value="should link to shopping cart after click on cart button" />
       </test-names>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Jest.renders learn react link" />
+        <item itemvalue="Jest.Test app.should link to shopping cart after click on cart button" />
+        <item itemvalue="Jest.Test app" />
+        <item itemvalue="Jest.Test app.should delete all non number symbols from input value" />
+        <item itemvalue="Jest.Test app.should delete all zeros from input value" />
+        <item itemvalue="Jest.Test app.should be only one product in cart after click button &quot;В корзину&quot;" />
       </list>
     </recent_temporary>
   </component>
@@ -177,7 +203,8 @@
       <workItem from="1680680907186" duration="2340000" />
       <workItem from="1680683281794" duration="237000" />
       <workItem from="1680683530460" duration="13234000" />
-      <workItem from="1680699265809" duration="8657000" />
+      <workItem from="1680699265809" duration="8940000" />
+      <workItem from="1680766732292" duration="7768000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add header and footer">
       <created>1679578692524</created>
@@ -326,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680624440108</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="refactor: split components into smaller components, change styles for admin panel and AddItemForm">
+      <created>1680708790993</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1680708790993</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -366,6 +400,7 @@
     <MESSAGE value="fix: fix style for mobile devices" />
     <MESSAGE value="refactor: remove unused file" />
     <MESSAGE value="refactor: split catalog component" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: split catalog component" />
+    <MESSAGE value="refactor: split components into smaller components, change styles for admin panel and AddItemForm" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: split components into smaller components, change styles for admin panel and AddItemForm" />
   </component>
 </project>

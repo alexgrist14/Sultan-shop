@@ -62,8 +62,7 @@ const CatalogParameters = ({
                 <div className='catalog-filter__price'>
                     <h4>Цена<span>₸</span></h4>
                     <div className='catalog-filter__price-range'>
-                        <input className='min' value={minPrice} onChange={handleInputMinChange}/>-<input
-                        className='max' value={maxPrice} onChange={handleInputMaxChange}/>
+                        <input className='min' value={minPrice} onChange={handleInputMinChange}/>-<input data-testid='maxPrice' className='max' value={maxPrice} onChange={handleInputMaxChange}/>
                     </div>
                 </div>
                 <CatalogParametersProducer setProducersFilterList={setProducersFilterList}/>

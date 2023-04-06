@@ -1,4 +1,4 @@
-import {ReactElement} from "react";
+import {Fragment, ReactElement} from "react";
 import {Link} from "react-router-dom";
 
 interface BreadcrumbsProps {
@@ -17,16 +17,16 @@ const Breadcrumbs = ({items}: BreadcrumbsProps): ReactElement => {
             <div className='dashed-border'></div>
             {
                 items.map((item, i) => (
-                    <>
+                    <Fragment key={i}>
                         <li>
-                            <Link className={i + 1 === items.length ? 'last-link': 'link'} to={item.path}>{item.title}</Link>
+                            <Link className={i + 1 === items.length ? 'last-link' : 'link'}
+                                  to={item.path}>{item.title}</Link>
 
                         </li>
                         {
-                            items.length - 1 === i ? '' : <div className='dashed-border'></div>
+                            items.length - 1 === i ? '' : <div key={i} className='dashed-border'></div>
                         }
-                    </>
-
+                    </Fragment>
                 ))
             }
         </ul>

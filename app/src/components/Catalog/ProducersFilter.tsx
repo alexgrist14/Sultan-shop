@@ -1,7 +1,7 @@
 import {ChangeEvent, ReactElement, useEffect,useState} from "react";
-import productsData from "../data/products.json";
-import polygonIcon from "../assets/images/polygon.svg";
-import IProduct from "../types/IProduct";
+import productsData from "../../data/products.json";
+import polygonIcon from "../../assets/images/polygon.svg";
+import IProduct from "../../types/IProduct";
 
 type GroupedProduct = {
     producer: string;
@@ -86,7 +86,7 @@ const ProducersFilter = ({searchValue, updateProducersFilterList}: ProducerFilte
             {
                 producersToShow.map((producer: GroupedProduct, i: number) => (
                     <div key={i}>
-                        <input type="checkbox" checked={selectedProducers.includes(producer.producer)}
+                        <input data-testid={`prod-checkbox-${i}`} type="checkbox" checked={selectedProducers.includes(producer.producer)}
                                onChange={(e) => addSelectedProducer(e, producer.producer)}/>
                         <span className='producer'>{producer.producer}</span> <span
                         className='count'>({producer.count})</span>

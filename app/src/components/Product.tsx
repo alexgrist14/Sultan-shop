@@ -65,7 +65,7 @@ const Product = ({product}: IProducts): ReactElement => {
             </div>
             <div className='product-acquire'>
                 <div className='product-price'>{product.price} ₸</div>
-                <button className='product-cart__btn' onClick={handleToCart}>
+                <button data-testid='cart-btn' className='product-cart__btn' onClick={handleToCart}>
                     <div className='btn-text'>В корзину</div>
                     <div className='btn-img'><img src={cartIcon} alt="cart_icon"/></div>
                 </button>

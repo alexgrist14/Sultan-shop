@@ -10,12 +10,12 @@ const HeaderCart = ({handleClick}: HeaderCartProps): ReactElement => {
     const {productsInCart, totalCost} = useContext(ShoppingCartContext);
 
     return (
-        <div className='header-actions__cart' onClick={handleClick}>
+        <div className='header-actions__cart' data-testid='cart-link' onClick={handleClick}>
             <div className='cart-icon'>
                 <img src={cartIcon} alt="cart-icon"/>
                 {
                     productsInCart > 0 ?
-                        <div className='count-products'>
+                        <div data-testid='cart-products' className='count-products'>
                             {productsInCart}
                         </div> : ''
                 }
