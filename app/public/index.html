@@ -10,10 +10,6 @@
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="Sultan shop template"/>
     <title>Sultan shop</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
     <script type="text/javascript">
       // Single Page Apps for GitHub Pages
       // MIT License
@@ -25,17 +21,27 @@
       // When the single page app is loaded further down in this file,
       // the correct url will be waiting in the browser's history for
       // the single page app to route accordingly.
-      (function(l) {
-        if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) {
-            return s.replace(/~and~/g, '&')
-          }).join('?');
-          window.history.replaceState(null, null,
+      ;(function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search
+                  .slice(1)
+                  .split('&')
+                  .map(function (s) {
+                    return s.replace(/~and~/g, '&')
+                  })
+                  .join('?')
+          window.history.replaceState(
+                  null,
+                  null,
                   l.pathname.slice(0, -1) + decoded + l.hash
-          );
+          )
         }
-      }(window.location))
+      })(window.location)
     </script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
