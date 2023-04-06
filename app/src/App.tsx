@@ -9,6 +9,7 @@ import {ShoppingCartProvider} from "./context/ShoppingCartContext";
 import ShoppingCart from "./components/ShoppingCart/index";
 import AdminPanel from "./components/Admin/AdminPanel";
 import AddItemForm from "./components/Admin/AddItemForm";
+import ErrorPage from "./components/ErrorPage";
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
                         <Route path='/admin-panel' element={<AdminPanel/>}/>
                         <Route path='/add-item' element={<AddItemForm/>}/>
                         <Route path='/' element={<Catalog/>}/>
+                        <Route path='/*' element={<ErrorPage/>}/>
                     </Routes>
                 <Footer/>
             </ShoppingCartProvider>

@@ -1,10 +1,10 @@
 import {ReactElement, useContext, useEffect} from "react";
-import weightIcon from '../assets/images/weight_icon.svg';
-import volumeIcon from '../assets/images/volume_icon.svg';
-import cartIcon from '../assets/images/cart_white_icon.svg';
-import IProduct from "../types/IProduct";
+import weightIcon from '../../assets/images/weight_icon.svg';
+import volumeIcon from '../../assets/images/volume_icon.svg';
+import cartIcon from '../../assets/images/cart_white_icon.svg';
+import IProduct from "../../types/IProduct";
 import {useNavigate} from 'react-router-dom'
-import {getProductByBarCode, ShoppingCartContext} from "../context/ShoppingCartContext";
+import {getProductByBarCode, ShoppingCartContext} from "../../context/ShoppingCartContext";
 import {toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -53,7 +53,7 @@ const Product = ({product}: IProducts): ReactElement => {
                 <span className='weight'>{product.size}</span>
                 <span className='type'>{` ${product.weightType}`}</span>
             </div>
-            <div className='product-name' onClick={handleClick}>
+            <div data-testid='product-name' className='product-name' onClick={handleClick}>
                 <p><span className='name'>{product.name} </span>{product.description}</p>
             </div>
             <div className='product-details'>

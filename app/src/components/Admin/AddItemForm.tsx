@@ -3,7 +3,7 @@ import IProduct from "../../types/IProduct";
 import {filterTypes} from "../../types/globalTypes";
 import {toast, ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Breadcrumbs from "../Breadcrumbs";
+import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 
 const AddItemForm = (): ReactElement => {
     const [selectedCategory, setSelectedCategory] = useState<string[]>([]);

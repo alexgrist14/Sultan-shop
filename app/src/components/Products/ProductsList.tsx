@@ -1,10 +1,10 @@
 import React, {ReactElement, useEffect, useState} from "react";
-import productsData from "../data/products.json";
-import arrowIcon from '../assets/images/arrow_orange.svg';
+import productsData from "../../data/products.json";
+import arrowIcon from '../../assets/images/arrow_orange.svg';
 import Product from "./Product";
 import ReactPaginate from "react-paginate";
-import IProduct from "../types/IProduct";
-import {SortBy} from "../types/globalTypes";
+import IProduct from "../../types/IProduct";
+import {SortBy} from "../../types/globalTypes";
 import {ToastContainer} from "react-toastify";
 
 interface FilteredProducts {

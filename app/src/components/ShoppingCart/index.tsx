@@ -1,8 +1,8 @@
 import {ReactElement, useContext, useEffect, useState} from "react";
 import {ShoppingCartContext} from "../../context/ShoppingCartContext";
 import OrderMessage from "../OrderMessage";
-import Breadcrumbs from "../Breadcrumbs";
-import BreadCrumbMobile from "../BreadCrumbMobile";
+import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
+import BreadCrumbMobile from "../Breadcrumbs/BreadCrumbMobile";
 import ShoppingCartItem from "./Item";
 
 const ShoppingCart = (): ReactElement => {

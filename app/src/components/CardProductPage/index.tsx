@@ -4,8 +4,8 @@ import productsData from "../../data/products.json";
 import {CheckoutProduct, getProductByBarCode, ShoppingCartContext} from "../../context/ShoppingCartContext";
 import {ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Breadcrumbs from "../Breadcrumbs";
-import BreadCrumbMobile from "../BreadCrumbMobile";
+import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
+import BreadCrumbMobile from "../Breadcrumbs/BreadCrumbMobile";
 import ProductCardCharacteristics from "./Characteristics";
 import ProductCardPageInfo from "./Info";
 import ProductCardInfoPurchase from "./InfoPurchase";
@@ -55,7 +55,7 @@ const CardProductPage = (): ReactElement => {
     }, [productsToBuy, productsInCart]);
 
     return (
-        <div className='product-card__container'>
+        <div data-testid='card-page' className='product-card__container'>
             <div className='product-card__wrapper'>
                 {
                     isSmallScreen ?

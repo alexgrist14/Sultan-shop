@@ -4,7 +4,7 @@ import productsData from "../../data/products.json";
 import {Link} from "react-router-dom";
 import {toast, ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Breadcrumbs from "../Breadcrumbs";
+import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 import AdminPanelItem from "./Item";
 
 const AdminPanel = (): ReactElement => {

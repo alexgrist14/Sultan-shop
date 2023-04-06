@@ -1,5 +1,5 @@
 import {ReactElement} from "react";
-import arrowIcon from "../assets/images/arrow_mobile.svg";
+import arrowIcon from "../../assets/images/arrow_mobile.svg";
 import {Link} from "react-router-dom";
 
 const BreadCrumbMobile = (): ReactElement =>{

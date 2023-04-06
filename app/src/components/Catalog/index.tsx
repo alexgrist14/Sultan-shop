@@ -1,13 +1,13 @@
 import {ReactElement, useContext, useState} from "react";
-import ProductsList from "../ProductsList";
+import ProductsList from "../Products/ProductsList";
 import {SortBy} from "../../types/globalTypes";
 import {Link} from "react-router-dom";
 import {ShoppingCartContext} from "../../context/ShoppingCartContext";
 import CatalogTopFilters from "./TopFilters";
 import CatalogHeader from "./Header";
 import CatalogParameters from "./Parameters";
-import Breadcrumbs from "../Breadcrumbs";
-import BreadCrumbMobile from "../BreadCrumbMobile";
+import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
+import BreadCrumbMobile from "../Breadcrumbs/BreadCrumbMobile";
 
 const Catalog = (): ReactElement => {
     const [minPrice, setMinPrice] = useState('0');
