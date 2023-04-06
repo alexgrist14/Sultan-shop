@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7cc70d7-d9d8-4dd6-ae2e-fc9cfd6e389a" name="Changes" comment="feat: add app tests">
-      <change afterPath="$PROJECT_DIR$/app/404.html" afterDir="false" />
+    <list default="true" id="b7cc70d7-d9d8-4dd6-ae2e-fc9cfd6e389a" name="Changes" comment="fix: try to fix gh-pages problem">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/public/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/App.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/index.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/styles/catalog.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles/catalog.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,8 +61,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Work\Sultan-shop" />
       <recent name="D:\Work\Sultan-shop\app" />
+      <recent name="D:\Work\Sultan-shop" />
       <recent name="D:\Work\Sultan-shop\app\public" />
       <recent name="D:\Work\Sultan-shop\app\src\assets\images" />
     </key>
@@ -196,7 +194,7 @@
       <workItem from="1680683530460" duration="13234000" />
       <workItem from="1680699265809" duration="8940000" />
       <workItem from="1680766732292" duration="7768000" />
-      <workItem from="1680775506617" duration="784000" />
+      <workItem from="1680775506617" duration="1099000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add header and footer">
       <created>1679578692524</created>
@@ -359,7 +357,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680775529150</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="fix: try to fix gh-pages problem">
+      <created>1680776333577</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1680776333577</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -401,6 +406,7 @@
     <MESSAGE value="refactor: split catalog component" />
     <MESSAGE value="refactor: split components into smaller components, change styles for admin panel and AddItemForm" />
     <MESSAGE value="feat: add app tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add app tests" />
+    <MESSAGE value="fix: try to fix gh-pages problem" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: try to fix gh-pages problem" />
   </component>
 </project>
