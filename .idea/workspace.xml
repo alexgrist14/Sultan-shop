@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7cc70d7-d9d8-4dd6-ae2e-fc9cfd6e389a" name="Changes" comment="refactor: split components into smaller components, change styles for admin panel and AddItemForm">
+    <list default="true" id="b7cc70d7-d9d8-4dd6-ae2e-fc9cfd6e389a" name="Changes" comment="feat: add app tests">
+      <change afterPath="$PROJECT_DIR$/app/404.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/public/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/404.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/App.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Breadcrumbs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Breadcrumbs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Catalog/LeftFilters.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog/LeftFilters.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Catalog/Parameters.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog/Parameters.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Catalog/ParametersProducer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog/ParametersProducer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Catalog/SortProducts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog/SortProducts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Header/Cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Header/Cart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/ProducersFilter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog/ProducersFilter.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Product.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/ShoppingCart/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/ShoppingCart/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/index.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/styles/adminPanel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles/adminPanel.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,29 +38,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Work/Sultan-shop&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs.jest.jest_package&quot;: &quot;D:/Work/Sultan-shop/app/node_modules/react-scripts&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\Work\\Sultan-shop\\app\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "dart.analysis.tool.window.visible": "false",
+    "last_opened_file_path": "D:/Work/Sultan-shop/app",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "D:/Work/Sultan-shop/app/node_modules/react-scripts",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
+    "ts.external.directory.path": "D:\\Work\\Sultan-shop\\app\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Work\Sultan-shop" />
@@ -205,6 +196,7 @@
       <workItem from="1680683530460" duration="13234000" />
       <workItem from="1680699265809" duration="8940000" />
       <workItem from="1680766732292" duration="7768000" />
+      <workItem from="1680775506617" duration="784000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add header and footer">
       <created>1679578692524</created>
@@ -360,7 +352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680708790993</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="feat: add app tests">
+      <created>1680775529150</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1680775529150</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -401,6 +400,7 @@
     <MESSAGE value="refactor: remove unused file" />
     <MESSAGE value="refactor: split catalog component" />
     <MESSAGE value="refactor: split components into smaller components, change styles for admin panel and AddItemForm" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: split components into smaller components, change styles for admin panel and AddItemForm" />
+    <MESSAGE value="feat: add app tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add app tests" />
   </component>
 </project>
