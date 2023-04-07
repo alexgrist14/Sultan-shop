@@ -123,6 +123,7 @@ describe('Test app',()=>{
                 </Routes>
             </MemoryRouter>
         );
+
             const productsNames = await screen.findAllByTestId('product-name');
             expect(productsNames.length).toBe(15);
             userEvent.click(productsNames[0]);

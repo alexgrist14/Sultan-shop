@@ -15,11 +15,10 @@ const CardProductPage = (): ReactElement => {
     const {productsInCart, productsToBuy, setProductsToBuy, isSmallScreen,} = useContext(ShoppingCartContext);
     const [isDescrOpen, setIsDescrOpen] = useState(true);
     const [isCharacteristicsOpen, setIsCharacteristicsOpen] = useState(true);
-    const [productCard,setProductCard] = useState<CheckoutProduct>();
+    const [productCard, setProductCard] = useState<CheckoutProduct>();
     const {barcode} = useParams();
 
-
-    useEffect(()=>{
+    useEffect(() => {
         if (!localStorage.getItem('products')) {
             setProductCard(getProductByBarCode(productsData.products, barcode) as CheckoutProduct);
         } else {
@@ -28,7 +27,7 @@ const CardProductPage = (): ReactElement => {
                 setProductCard(getProductByBarCode(JSON.parse(storedProducts) as CheckoutProduct[], barcode) as CheckoutProduct);
             }
         }
-    },[])
+    }, [])
 
     useEffect(() => {
         const storedData = localStorage.getItem('productsToBuy')
@@ -61,7 +60,10 @@ const CardProductPage = (): ReactElement => {
                     isSmallScreen ?
                         <BreadCrumbMobile/>
                         :
-                        <Breadcrumbs items={[{path:'/',title:"Каталог"},{path:'',title:`${productCard?.name} ${productCard?.description}`}]}/>
+                        <Breadcrumbs items={[{path: '/', title: "Каталог"}, {
+                            path: '',
+                            title: `${productCard?.name} ${productCard?.description}`
+                        }]}/>
                 }
                 <div className='product-card__content'>
                     <div className='product-card__img'>
@@ -69,15 +71,19 @@ const CardProductPage = (): ReactElement => {
                     </div>
                     <div className='product-card__info'>
                         <h4 className='product-card__info-stock'>В наличии</h4>
-                        <h2 className='product-card__info-name'><span>{productCard?.name}</span> {productCard?.description}</h2>
+                        <h2 className='product-card__info-name'>
+                            <span>{productCard?.name}</span> {productCard?.description}</h2>
                         {
                             !isSmallScreen && <ProductCardWeight productCard={productCard}/>
                         }
                         <ProductCardInfoPurchase productCard={productCard}/>
                         <div className='product-card__info-features'>
-                            <ProductCardPageInfo productCard={productCard} setIsDescrOpen={setIsDescrOpen} isDescrOpen={isDescrOpen}/>
+                            <ProductCardPageInfo productCard={productCard} setIsDescrOpen={setIsDescrOpen}
+                                                 isDescrOpen={isDescrOpen}/>
                             <div className='dashed-border'></div>
-                            <ProductCardCharacteristics isCharacteristicsOpen={isCharacteristicsOpen} setIsCharacteristicsOpen={setIsCharacteristicsOpen} productCard={productCard}/>
+                            <ProductCardCharacteristics isCharacteristicsOpen={isCharacteristicsOpen}
+                                                        setIsCharacteristicsOpen={setIsCharacteristicsOpen}
+                                                        productCard={productCard}/>
                         </div>
                     </div>
                 </div>

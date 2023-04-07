@@ -586,7 +586,7 @@
     gap: 8px;
   }
   .shopping-cart__products-item .product-count__decrement {
-    margin: 0;
+    margin-left: 10px;
   }
   .shopping-cart__products-item .product-count__increment {
     margin-right: 10px;
@@ -1076,6 +1076,10 @@
   }
 }
 @media only screen and (max-width: 600px) {
+  .catalog-filter_types {
+    padding: 10px;
+    margin-top: 5px;
+  }
   .catalog-filter {
     flex-direction: column;
     align-items: center;
@@ -1468,46 +1472,6 @@
   gap: 10px;
   margin-top: 18px;
 }
-.product-card__info-additional__btn .links {
-  text-align: center;
-  line-height: 77px;
-  width: 77px;
-  height: 77px;
-  background: #FFFFFF;
-  box-shadow: 0 15px 70px -11px rgba(43, 28, 1, 0.04);
-  border-radius: 10px;
-}
-.product-card__info-additional__btn .ad {
-  display: flex;
-  width: 316px;
-  height: 77px;
-  justify-content: center;
-  align-items: center;
-  background: #FFFFFF;
-  box-shadow: 0 15px 70px -11px rgba(43, 28, 1, 0.04);
-  border-radius: 10px;
-  text-align: center;
-  font-size: 12px;
-  line-height: 18px;
-  color: #3F4E65;
-}
-.product-card__info-additional__btn .ad span {
-  font-weight: 700;
-}
-.product-card__info-additional__btn .price-list {
-  display: flex;
-  width: 186px;
-  height: 77px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  font-weight: 700;
-  font-size: 14px;
-  color: #3F4E65;
-  background: #FFFFFF;
-  box-shadow: 0 15px 70px -11px rgba(43, 28, 1, 0.04);
-  border-radius: 10px;
-}
 .product-card__info-features {
   margin-top: 37px;
 }
@@ -1643,8 +1607,6 @@
     justify-content: center;
     width: 100%;
   }
-}
-@media only screen and (max-width: 320px) {
   .product-card__info-stock {
     margin-top: 0;
     margin-left: 16px;
@@ -1652,6 +1614,23 @@
   .product-card__info-name {
     margin-left: 16px;
   }
+  .product-card__info-features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .product-card__info-features .part-info {
+    text-align: left;
+  }
+  .product-card__info-features .description {
+    margin-right: 25px;
+    text-align: center;
+  }
+  .product-card__info-features .characteristics {
+    text-align: left;
+  }
+}
+@media only screen and (max-width: 320px) {
   .product-card__info-purchase {
     justify-content: unset;
     gap: 20px;
@@ -2129,6 +2108,20 @@
   flex-direction: column;
 }
 
+@media only screen and (max-width: 600px) {
+  .admin-panel__container .breadcrumbs {
+    margin-left: 0;
+  }
+  .add-item__container .breadcrumbs {
+    margin-left: 0;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .admin-panel__item-fields {
+    justify-content: center;
+    align-items: center;
+  }
+}
 body {
   margin: 0;
   padding: 0;

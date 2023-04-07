@@ -17,7 +17,7 @@ function App() {
             <ShoppingCartProvider>
                     <Header/>
                     <Routes>
-                        <Route path='/product-card/:barcode' element={<CardProductPage/>}/>
+                        <Route path='/product-card/:barcode' element={<CardProductPage data-testid='card-page'/>}/>
                         <Route path='/shopping-cart' element={<ShoppingCart/>}/>
                         <Route path='/admin-panel' element={<AdminPanel/>}/>
                         <Route path='/add-item' element={<AddItemForm/>}/>

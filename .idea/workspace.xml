@@ -2,22 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7cc70d7-d9d8-4dd6-ae2e-fc9cfd6e389a" name="Changes" comment="feat: add more tests for app, moved components to folders">
-      <change afterPath="$PROJECT_DIR$/app/src/components/ErrorPage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/App.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Admin/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Admin/AddItemForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Admin/AdminPanel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Admin/AdminPanel.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/BreadCrumbMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Breadcrumbs/BreadCrumbMobile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Breadcrumbs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Breadcrumbs/Breadcrumbs.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/components/CardProductPage/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/CardProductPage/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Catalog/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Products/Product.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/ProductsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Products/ProductsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/ShoppingCart/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/ShoppingCart/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Header/Logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Header/Logo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Products/ProductsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Products/ProductsList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/index.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/styles/adminPanel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles/adminPanel.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/styles/catalog.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles/catalog.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/styles/productCard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles/productCard.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/styles/shoppingCart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles/shoppingCart.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +51,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
-    "last_opened_file_path": "D:/Work/Sultan-shop/app",
+    "last_opened_file_path": "D:/Work/Sultan-shop",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
@@ -207,7 +201,8 @@
       <workItem from="1680683530460" duration="13234000" />
       <workItem from="1680699265809" duration="8940000" />
       <workItem from="1680766732292" duration="7768000" />
-      <workItem from="1680775506617" duration="3577000" />
+      <workItem from="1680775506617" duration="3799000" />
+      <workItem from="1680864277817" duration="3404000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add header and footer">
       <created>1679578692524</created>
@@ -391,7 +386,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680776984264</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="feat: add more tests for app, moved components to folders">
+      <created>1680779264788</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1680779264788</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
