@@ -1,10 +1,11 @@
-import {ChangeEvent, Dispatch, ReactElement, SetStateAction, useContext, useState} from "react";
+import {Dispatch, ReactElement, SetStateAction, useContext, useState} from "react";
 import arrowIcon from "../../assets/images/arrow_mobile.svg";
 import CatalogLeftFilters from "./LeftFilters";
 import CatalogSortProducts from "./SortProducts";
 import {ShoppingCartContext} from "../../context/ShoppingCartContext";
 import {SortBy} from "../../types/globalTypes";
 import CatalogParametersProducer from "./ParametersProducer";
+import CatalogParametersPrice from "./ParametersPrice";
 
 interface CatalogParametersProps {
     setProducersFilterList: Dispatch<SetStateAction<string[]>>,
@@ -29,26 +30,7 @@ const CatalogParameters = ({
                                sortBy, setSortBy
                            }: CatalogParametersProps): ReactElement => {
     const [showFilters, setShowFilters] = useState(false);
-
     const {isSmallScreen} = useContext(ShoppingCartContext);
-
-    const handleInputMinChange = (event: ChangeEvent<HTMLInputElement>): void => {
-        setMinPrice(parser(event.target.value));
-    }
-
-    const handleInputMaxChange = (event: ChangeEvent<HTMLInputElement>): void => {
-        setMaxPrice(parser(event.target.value));
-    }
-
-    const parser = (inputValue: string): string => {
-        const outputString: string = inputValue.replace(/\D/g, '');
-        if (outputString === '') {
-            return '0';
-        } else if (outputString === '' || (outputString.charAt(0) !== '0' && parseInt(outputString) > 0)) {
-            return outputString;
-        }
-        return '';
-    }
 
     return (
         <div className='catalog-filter__parameters'>
@@ -59,12 +41,7 @@ const CatalogParameters = ({
                                                                                          alt=""/></div>}
             </div>
             <div className={`catalog-filter__parameters-container ${showFilters && 'show'}`}>
-                <div className='catalog-filter__price'>
-                    <h4>Цена<span>₸</span></h4>
-                    <div className='catalog-filter__price-range'>
-                        <input className='min' value={minPrice} onChange={handleInputMinChange}/>-<input data-testid='maxPrice' className='max' value={maxPrice} onChange={handleInputMaxChange}/>
-                    </div>
-                </div>
+                <CatalogParametersPrice maxPrice={maxPrice} minPrice={minPrice} setMinPrice={setMinPrice} setMaxPrice={setMaxPrice}/>
                 <CatalogParametersProducer setProducersFilterList={setProducersFilterList}/>
             </div>
             <CatalogLeftFilters handleSelectCategory={handleSelectCategory} selectedCategory={selectedCategory}/>

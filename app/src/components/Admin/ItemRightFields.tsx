@@ -15,7 +15,7 @@ const ItemRightFields = ({item,handleInputChange,index,products,setProducts}:Ite
         const updatedProducts: IProduct[] = [...products];
         const reg = /^-?\d*(\.\d*)?$/;
         if ((!isNaN(Number(value)) && reg.test(value)) || value === '' || value === '-') {
-            updatedProducts[index][field] = value as any;
+            updatedProducts[index][field] = value as string & string[];
             setProducts(updatedProducts);
             localStorage.setItem('products', JSON.stringify(updatedProducts));
         }

@@ -1,4 +1,4 @@
-import {ReactElement, useContext, useState} from "react";
+import {ReactElement, useCallback, useContext, useMemo, useState} from "react";
 import ProductsList from "../Products/ProductsList";
 import {SortBy} from "../../types/globalTypes";
 import {Link} from "react-router-dom";
@@ -17,12 +17,15 @@ const Catalog = (): ReactElement => {
     const [selectedCategory, setSelectedCategory] = useState<string[]>([]);
     const {isSmallScreen} = useContext(ShoppingCartContext);
 
-    const handleSelectCategory = (item: string): void => {
+    const handleSelectCategory = useCallback((item: string): void => {
         if (selectedCategory.includes(item))
             setSelectedCategory(prevState => prevState.filter(category => category !== item));
         else
             setSelectedCategory([...selectedCategory, item])
-    }
+    }, [selectedCategory]);
+
+
+    const memoizedSelectedCategory = useMemo(() => selectedCategory, [selectedCategory]);
 
     return (
         <section className='catalog'>
@@ -31,10 +34,11 @@ const Catalog = (): ReactElement => {
                     isSmallScreen ?
                         <BreadCrumbMobile/>
                         :
-                        <Breadcrumbs items={[{path:'/',title:"Каталог"}]}/>
+                        <Breadcrumbs items={[{path: '/', title: "Каталог"}]}/>
                 }
                 <CatalogHeader isSmallScreen={isSmallScreen} sortBy={sortBy} setSortBy={setSortBy}/>
-                <CatalogTopFilters handleSelectCategory={handleSelectCategory} selectedCategory={selectedCategory}/>
+                <CatalogTopFilters handleSelectCategory={handleSelectCategory}
+                                   selectedCategory={memoizedSelectedCategory}/>
                 <div className='catalog-content__container'>
                     <div className='catalog-filter'>
                         <CatalogParameters setProducersFilterList={setProducersFilterList}

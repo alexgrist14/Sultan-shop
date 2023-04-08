@@ -3,15 +3,13 @@ import {ShoppingCartContext} from "../../context/ShoppingCartContext";
 import OrderMessage from "../OrderMessage";
 import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 import BreadCrumbMobile from "../Breadcrumbs/BreadCrumbMobile";
-import ShoppingCartItem from "./Item";
+import ShoppingCartItemsList from "./ItemsList";
 
 const ShoppingCart = (): ReactElement => {
     const {
         productsInCart,
-        setProductsInCart,
         productsToBuy,
         setProductsToBuy,
-        totalCost,
         isSmallScreen
     } = useContext(ShoppingCartContext);
 
@@ -31,13 +29,7 @@ const ShoppingCart = (): ReactElement => {
         }
     }, [productsInCart, productsToBuy])
 
-    const handleOpenOrderMessage = (): void => {
-        setProductsInCart(0);
-        setProductsToBuy([]);
-        localStorage.setItem('productsToBuy', '[]');
-        localStorage.setItem('cartCount', '0');
-        setShowOrderMessage(true)
-    }
+
 
     const handleCloseMessage = (): void => {
         setShowOrderMessage(false)
@@ -55,26 +47,7 @@ const ShoppingCart = (): ReactElement => {
                             <Breadcrumbs items={[{path:"",title:"Корзина"}]}/>
                     }
                     <h2 className='shopping-cart__title'>Корзина</h2>
-                    <div className='shopping-cart__products'>
-                        {
-                            productsToBuy.length > 0 ? productsToBuy.map((item, index) => {
-                                    return (<ShoppingCartItem key={index} item={item}/>)
-                                }) : (
-                                    <>
-                                        Корзина пуста. Перейдите в каталог чтобы выбрать товары.
-                                    </>
-                                )
-                        }
-                        {
-                            productsToBuy.length > 0 ?
-                                <div className='ordering'>
-                                    <div className='ordering-btn' onClick={handleOpenOrderMessage}>Оформить заказ</div>
-                                    <div className='ordering-total-cost'>{totalCost} ₸</div>
-                                </div>
-                                : ''
-                        }
-
-                    </div>
+                    <ShoppingCartItemsList setShowOrderMessage={setShowOrderMessage}/>
                 </div>
             </div>
 

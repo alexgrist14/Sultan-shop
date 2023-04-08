@@ -17,13 +17,12 @@
 
   &-products__container {
     .pages {
-      position: relative;
       display: flex;
       margin-top: 69px;
-      left: 38.5%;
       align-items: center;
       font-weight: 500;
       font-size: 14px;
+      justify-content: center;
       color: $secondary-text-color;
       gap: 20px;
 
@@ -447,9 +446,6 @@
         fill: black !important;
       }
     }
-  }
-  .pages {
-    left: 20% !important;
   }
   .catalog-products__text {
     margin-left: 5px;

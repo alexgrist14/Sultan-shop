@@ -22,14 +22,14 @@ const AdminPanelItem = ({item,products,setProducts,index}:AdminPanelItemProps): 
 
     const handleInputChange = (index: number, field: keyof IProduct, value: string) => {
         const updatedProducts: IProduct[] = [...products];
-        updatedProducts[index][field] = value as any;
+        updatedProducts[index][field] = value as string & string[];
         setProducts(updatedProducts);
         localStorage.setItem('products', JSON.stringify(updatedProducts));
     }
 
     const handleCategoryChange = (index: number, field: keyof IProduct, event: ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value
-        const updatedProducts: any = [...products];
+        const updatedProducts:any = [...products];
         if (updatedProducts[index][field].includes(value) && updatedProducts[index][field].length === 1)
             return;
         else if (updatedProducts[index][field].includes(value)) {

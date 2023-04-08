@@ -327,14 +327,24 @@
     text-align: center;
     padding: 0;
   }
+  .product-card__info-weight{
+    margin-left: 16px;
+  }
+  .product-card__info-purchase{
+    margin-left: 16px;
+  }
   .product-card__info-name {
     line-height: 24px;
     text-align: left;
     font-size: 16px;
     width: 250px;
+    margin-left: 16px;
+
   }
   .product-card__info-stock {
     text-align: left;
+    margin-top: 0;
+    margin-left: 16px;
   }
 }
 
@@ -359,10 +369,12 @@
       text-align: left;
     }
     .description{
-      margin-right: 25px;
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       p{
-
+        text-align: left;
+        width: 90%;
       }
     }
     .characteristics{

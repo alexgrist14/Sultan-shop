@@ -8,7 +8,7 @@ import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 const AddItemForm = (): ReactElement => {
     const [selectedCategory, setSelectedCategory] = useState<string[]>([]);
     const [selectedWeight, setSelectedWeight] = useState('г');
-    const [products, setProducts] = useState<IProduct[]>(JSON.parse(localStorage.getItem('products') || '[]'));
+    const [products] = useState<IProduct[]>(JSON.parse(localStorage.getItem('products') || '[]'));
     const [priceValue, setPriceValue] = useState('');
     const [product, setProduct] = useState<IProduct>({
         url: '',

@@ -14,7 +14,9 @@ const CatalogTopFilters = ({handleSelectCategory, selectedCategory}: CatalogTopF
                     return (
                         <div
                             className={`catalog-goods__types-item ${selectedCategory.includes(item) ? 'selected-category' : ''}`}
-                            onClick={() => handleSelectCategory(item)} key={item}>
+                            onClick={() => {
+                                handleSelectCategory(item)
+                            }} key={item}>
                             <div>
                                 {item}
                             </div>

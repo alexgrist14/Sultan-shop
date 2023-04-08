@@ -1,4 +1,4 @@
-import React, {ReactElement, useEffect, useRef, useState} from "react";
+import {ReactElement, useEffect, useRef, useState} from "react";
 import productsData from "../../data/products.json";
 import arrowIcon from '../../assets/images/arrow_orange.svg';
 import Product from "./Product";
@@ -13,7 +13,7 @@ interface FilteredProducts {
     productsPerPage: number,
     producers: string[],
     selectedCategory: string[],
-    sortBy: SortBy
+    sortBy: SortBy,
 }
 
 const ProductsList = ({
@@ -22,7 +22,7 @@ const ProductsList = ({
                           minPrice,
                           producers,
                           selectedCategory,
-                          sortBy
+                          sortBy,
                       }: FilteredProducts): ReactElement => {
     const [products, setProducts] = useState<IProduct[]>([]);
     const [localStorageProducts, setLocalStorageProducts] = useState<IProduct[]>([]);
@@ -51,6 +51,12 @@ const ProductsList = ({
             setProducts(filteredProducts);
         }
     }, [minPrice, maxPrice, producers, sortBy, selectedCategory]);
+
+    useEffect(() => {
+        const endOffset = itemOffset + productsPerPage;
+        setCurrentItems(products.slice(itemOffset, endOffset));
+        setPageCount(Math.ceil(products.length / productsPerPage));
+    }, [itemOffset, productsPerPage, products])
 
     const getLocalstorageFilteredProducts = (): IProduct[] => {
         return localStorageProducts.filter((item) => {
@@ -86,12 +92,6 @@ const ProductsList = ({
             refVariable.scrollIntoView({behavior: "smooth"});
         }
     }
-
-    useEffect(() => {
-        const endOffset = itemOffset + productsPerPage;
-        setCurrentItems(products.slice(itemOffset, endOffset));
-        setPageCount(Math.ceil(products.length / productsPerPage));
-    }, [itemOffset, productsPerPage, products])
 
     const handlePageClick = (event: { selected: number }) => {
         const newOffset = (event.selected * productsPerPage) % products.length;
