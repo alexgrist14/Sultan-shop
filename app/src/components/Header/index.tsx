@@ -7,6 +7,7 @@ import HeaderCart from "./Cart";
 import HeaderLogo from "./Logo";
 import HeaderActions from "./Actions";
 import HeaderCallback from "./Callback";
+import {getLocalStorageItem} from "../../componentsUtils/localStorageUtils";
 
 const Header = (): ReactElement => {
     const {
@@ -41,10 +42,7 @@ const Header = (): ReactElement => {
     const handleShoppingCart = (): void => {
         const count = localStorage.getItem('cartCount');
         if (count) {
-            const storedData = localStorage.getItem('productsToBuy')
-            if (storedData) {
-                setProductsToBuy(JSON.parse(storedData))
-            }
+            setProductsToBuy(getLocalStorageItem('productsToBuy'))
             setTotalCost(productsToBuy.reduce((total, product) => {
                 const price = parseFloat(product.price);
                 const amount = product.amount;
@@ -66,7 +64,7 @@ const Header = (): ReactElement => {
     }, [productsInCart, productsToBuy])
 
 
-    const handleClick = (): void => {
+    const handleRedirectToCart = (): void => {
         navigate('/shopping-cart');
     }
 
@@ -75,7 +73,7 @@ const Header = (): ReactElement => {
             <HeaderMenu/>
             <div className='header-actions'>
                 <div className='header-actions__container'>
-                    <HeaderLogo handleClick={handleClick}/>
+                    <HeaderLogo handleClick={handleRedirectToCart}/>
                     <HeaderActions/>
                     <div className='second-actions__container'>
                         <HeaderCallback/>
@@ -86,7 +84,7 @@ const Header = (): ReactElement => {
                         </div>
                         <div className='dashed-border'></div>
                         {
-                            !isSmallScreen && <HeaderCart handleClick={handleClick}/>
+                            !isSmallScreen && <HeaderCart handleClick={handleRedirectToCart}/>
                         }
                     </div>
                 </div>

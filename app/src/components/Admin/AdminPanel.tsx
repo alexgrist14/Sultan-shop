@@ -27,12 +27,13 @@ const AdminPanel = (): ReactElement => {
 
     return (
         <div className='admin-panel__container'>
-            <Breadcrumbs items={[{path:'',title:'Админ панель'}]}/>
+            <Breadcrumbs items={[{path: '', title: 'Админ панель'}]}/>
             <Link className='add-item' to="/add-item">Добавить товар</Link>
             <div className='admin-panel__items-container'>
                 {
-                    products.length && products.map((item,index)=>{
-                        return <AdminPanelItem key={index} item={item} products={products} setProducts={setProducts} index={index}/>
+                    products.length && products.map((item, index) => {
+                        return <AdminPanelItem key={index} item={item} products={products} setProducts={setProducts}
+                                               index={index}/>
                     })
                 }
             </div>

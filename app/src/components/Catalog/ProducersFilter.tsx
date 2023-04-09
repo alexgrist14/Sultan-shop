@@ -1,68 +1,34 @@
-import {ChangeEvent, ReactElement, useEffect,useState} from "react";
+import {ChangeEvent, ReactElement, useEffect, useState} from "react";
 import productsData from "../../data/products.json";
 import polygonIcon from "../../assets/images/polygon.svg";
-import IProduct from "../../types/IProduct";
+import {groupByProducer, GroupedProduct} from "../../componentsUtils/producersUtils";
+import {getLocalStorageItem} from "../../componentsUtils/localStorageUtils";
 
-type GroupedProduct = {
-    producer: string;
-    count: number;
-}
-
-type ProducerFilterProps = {
+interface ProducerFilterProps {
     searchValue: string,
     updateProducersFilterList: (producers: string[]) => void
-}
-
-function getProductsFromLocalStorage():IProduct[]{
-    let products;
-    if (!localStorage.getItem('products')) {
-       products = productsData.products;
-    } else {
-        const storedProducts = localStorage.getItem('products') || '[]';
-        products = JSON.parse(storedProducts) as IProduct[];
-    }
-
-    return products;
 }
 
 const ProducersFilter = ({searchValue, updateProducersFilterList}: ProducerFilterProps): ReactElement => {
     const [showAll, setShowAll] = useState(false);
     const [selectedProducers, setSelectedProducers] = useState<string[]>([]);
     const [groupedData, setGroupedData] = useState<GroupedProduct[]>([]);
-    const products = getProductsFromLocalStorage();
-
-    const groupByProducer = (): GroupedProduct[] => {
-        const groupedData: { [key: string]: number } = {};
-        products.forEach((p) => {
-            const producer = p.producer;
-            if (producer in groupedData) {
-                groupedData[producer]++;
-            } else {
-                groupedData[producer] = 1;
-            }
-        });
-        const groupedArray = Object.entries(groupedData).map(
-            ([producer, count]) => ({
-                producer,
-                count,
-            })
-        );
-        return groupedArray;
-    };
+    const products = getLocalStorageItem('products') || productsData.products;
+    const producersToShow = showAll ? groupedData : groupedData.slice(0, 4);
 
     useEffect(() => {
-        const groupData = groupByProducer();
+        const groupData = groupByProducer(products);
         if (searchValue !== '') {
             setGroupedData(groupData.filter((data) => data.producer.toLowerCase().includes(searchValue.toLowerCase())))
         } else {
             setGroupedData(groupData);
         }
 
-    }, [searchValue])
+    }, [searchValue]);
 
     useEffect(() => {
         updateProducersFilterList(selectedProducers);
-    }, [selectedProducers, updateProducersFilterList])
+    }, [selectedProducers, updateProducersFilterList]);
 
     const toggleShowAll = (): void => {
         setShowAll(true);
@@ -79,14 +45,14 @@ const ProducersFilter = ({searchValue, updateProducersFilterList}: ProducerFilte
             setSelectedProducers(prevState => prevState.filter(prod => prod !== producer));
         }
     }
-    const producersToShow = showAll ? groupedData : groupedData.slice(0, 4);
 
     return (
         <>
             {
                 producersToShow.map((producer: GroupedProduct, i: number) => (
                     <div key={i}>
-                        <input data-testid={`prod-checkbox-${i}`} type="checkbox" checked={selectedProducers.includes(producer.producer)}
+                        <input data-testid={`prod-checkbox-${i}`} type="checkbox"
+                               checked={selectedProducers.includes(producer.producer)}
                                onChange={(e) => addSelectedProducer(e, producer.producer)}/>
                         <span className='producer'>{producer.producer}</span> <span
                         className='count'>({producer.count})</span>

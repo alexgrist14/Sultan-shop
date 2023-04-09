@@ -29,8 +29,6 @@ const ShoppingCart = (): ReactElement => {
         }
     }, [productsInCart, productsToBuy])
 
-
-
     const handleCloseMessage = (): void => {
         setShowOrderMessage(false)
     }
@@ -43,8 +41,8 @@ const ShoppingCart = (): ReactElement => {
                     {
                         isSmallScreen ?
                             <BreadCrumbMobile/>
-                             :
-                            <Breadcrumbs items={[{path:"",title:"Корзина"}]}/>
+                            :
+                            <Breadcrumbs items={[{path: "", title: "Корзина"}]}/>
                     }
                     <h2 className='shopping-cart__title'>Корзина</h2>
                     <ShoppingCartItemsList setShowOrderMessage={setShowOrderMessage}/>

@@ -1,6 +1,7 @@
 import {Dispatch, ReactElement, SetStateAction, useContext} from "react";
 import ShoppingCartItem from "./Item";
 import {ShoppingCartContext} from "../../context/ShoppingCartContext";
+import {setLocalStorageItem} from "../../componentsUtils/localStorageUtils";
 
 interface ShoppingCartItemsListProps {
     setShowOrderMessage: Dispatch<SetStateAction<boolean>>
@@ -17,8 +18,8 @@ const ShoppingCartItemsList = ({setShowOrderMessage}:ShoppingCartItemsListProps)
     const handleOpenOrderMessage = (): void => {
         setProductsInCart(0);
         setProductsToBuy([]);
-        localStorage.setItem('productsToBuy', '[]');
-        localStorage.setItem('cartCount', '0');
+        setLocalStorageItem('productsToBuy', []);
+        setLocalStorageItem('cartCount', 0);
         setShowOrderMessage(true)
     }
 

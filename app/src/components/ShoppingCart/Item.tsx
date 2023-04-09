@@ -3,12 +3,13 @@ import weightIcon from "../../assets/images/weight_icon.svg";
 import volumeIcon from "../../assets/images/volume_icon.svg";
 import deleteIcon from "../../assets/images/delete_icon.svg";
 import {CheckoutProduct, ShoppingCartContext} from "../../context/ShoppingCartContext";
+import {setLocalStorageItem} from "../../componentsUtils/localStorageUtils";
 
-interface ShoppingCartItemProps{
-    item:CheckoutProduct,
+interface ShoppingCartItemProps {
+    item: CheckoutProduct,
 }
 
-const ShoppingCartItem = ({item}:ShoppingCartItemProps): ReactElement =>{
+const ShoppingCartItem = ({item}: ShoppingCartItemProps): ReactElement => {
     const {setProductsInCart, productsToBuy, setProductsToBuy} = useContext(ShoppingCartContext);
 
     const handleDecrement = (product: CheckoutProduct): void => {
@@ -33,11 +34,11 @@ const ShoppingCartItem = ({item}:ShoppingCartItemProps): ReactElement =>{
 
     const handleDeleteProduct = (product: CheckoutProduct): void => {
         setProductsToBuy(prevState => {
-            localStorage.setItem('productsToBuy', JSON.stringify(prevState.filter(item => item !== product)));
+            setLocalStorageItem('productsToBuy',prevState.filter(item => item !== product));
             return prevState.filter(item => item !== product);
         })
         setProductsInCart(prevState => {
-            localStorage.setItem('cartCount', (prevState - product.amount).toString());
+            setLocalStorageItem('cartCount',prevState - product.amount);
             return prevState - product.amount;
         });
     }

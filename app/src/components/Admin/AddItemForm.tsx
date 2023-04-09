@@ -24,6 +24,7 @@ const AddItemForm = (): ReactElement => {
     });
     const formRef = useRef<HTMLFormElement | null>(null);
     const notifyDefault = () => toast("Товар успешно добавлен.", {hideProgressBar: true});
+
     const parser = (event: ChangeEvent<HTMLInputElement>) => {
         const {value} = event.target;
         const reg = /^-?\d*(\.\d*)?$/;

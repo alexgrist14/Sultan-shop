@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7cc70d7-d9d8-4dd6-ae2e-fc9cfd6e389a" name="Changes" comment="feat: change display problems on mobile devises">
-      <change afterPath="$PROJECT_DIR$/app/src/components/Catalog/ParametersPrice.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/components/ShoppingCart/ItemsList.tsx" afterDir="false" />
+    <list default="true" id="b7cc70d7-d9d8-4dd6-ae2e-fc9cfd6e389a" name="Changes" comment="refactor: change some styles, split components into smaller components">
+      <change afterPath="$PROJECT_DIR$/app/src/componentsUtils/localStorageUtils.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/componentsUtils/producersUtils.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/componentsUtils/productsUtils.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/components/Admin/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Admin/AddItemForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/components/Admin/Item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Admin/Item.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/components/Admin/ItemRightFields.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Admin/ItemRightFields.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Catalog/Parameters.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog/Parameters.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Catalog/TopFilters.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog/TopFilters.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Catalog/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/CardProductPage/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/CardProductPage/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Catalog/ParametersPrice.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog/ParametersPrice.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Catalog/ProducersFilter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog/ProducersFilter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Header/Actions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Header/Actions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Header/Logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Header/Logo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Header/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Products/Product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Products/Product.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/components/Products/ProductsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Products/ProductsList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/ShoppingCart/Item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/ShoppingCart/Item.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/ShoppingCart/ItemsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/ShoppingCart/ItemsList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/components/ShoppingCart/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/ShoppingCart/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/index.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/styles/adminPanel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles/adminPanel.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/styles/catalog.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles/catalog.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/styles/productCard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles/productCard.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,10 +30,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Sass File" />
-        <option value="TypeScript File" />
         <option value="SCSS File" />
         <option value="HTML File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -80,11 +82,11 @@
       <recent name="D:\Work\Sultan-shop\app\src\assets\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Work\Sultan-shop\app\src\componentsUtils" />
       <recent name="D:\Work\Sultan-shop\app" />
       <recent name="D:\Work\Sultan-shop\app\src\components\Products" />
       <recent name="D:\Work\Sultan-shop\app\src\components\Breadcrumbs" />
       <recent name="D:\Work\Sultan-shop\app\src\components\Catalog" />
-      <recent name="D:\Work\Sultan-shop\app\src\components\CardProductPage" />
     </key>
   </component>
   <component name="RunManager" selected="Jest.App.test.tsx">
@@ -205,7 +207,9 @@
       <workItem from="1680766732292" duration="7768000" />
       <workItem from="1680775506617" duration="3799000" />
       <workItem from="1680864277817" duration="3917000" />
-      <workItem from="1680942776065" duration="5233000" />
+      <workItem from="1680942776065" duration="5513000" />
+      <workItem from="1680963316515" duration="51000" />
+      <workItem from="1681032443563" duration="6954000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add header and footer">
       <created>1679578692524</created>
@@ -403,7 +407,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680872026162</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="refactor: change some styles, split components into smaller components">
+      <created>1680948302369</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1680948302369</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -422,7 +433,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="feat: add filter producer, add selection by category" />
     <MESSAGE value="feat: add product card" />
     <MESSAGE value="feat: add shopping cart" />
     <MESSAGE value="feat: local storage management" />
@@ -447,6 +457,7 @@
     <MESSAGE value="refactor: remove spaces" />
     <MESSAGE value="feat: add more tests for app, moved components to folders" />
     <MESSAGE value="feat: change display problems on mobile devises" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: change display problems on mobile devises" />
+    <MESSAGE value="refactor: change some styles, split components into smaller components" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: change some styles, split components into smaller components" />
   </component>
 </project>

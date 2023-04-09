@@ -10,6 +10,7 @@ import ProductCardCharacteristics from "./Characteristics";
 import ProductCardPageInfo from "./Info";
 import ProductCardInfoPurchase from "./InfoPurchase";
 import ProductCardWeight from "./Weight";
+import {getLocalStorageItem, setLocalStorageItem} from "../../componentsUtils/localStorageUtils";
 
 const CardProductPage = (): ReactElement => {
     const {productsInCart, productsToBuy, setProductsToBuy, isSmallScreen,} = useContext(ShoppingCartContext);
@@ -22,18 +23,12 @@ const CardProductPage = (): ReactElement => {
         if (!localStorage.getItem('products')) {
             setProductCard(getProductByBarCode(productsData.products, barcode) as CheckoutProduct);
         } else {
-            const storedProducts = localStorage.getItem('products');
-            if (storedProducts) {
-                setProductCard(getProductByBarCode(JSON.parse(storedProducts) as CheckoutProduct[], barcode) as CheckoutProduct);
-            }
+            setProductCard(getProductByBarCode(getLocalStorageItem('products') as CheckoutProduct[], barcode) as CheckoutProduct);
         }
     }, [])
 
     useEffect(() => {
-        const storedData = localStorage.getItem('productsToBuy')
-        if (storedData) {
-            setProductsToBuy(JSON.parse(storedData) as CheckoutProduct[])
-        }
+        setProductsToBuy(getLocalStorageItem('productsToBuy') as CheckoutProduct[])
     }, []);
 
     useEffect(() => {
@@ -48,8 +43,8 @@ const CardProductPage = (): ReactElement => {
 
     useEffect(() => {
         if (productsToBuy.length !== 0) {
-            localStorage.setItem('productsToBuy', JSON.stringify(productsToBuy));
-            localStorage.setItem('cartCount', (productsInCart).toString());
+            setLocalStorageItem('productsToBuy',productsToBuy);
+            setLocalStorageItem('cartCount',productsInCart);
         }
     }, [productsToBuy, productsInCart]);
 

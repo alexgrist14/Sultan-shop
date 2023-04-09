@@ -1,7 +1,8 @@
 import {Dispatch, ReactElement, SetStateAction} from "react";
 import IProduct from "../../types/IProduct";
+import {setLocalStorageItem} from "../../componentsUtils/localStorageUtils";
 
-interface ItemRightFieldsProps{
+interface ItemRightFieldsProps {
     item: IProduct,
     handleInputChange: (index: number, field: keyof IProduct, value: string) => void,
     index: number,
@@ -9,15 +10,22 @@ interface ItemRightFieldsProps{
     setProducts: Dispatch<SetStateAction<IProduct[]>>,
 }
 
-const ItemRightFields = ({item,handleInputChange,index,products,setProducts}:ItemRightFieldsProps): ReactElement =>{
+const ItemRightFields = ({
+                             item,
+                             handleInputChange,
+                             index,
+                             products,
+                             setProducts
+                         }: ItemRightFieldsProps): ReactElement => {
 
     const handlePriceChange = (index: number, field: keyof IProduct, value: string) => {
         const updatedProducts: IProduct[] = [...products];
         const reg = /^-?\d*(\.\d*)?$/;
+
         if ((!isNaN(Number(value)) && reg.test(value)) || value === '' || value === '-') {
             updatedProducts[index][field] = value as string & string[];
             setProducts(updatedProducts);
-            localStorage.setItem('products', JSON.stringify(updatedProducts));
+            setLocalStorageItem('products', updatedProducts)
         }
     }
 

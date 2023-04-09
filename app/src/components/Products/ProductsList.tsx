@@ -6,8 +6,10 @@ import ReactPaginate from "react-paginate";
 import IProduct from "../../types/IProduct";
 import {SortBy} from "../../types/globalTypes";
 import {ToastContainer} from "react-toastify";
+import {getLocalstorageFilteredProducts, scrollToTop, sortProducts} from "../../componentsUtils/productsUtils";
+import {getLocalStorageItem, setLocalStorageItem} from "../../componentsUtils/localStorageUtils";
 
-interface FilteredProducts {
+interface ProductsListProps {
     maxPrice: string,
     minPrice: string,
     productsPerPage: number,
@@ -23,7 +25,7 @@ const ProductsList = ({
                           producers,
                           selectedCategory,
                           sortBy,
-                      }: FilteredProducts): ReactElement => {
+                      }: ProductsListProps): ReactElement => {
     const [products, setProducts] = useState<IProduct[]>([]);
     const [localStorageProducts, setLocalStorageProducts] = useState<IProduct[]>([]);
     const [currentItems, setCurrentItems] = useState<IProduct[]>([]);
@@ -32,22 +34,22 @@ const ProductsList = ({
     const topElementRef = useRef<null | HTMLDivElement>(null);
 
     useEffect(() => {
-        const localStorageProducts = JSON.parse(localStorage.getItem('products') || '[]') as IProduct[]
-        if (!localStorage.getItem('products') || localStorageProducts.length === 0) {
+        const localStorageProductsJson = localStorage.getItem('products') || '[]';
+        const localStorageProducts = JSON.parse(localStorageProductsJson) as IProduct[];
+
+        if (localStorageProducts.length === 0) {
             setLocalStorageProducts(productsData.products);
-            localStorage.setItem('products', JSON.stringify(productsData.products));
+            setLocalStorageItem('products',productsData.products);
         } else {
-            const storedProducts = localStorage.getItem('products');
-            if (storedProducts) {
-                setLocalStorageProducts(JSON.parse(storedProducts) as IProduct[]);
-            }
+            const storedProducts = getLocalStorageItem('products');
+            setLocalStorageProducts(storedProducts ?? []);
         }
     }, []);
 
     useEffect(() => {
         if (localStorageProducts.length > 0) {
-            const filteredProducts = getLocalstorageFilteredProducts();
-            sortProducts(filteredProducts);
+            const filteredProducts = getLocalstorageFilteredProducts(localStorageProducts,selectedCategory,minPrice,maxPrice,producers);
+            sortProducts(filteredProducts,sortBy);
             setProducts(filteredProducts);
         }
     }, [minPrice, maxPrice, producers, sortBy, selectedCategory]);
@@ -57,41 +59,6 @@ const ProductsList = ({
         setCurrentItems(products.slice(itemOffset, endOffset));
         setPageCount(Math.ceil(products.length / productsPerPage));
     }, [itemOffset, productsPerPage, products])
-
-    const getLocalstorageFilteredProducts = (): IProduct[] => {
-        return localStorageProducts.filter((item) => {
-            if (selectedCategory.length && !item.category.some(val => selectedCategory.includes(val))) {
-                return false;
-            }
-            const isPriceInRange = +item.price >= +minPrice && +item.price <= +maxPrice;
-            const isProducerIncluded = producers.length === 0 || producers.includes(item.producer);
-
-            return isPriceInRange && isProducerIncluded;
-        });
-    }
-
-    const sortProducts = (filteredProducts: IProduct[]) => {
-        switch (sortBy) {
-            case 'name-desc':
-                filteredProducts.sort((a, b) => b.name.localeCompare(a.name));
-                break;
-            case 'price-asc':
-                filteredProducts.sort((a, b) => +a.price - +b.price);
-                break;
-            case 'price-desc':
-                filteredProducts.sort((a, b) => +b.price - +a.price);
-                break;
-            default:
-                filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
-        }
-    }
-
-    const scrollToTop = () => {
-        const refVariable = topElementRef.current;
-        if (refVariable) {
-            refVariable.scrollIntoView({behavior: "smooth"});
-        }
-    }
 
     const handlePageClick = (event: { selected: number }) => {
         const newOffset = (event.selected * productsPerPage) % products.length;
@@ -113,7 +80,7 @@ const ProductsList = ({
                 }
             </div>
             <ReactPaginate
-                onClick={scrollToTop}
+                onClick={()=> scrollToTop(topElementRef)}
                 breakLabel='...'
                 nextLabel={<img src={arrowIcon} alt=""/>}
                 onPageChange={handlePageClick}

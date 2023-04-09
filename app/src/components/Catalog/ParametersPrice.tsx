@@ -7,6 +7,16 @@ interface CatalogParametersPriceProps {
     setMaxPrice: Dispatch<SetStateAction<string>>,
 }
 
+const parser = (inputValue: string): string => {
+    const outputString: string = inputValue.replace(/\D/g, '');
+    if (outputString === '') {
+        return '0';
+    } else if (outputString === '' || (outputString.charAt(0) !== '0' && parseInt(outputString) > 0)) {
+        return outputString;
+    }
+    return '';
+}
+
 const CatalogParametersPrice = ({
                                     minPrice,
                                     maxPrice,
@@ -19,16 +29,6 @@ const CatalogParametersPrice = ({
 
     const handleInputMaxChange = (event: ChangeEvent<HTMLInputElement>): void => {
         setMaxPrice(parser(event.target.value));
-    }
-
-    const parser = (inputValue: string): string => {
-        const outputString: string = inputValue.replace(/\D/g, '');
-        if (outputString === '') {
-            return '0';
-        } else if (outputString === '' || (outputString.charAt(0) !== '0' && parseInt(outputString) > 0)) {
-            return outputString;
-        }
-        return '';
     }
 
     return (

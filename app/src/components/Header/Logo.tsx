@@ -11,6 +11,7 @@ interface HeaderLogoProps {
 
 const HeaderLogo = ({handleClick}: HeaderLogoProps): ReactElement => {
     const {productsInCart, isSmallScreen} = useContext(ShoppingCartContext);
+
     return (
         <div className='header-actions__logo'>
             {

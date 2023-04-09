@@ -7,6 +7,7 @@ import {useNavigate} from 'react-router-dom'
 import {getProductByBarCode, ShoppingCartContext} from "../../context/ShoppingCartContext";
 import {toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {setLocalStorageItem} from "../../componentsUtils/localStorageUtils";
 
 interface IProducts {
     product: IProduct
@@ -18,8 +19,8 @@ const Product = ({product}: IProducts): ReactElement => {
 
     useEffect(() => {
         if (productsToBuy.length !== 0) {
-            localStorage.setItem('productsToBuy', JSON.stringify(productsToBuy));
-            localStorage.setItem('cartCount', (productsInCart).toString());
+            setLocalStorageItem('productsToBuy', productsToBuy);
+            setLocalStorageItem('cartCount', productsInCart);
         }
     }, [productsToBuy])
 
@@ -41,9 +42,10 @@ const Product = ({product}: IProducts): ReactElement => {
         toast('Товар добавлен в корзину.', {hideProgressBar: true});
     }
 
-    const handleClick = () => {
+    const handleRedirectToCardPage = () => {
         navigate(`/product-card/${product.barcode}`)
     }
+
     return (
         <div data-testid="product" className='product'>
             <div className='product-image'><img src={product.url} alt="product_image"/></div>
@@ -53,7 +55,7 @@ const Product = ({product}: IProducts): ReactElement => {
                 <span className='weight'>{product.size}</span>
                 <span className='type'>{` ${product.weightType}`}</span>
             </div>
-            <div data-testid='product-name' className='product-name' onClick={handleClick}>
+            <div data-testid='product-name' className='product-name' onClick={handleRedirectToCardPage}>
                 <p><span className='name'>{product.name} </span>{product.description}</p>
             </div>
             <div className='product-details'>

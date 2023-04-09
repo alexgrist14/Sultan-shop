@@ -7,6 +7,7 @@ import {ShoppingCartContext} from "../../context/ShoppingCartContext";
 
 const HeaderActions = (): ReactElement => {
     const {isSmallScreen} = useContext(ShoppingCartContext);
+
     return (
         <div className='first-actions__container'>
             <div className='header-actions__catalog-btn'>
