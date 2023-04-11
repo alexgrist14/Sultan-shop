@@ -1,6 +1,6 @@
 import {Dispatch, ReactElement, SetStateAction} from "react";
 import polygonIcon from "../../assets/images/polygon.svg";
-import {CheckoutProduct} from "../../context/ShoppingCartContext";
+import {CheckoutProduct} from "../../types/IProduct";
 
 interface ProductCardPageInfoProps{
     productCard: CheckoutProduct | undefined,

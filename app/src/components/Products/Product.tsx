@@ -2,7 +2,7 @@ import {ReactElement, useContext, useEffect} from "react";
 import weightIcon from '../../assets/images/weight_icon.svg';
 import volumeIcon from '../../assets/images/volume_icon.svg';
 import cartIcon from '../../assets/images/cart_white_icon.svg';
-import IProduct from "../../types/IProduct";
+import {IProduct} from "../../types/IProduct";
 import {useNavigate} from 'react-router-dom'
 import {getProductByBarCode, ShoppingCartContext} from "../../context/ShoppingCartContext";
 import {toast} from "react-toastify";

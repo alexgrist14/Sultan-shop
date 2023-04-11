@@ -1,5 +1,5 @@
 import {ReactElement, useEffect, useState} from "react";
-import IProduct from "../../types/IProduct";
+import {IProduct} from "../../types/IProduct";
 import productsData from "../../data/products.json";
 import {Link} from "react-router-dom";
 import {toast, ToastContainer} from "react-toastify";

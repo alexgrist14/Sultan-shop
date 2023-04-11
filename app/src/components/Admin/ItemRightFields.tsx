@@ -1,5 +1,5 @@
 import {Dispatch, ReactElement, SetStateAction} from "react";
-import IProduct from "../../types/IProduct";
+import {IProduct} from "../../types/IProduct";
 import {setLocalStorageItem} from "../../componentsUtils/localStorageUtils";
 
 interface ItemRightFieldsProps {

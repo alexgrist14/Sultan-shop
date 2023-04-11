@@ -1,5 +1,10 @@
 export type SortBy = 'name-asc' | 'name-desc' | 'price-asc' | 'price-desc';
 
+export type GroupedProduct = {
+    producer: string;
+    count: number;
+}
+
 export const filterTypes = [
     'Уход за телом',
     'Уход за руками',

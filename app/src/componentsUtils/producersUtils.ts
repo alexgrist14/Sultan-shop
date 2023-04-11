@@ -1,9 +1,5 @@
-import IProduct from "../types/IProduct";
-
-export type GroupedProduct = {
-    producer: string;
-    count: number;
-}
+import {IProduct} from "../types/IProduct";
+import {GroupedProduct} from "../types/globalTypes";
 
 export const groupByProducer = (products:IProduct[]): GroupedProduct[] => {
     const groupedData: { [key: string]: number } = {};

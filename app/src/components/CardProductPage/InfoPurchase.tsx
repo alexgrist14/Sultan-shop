@@ -2,7 +2,8 @@ import {ReactElement, useContext, useState} from "react";
 import cartIcon from "../../assets/images/cart_white_icon.svg";
 import shareIcon from "../../assets/images/share_icon.svg";
 import downloadIcon from "../../assets/images/black_download.svg";
-import {CheckoutProduct, getProductByBarCode, ShoppingCartContext} from "../../context/ShoppingCartContext";
+import {getProductByBarCode, ShoppingCartContext} from "../../context/ShoppingCartContext";
+import {CheckoutProduct} from "../../types/IProduct";
 import {toast} from "react-toastify";
 import {useParams} from "react-router-dom";
 

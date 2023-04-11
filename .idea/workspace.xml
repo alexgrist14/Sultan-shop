@@ -1,25 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7cc70d7-d9d8-4dd6-ae2e-fc9cfd6e389a" name="Changes" comment="refactor: change some styles, split components into smaller components">
-      <change afterPath="$PROJECT_DIR$/app/src/componentsUtils/localStorageUtils.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/componentsUtils/producersUtils.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/componentsUtils/productsUtils.ts" afterDir="false" />
+    <list default="true" id="b7cc70d7-d9d8-4dd6-ae2e-fc9cfd6e389a" name="Changes" comment="refactor: add components utils folder, change logic of get/set localstorage items">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/components/Admin/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Admin/AddItemForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Admin/AdminPanel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Admin/AdminPanel.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/components/Admin/Item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Admin/Item.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Admin/ItemLeftFields.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Admin/ItemLeftFields.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/components/Admin/ItemRightFields.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Admin/ItemRightFields.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/CardProductPage/Characteristics.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/CardProductPage/Characteristics.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/CardProductPage/Info.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/CardProductPage/Info.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/CardProductPage/InfoPurchase.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/CardProductPage/InfoPurchase.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/CardProductPage/Weight.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/CardProductPage/Weight.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/components/CardProductPage/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/CardProductPage/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Catalog/ParametersPrice.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog/ParametersPrice.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/components/Catalog/ProducersFilter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog/ProducersFilter.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Header/Actions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Header/Actions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Header/Logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Header/Logo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Header/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/components/Products/Product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Products/Product.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/components/Products/ProductsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Products/ProductsList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/components/ShoppingCart/Item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/ShoppingCart/Item.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/ShoppingCart/ItemsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/ShoppingCart/ItemsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/ShoppingCart/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/ShoppingCart/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/componentsUtils/producersUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/componentsUtils/producersUtils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/componentsUtils/productsUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/componentsUtils/productsUtils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/context/ShoppingCartContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/context/ShoppingCartContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/styles/catalog.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles/catalog.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/types/IProduct.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/types/IProduct.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/types/globalTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/types/globalTypes.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,29 +54,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "dart.analysis.tool.window.visible": "false",
-    "last_opened_file_path": "D:/Work/Sultan-shop",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.jest.jest_package": "D:/Work/Sultan-shop/app/node_modules/react-scripts",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
-    "ts.external.directory.path": "D:\\Work\\Sultan-shop\\app\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Work/Sultan-shop&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;D:/Work/Sultan-shop/app/node_modules/react-scripts&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Work\\Sultan-shop\\app\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Work\Sultan-shop\app" />
@@ -209,7 +212,9 @@
       <workItem from="1680864277817" duration="3917000" />
       <workItem from="1680942776065" duration="5513000" />
       <workItem from="1680963316515" duration="51000" />
-      <workItem from="1681032443563" duration="6954000" />
+      <workItem from="1681032443563" duration="7143000" />
+      <workItem from="1681113293877" duration="155000" />
+      <workItem from="1681199644657" duration="977000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add header and footer">
       <created>1679578692524</created>
@@ -414,7 +419,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680948302369</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="refactor: add components utils folder, change logic of get/set localstorage items">
+      <created>1681039931769</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1681039931770</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -433,7 +445,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="feat: add product card" />
     <MESSAGE value="feat: add shopping cart" />
     <MESSAGE value="feat: local storage management" />
     <MESSAGE value="feat: add admin panel" />
@@ -458,6 +469,7 @@
     <MESSAGE value="feat: add more tests for app, moved components to folders" />
     <MESSAGE value="feat: change display problems on mobile devises" />
     <MESSAGE value="refactor: change some styles, split components into smaller components" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: change some styles, split components into smaller components" />
+    <MESSAGE value="refactor: add components utils folder, change logic of get/set localstorage items" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: add components utils folder, change logic of get/set localstorage items" />
   </component>
 </project>

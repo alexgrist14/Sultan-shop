@@ -1,4 +1,4 @@
-export default interface IProduct {
+export interface IProduct {
     url: string,
     name: string,
     weightType: string,
@@ -9,4 +9,8 @@ export default interface IProduct {
     producer: string,
     price: string,
     category: string[],
+}
+
+export interface CheckoutProduct extends IProduct{
+    amount: number
 }

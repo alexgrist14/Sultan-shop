@@ -1,7 +1,8 @@
 import {ReactElement, useContext, useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import productsData from "../../data/products.json";
-import {CheckoutProduct, getProductByBarCode, ShoppingCartContext} from "../../context/ShoppingCartContext";
+import {getProductByBarCode, ShoppingCartContext} from "../../context/ShoppingCartContext";
+import {CheckoutProduct} from "../../types/IProduct";
 import {ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";

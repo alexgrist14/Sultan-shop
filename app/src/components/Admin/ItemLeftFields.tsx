@@ -1,5 +1,5 @@
 import {ReactElement} from "react";
-import IProduct from "../../types/IProduct";
+import {IProduct} from "../../types/IProduct";
 
 interface ItemLeftFieldsProps {
     item: IProduct,

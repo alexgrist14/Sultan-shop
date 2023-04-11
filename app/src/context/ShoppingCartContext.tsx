@@ -1,5 +1,5 @@
 import {Dispatch, SetStateAction, useState, createContext, FC, ReactNode} from "react";
-import IProduct from "../types/IProduct";
+import {CheckoutProduct, IProduct} from "../types/IProduct";
 
 type ShoppingCartContextContextType = {
     productsInCart: number;
@@ -16,9 +16,6 @@ type ShoppingCartProviderProps = {
     children: ReactNode
 }
 
-export interface CheckoutProduct extends IProduct{
-    amount: number
-}
 
 export const getProductByBarCode = (data:IProduct[], barcode: string | undefined): IProduct | undefined => {
     return data.find((product: IProduct) => product.barcode === barcode);

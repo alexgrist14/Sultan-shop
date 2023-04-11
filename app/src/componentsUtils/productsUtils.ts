@@ -1,4 +1,4 @@
-import IProduct from "../types/IProduct";
+import {IProduct} from "../types/IProduct";
 import {SortBy} from "../types/globalTypes";
 import {MutableRefObject} from "react";
 

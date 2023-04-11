@@ -1,5 +1,5 @@
 import {ChangeEvent, Dispatch, ReactElement, SetStateAction, useState} from "react";
-import IProduct from "../../types/IProduct";
+import {IProduct} from "../../types/IProduct";
 import {filterTypes} from "../../types/globalTypes";
 import deleteIcon from "../../assets/images/delete_icon.svg";
 import {toast} from "react-toastify";
