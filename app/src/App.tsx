@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import Header from "./components/Header/index";
-import Footer from "./components/Footer/index";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 import Catalog from "./components/Catalog/index";
 import {Route, Routes} from 'react-router-dom';
 import CardProductPage from "./components/CardProductPage/index";
 import {ShoppingCartProvider} from "./context/ShoppingCartContext";
-import ShoppingCart from "./components/ShoppingCart/index";
+import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
 import AdminPanel from "./components/Admin/AdminPanel";
 import AddItemForm from "./components/Admin/AddItemForm";
 import ErrorPage from "./components/ErrorPage";

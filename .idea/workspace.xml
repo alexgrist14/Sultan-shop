@@ -1,28 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b7cc70d7-d9d8-4dd6-ae2e-fc9cfd6e389a" name="Changes" comment="refactor: add components utils folder, change logic of get/set localstorage items">
+      <change afterPath="$PROJECT_DIR$/app/src/components/Breadcrumbs/BreadCrumbMobile.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/Footer/Contacts/Contacts.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/Footer/Contacts/Contacts.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/Footer/Description/Description.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/Footer/Description/Description.module.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/Footer/Description/Description.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/Footer/Downloads/Downloads.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/Footer/Downloads/Downloads.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/Footer/Footer.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/Footer/Footer.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/Footer/Footer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/Footer/Navigation/Navigation.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/Footer/Navigation/Navigation.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/Header/Actions/Actions.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/Header/Callback/Callback.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/Header/Cart/Cart.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/Header/Header.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/Header/Logo/Logo.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/Header/Menu/Menu.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/Products/Product/Product.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/Products/ProductsList/ProductList.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/ShoppingCart/Item/Item.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/ShoppingCart/ItemsList/ItemsList.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/ShoppingCart/ShoppingCart.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Admin/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Admin/AddItemForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Admin/AdminPanel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Admin/AdminPanel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/components/Admin/Item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Admin/Item.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Admin/ItemLeftFields.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Admin/ItemLeftFields.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/components/Admin/ItemRightFields.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Admin/ItemRightFields.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/CardProductPage/Characteristics.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/CardProductPage/Characteristics.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/CardProductPage/Info.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/CardProductPage/Info.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/CardProductPage/InfoPurchase.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/CardProductPage/InfoPurchase.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/CardProductPage/Weight.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/CardProductPage/Weight.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Breadcrumbs/BreadCrumbMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Breadcrumbs/BreadCrumbMobile.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/components/CardProductPage/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/CardProductPage/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/components/Catalog/ProducersFilter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog/ProducersFilter.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Products/Product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Products/Product.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Products/ProductsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Products/ProductsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/ShoppingCart/Item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/ShoppingCart/Item.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/componentsUtils/producersUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/componentsUtils/producersUtils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/componentsUtils/productsUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/componentsUtils/productsUtils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/context/ShoppingCartContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/context/ShoppingCartContext.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/styles/catalog.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles/catalog.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/types/IProduct.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/types/IProduct.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/types/globalTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/types/globalTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Catalog/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Catalog/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Footer/Contacts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Footer/Contacts/Contacts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Footer/Description.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Footer/Description/Description.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Footer/Downloads.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Footer/Downloads/Downloads.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Footer/Navigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Footer/Navigation/Navigation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Footer/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Header/Actions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Header/Actions/Actions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Header/Callback.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Header/Callback/Callback.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Header/Cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Header/Cart/Cart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Header/Logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Header/Logo/Logo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Header/Menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Header/Menu/Menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Products/Product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Products/Product/Product.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Products/ProductsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Products/ProductsList/ProductsList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/ShoppingCart/Item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/ShoppingCart/Item/Item.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/ShoppingCart/ItemsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/ShoppingCart/ItemsList/ItemsList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/ShoppingCart/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/ShoppingCart/ShoppingCart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/componentsUtils/localStorageUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Utils/localStorageUtils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/componentsUtils/producersUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Utils/producersUtils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/componentsUtils/productsUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Utils/productsUtils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/index.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/styles/adminPanel.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/styles/adminPanel.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Footer/Navigation/Navigation.module.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/styles/catalog.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/styles/catalog.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/styles/footer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/styles/footer.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Footer/Footer.module.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/styles/footer.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/styles/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles/header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/styles/orderMessage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/styles/orderMessage.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Footer/Contacts/Contacts.module.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/styles/product.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/styles/product.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Footer/Downloads/Downloads.module.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/styles/product.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/styles/productCard.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/styles/productCard.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/styles/shoppingCart.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/styles/shoppingCart.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/styles/shoppingCart.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/styles/variables.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/styles/variables.css.map" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,10 +93,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Sass File" />
-        <option value="SCSS File" />
         <option value="HTML File" />
         <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -54,29 +114,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Work/Sultan-shop&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs.jest.jest_package&quot;: &quot;D:/Work/Sultan-shop/app/node_modules/react-scripts&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\Work\\Sultan-shop\\app\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "dart.analysis.tool.window.visible": "false",
+    "last_opened_file_path": "D:/Work/Sultan-shop",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "D:/Work/Sultan-shop/app/node_modules/react-scripts",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\alexgrist\\AppData\\Roaming\\npm\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "watcher.settings",
+    "ts.external.directory.path": "D:\\Work\\Sultan-shop\\app\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Work\Sultan-shop\app" />
@@ -85,17 +146,16 @@
       <recent name="D:\Work\Sultan-shop\app\src\assets\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Work\Sultan-shop\app\src\componentsUtils" />
-      <recent name="D:\Work\Sultan-shop\app" />
-      <recent name="D:\Work\Sultan-shop\app\src\components\Products" />
-      <recent name="D:\Work\Sultan-shop\app\src\components\Breadcrumbs" />
-      <recent name="D:\Work\Sultan-shop\app\src\components\Catalog" />
+      <recent name="D:\Work\Sultan-shop\app\src\components\Header\Menu" />
+      <recent name="D:\Work\Sultan-shop\app\src\components\Header\Logo" />
+      <recent name="D:\Work\Sultan-shop\app\src\components\Header\Cart" />
+      <recent name="D:\Work\Sultan-shop\app\src\components\Header\Callback" />
+      <recent name="D:\Work\Sultan-shop\app\src\components\Header\Actions" />
     </key>
   </component>
   <component name="RunManager" selected="Jest.App.test.tsx">
     <configuration name="App.test.tsx" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
-      <node-options value="" />
       <jest-package value="$PROJECT_DIR$/app/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$/app" />
       <envs />
@@ -105,7 +165,6 @@
     </configuration>
     <configuration name="Test app" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
-      <node-options value="" />
       <jest-package value="$PROJECT_DIR$/app/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$/app" />
       <envs />
@@ -118,7 +177,6 @@
     </configuration>
     <configuration name="Test app.shoul open card page after click on name" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
-      <node-options value="" />
       <jest-package value="$PROJECT_DIR$/app/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$/app" />
       <envs />
@@ -132,7 +190,6 @@
     </configuration>
     <configuration name="Test app.should displayed Error page after link to unregistered route" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
-      <node-options value="" />
       <jest-package value="$PROJECT_DIR$/app/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$/app" />
       <envs />
@@ -146,7 +203,6 @@
     </configuration>
     <configuration name="Test app.should link to shopping cart after click on cart button" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
-      <node-options value="" />
       <jest-package value="$PROJECT_DIR$/app/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$/app" />
       <envs />
@@ -169,6 +225,9 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="b7cc70d7-d9d8-4dd6-ae2e-fc9cfd6e389a" name="Changes" comment="" />

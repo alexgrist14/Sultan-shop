@@ -1,0 +1,130 @@
+.content__company_description {
+  margin-left: -35px;
+  margin-right: 10px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 320px;
+
+  p {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .sales__subscribe {
+    &__title {
+      text-align: left;
+      font-weight: unset;
+      font-size: 12px;
+    }
+
+    .mail {
+      &__input {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 20px;
+        padding-right: 10px;
+        align-items: center;
+        width: 252px;
+        height: 59px;
+        background: #FFFFFF;
+        border-radius: 36px;
+      }
+
+      &__placeholder {
+        font-size: 12px;
+        color: #5C6370;
+      }
+
+      &__submit {
+        width: 39px;
+        height: 39px;
+        background: #FFC85E;
+        border-radius: 1000px;
+
+        img {
+          position: relative;
+          top: 25%
+        }
+      }
+    }
+  }
+
+  .links__downloads_btn {
+    display: flex;
+    width: 214px;
+    height: 59px;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    background: #FFC85E;
+    border-radius: 79px;
+
+    .text {
+      font-weight: 700;
+      font-size: 14px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .content__company_description {
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .content__company_description {
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+
+    .footer__header {
+      display: flex;
+      margin-top: 17px;
+      width: 93.5%;
+      justify-content: space-between;
+
+      .links__downloads_btn {
+        width: 149px;
+        height: 40px;
+
+        .text {
+          font-weight: 700;
+          font-size: 12px;
+        }
+      }
+      .company__logo {
+        img {
+          width: 97px !important;
+          height: 41px !important;
+        }
+      }
+    }
+
+    p {
+      width: 85%;
+      margin-left: -22px;
+      margin-bottom: 0;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+    }
+    .sales__subscribe{
+      width: 100%;
+      .mail {
+        &__input {
+          padding: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -11,7 +11,7 @@ import ProductCardCharacteristics from "./Characteristics";
 import ProductCardPageInfo from "./Info";
 import ProductCardInfoPurchase from "./InfoPurchase";
 import ProductCardWeight from "./Weight";
-import {getLocalStorageItem, setLocalStorageItem} from "../../componentsUtils/localStorageUtils";
+import {getLocalStorageItem, setLocalStorageItem} from "../../Utils/localStorageUtils";
 
 const CardProductPage = (): ReactElement => {
     const {productsInCart, productsToBuy, setProductsToBuy, isSmallScreen,} = useContext(ShoppingCartContext);

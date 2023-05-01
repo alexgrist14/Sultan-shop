@@ -1,0 +1,44 @@
+.links {
+  &__downloads {
+    text-align: left;
+
+    &_title {
+      letter-spacing: 0.3px;
+      font-weight: 600;
+      font-size: 20px;
+      margin: 0 0 30px;
+    }
+
+    &_btn {
+      display: flex;
+      width: 214px;
+      height: 59px;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      background: #FFC85E;
+      border-radius: 79px;
+
+      .text {
+        font-weight: 700;
+        font-size: 14px;
+      }
+    }
+
+    &_socials {
+      .title {
+        margin-left: 8px;
+        font-weight: normal;
+        font-size: 14px;
+
+      }
+
+      .links {
+        display: flex;
+        margin-left: 5px;
+        gap: 10px;
+      }
+    }
+
+  }
+}

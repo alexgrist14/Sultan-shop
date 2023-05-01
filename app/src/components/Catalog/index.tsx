@@ -1,5 +1,5 @@
 import {ReactElement, useCallback, useContext, useMemo, useState} from "react";
-import ProductsList from "../Products/ProductsList";
+import ProductsList from "../Products/ProductsList/ProductsList";
 import {SortBy} from "../../types/globalTypes";
 import {Link} from "react-router-dom";
 import {ShoppingCartContext} from "../../context/ShoppingCartContext";

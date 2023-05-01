@@ -1,8 +1,8 @@
 import {ChangeEvent, ReactElement, useEffect, useState} from "react";
 import productsData from "../../data/products.json";
 import polygonIcon from "../../assets/images/polygon.svg";
-import {groupByProducer} from "../../componentsUtils/producersUtils";
-import {getLocalStorageItem} from "../../componentsUtils/localStorageUtils";
+import {groupByProducer} from "../../Utils/producersUtils";
+import {getLocalStorageItem} from "../../Utils/localStorageUtils";
 import {GroupedProduct} from "../../types/globalTypes";
 
 interface ProducerFilterProps {

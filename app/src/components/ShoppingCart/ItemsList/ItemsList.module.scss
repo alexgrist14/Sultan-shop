@@ -1,0 +1,70 @@
+@use "../../../styles/variables";
+
+.products {
+  display: flex;
+  flex-direction: column;
+  margin-top: 47px;
+
+  .ordering {
+    display: flex;
+    padding: 50px 0;
+    justify-content: space-between;
+    border-top: 1px dashed rgba(63, 78, 101, 0.3);
+    align-items: center;
+
+    .btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 192px;
+      height: 59px;
+      background: #FFC85E;
+      border-radius: 79px;
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.2s ALL;
+
+      &:hover {
+        background: #efb02c;
+      }
+
+      &:active {
+        background: #b0790d;
+      }
+    }
+
+    .total {
+      color: variables.$primary-text-color;
+      font-weight: 700;
+      font-size: 30px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .products {
+    .ordering {
+      padding: 50px 20px;
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .ordering {
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .btn {
+      order: 2;
+      width: 290px;
+      height: 80px;
+    }
+
+    .total {
+      order: 1;
+      margin-bottom: 25px;
+    }
+  }
+}
